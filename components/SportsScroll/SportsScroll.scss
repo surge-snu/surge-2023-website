@@ -1,0 +1,78 @@
+$animationSpeed: 20s;
+
+.SportsSlider {
+  width: 100%;
+  position: relative;
+  margin: 0 0;
+  direction: rtl;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    min-width: 500px;
+    z-index: 2;
+  }
+
+  &::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+
+  &::before {
+    left: 0;
+    top: 0;
+  }
+
+  &__track {
+    animation: SportsScroll $animationSpeed linear infinite;
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+
+    &--item {
+      background-color: $primaryColor;
+      margin: 0;
+      @include make-flex(column, center, center);
+      border-radius: 15px;
+      padding: 0;
+      text-align: center;
+
+      @include respondAt(915px) {
+        @include box(10rem, 100%);
+      }
+
+      &--image {
+        // background-color: red;
+        border-radius: 10px;
+        width: 13rem;
+        height: 13rem;
+        aspect-ratio: 1/1;
+
+        @include respondAt(915px) {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &--heading {
+        font-size: 1.5rem;
+        font-family: "Migra";
+        text-transform: uppercase;
+        color: $backgroundColor;
+        padding: 0.5rem 0;
+      }
+    }
+  }
+}
+
+@keyframes SportsScroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(50%);
+  }
+}

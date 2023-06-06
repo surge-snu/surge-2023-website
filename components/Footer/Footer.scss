@@ -1,0 +1,60 @@
+.Footer {
+  background-image: linear-gradient(to right, #ff655b 20%, #ab07f8, #592fd1);
+  @include box(100vw, auto);
+  @include make-flex(row, center, space-between);
+  padding: 5rem 20rem;
+
+  @include respondAtLarge(915px, 1300px) {
+    padding: 5rem 10rem;
+  }
+
+  @include respondAt(915px) {
+    @include make-flex(column, center, center);
+    gap: 2rem;
+    padding: 5rem 2rem;
+  }
+
+  &__logoSocials {
+    &--logo {
+      width: 20rem;
+      height: auto;
+
+      @include respondAt(915px) {
+        width: 15rem;
+        height: auto;
+      }
+    }
+
+    &--socials {
+      @include make-flex(row, center, flex-start);
+      gap: 1rem;
+
+      @include respondAt(915px) {
+        @include make-flex(row, center, center);
+      }
+    }
+  }
+
+  &__links {
+    @include make-flex(row, flex-start, space-between);
+    gap: 5rem;
+
+    @include respondAt(915px) {
+      @include make-flex(column, center, center);
+      text-align: center;
+      gap: 2rem;
+    }
+
+    &--category {
+      h2 {
+        font-family: "Poppins", sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+      }
+
+      &--heading {
+        font-weight: 700 !important;
+      }
+    }
+  }
+}
