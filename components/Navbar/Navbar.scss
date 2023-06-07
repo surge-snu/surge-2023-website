@@ -7,13 +7,12 @@
 
 .NavbarContainer {
   padding: 0.75rem 2rem;
-  height: 4.5rem;
+  min-height: 4.5rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   @include make-flex($dir: row, $just: space-between, $align: center);
 
   @include respondAt(915px) {
-    height: 4rem;
     padding: 0.75rem 1rem;
     @include make-flex($dir: column, $just: flex-start, $align: center);
   }

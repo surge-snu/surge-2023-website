@@ -13,7 +13,6 @@ function Navbar({ isSmall = false }) {
     setNavState(false);
   }, [pathName]);
 
-
   return (
     <nav className={`NavbarWrapper ${isSmall ? "NavbarWrapper--small" : ""}`}>
       <div className="NavbarContainer">
