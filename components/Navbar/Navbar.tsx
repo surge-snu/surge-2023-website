@@ -7,23 +7,36 @@ import "./Navbar.scss";
 function Navbar({ isSmall = false }) {
   const [navState, setNavState] = useState(false);
   const pathName = usePathname();
-  const [isSmallScreen, setIsSmallScreen] = useState(true);
-
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
   useEffect(() => {
     setNavState(false);
   }, [pathName]);
-
+  useEffect(() => {
+    if (window.innerWidth <= 960) {
+      console.log("heh");
+      setIsSmallScreen(true);
+    } else {
+      console.log("jiji");
+      setIsSmallScreen(false);
+    }
+  });
   return (
-    <nav className={`NavbarWrapper ${isSmall ? "NavbarWrapper--small" : ""}`}>
+    <nav
+      className={`NavbarWrapper ${isSmallScreen ? "NavbarWrapper--small" : ""}`}
+    >
       <div className="NavbarContainer">
         <div className="NavbarContainer__AlwaysOnTop">
           <div className="NavbarContainer__Logo">
             <Link href="/" aria-label="Go to Home Page">
               <Image
-                src="/Images/surgeLogoPC.svg"
+                src={
+                  isSmall
+                    ? "/Images/SurgeLogoMobile.svg"
+                    : "/Images/surgeLogoPC.svg"
+                }
                 alt="Surge Logo in Primary Color"
                 width={isSmall ? 50 : 200}
-                height={isSmall ? 20 : 25}
+                height={isSmall ? 40 : 25}
                 priority
               />
             </Link>

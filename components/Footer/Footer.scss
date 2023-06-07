@@ -2,7 +2,7 @@
   background-image: linear-gradient(to right, #ff655b 20%, #ab07f8, #592fd1);
   @include box(100vw, auto);
   @include make-flex(row, center, space-between);
-  padding: 5rem 20rem;
+  padding: 5rem 7rem;
 
   @include respondAtLarge(915px, 1300px) {
     padding: 5rem 10rem;
@@ -18,7 +18,7 @@
     &--logo {
       width: 20rem;
       height: auto;
-
+      margin-bottom: 1rem;
       @include respondAt(915px) {
         width: 15rem;
         height: auto;
@@ -28,7 +28,6 @@
     &--socials {
       @include make-flex(row, center, flex-start);
       gap: 1rem;
-
       @include respondAt(915px) {
         @include make-flex(row, center, center);
       }
@@ -48,10 +47,21 @@
     &--category {
       h2 {
         font-family: "Poppins", sans-serif;
-        font-size: 1rem;
+        font-size: 1.5rem;
         font-weight: 400;
       }
-
+      &--links {
+        @include make-flex(row);
+        @include respondAt(915px) {
+          @include make-flex(column,center,center);
+        }
+        &__content {
+          margin-right: 1rem;
+          @include respondAt(915px) {
+            margin-right: 0;
+          }
+        }
+      }
       &--heading {
         font-weight: 700 !important;
       }

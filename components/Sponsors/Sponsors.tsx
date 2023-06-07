@@ -19,7 +19,7 @@ function Sponsors() {
             src="/Images/Homepage/Sponsors/Stag.png"
             alt="Stag"
             width={200}
-            height={100}
+            height={90}
             className="Sponsors__content--card--image"
           />
         </motion.div>
@@ -33,7 +33,7 @@ function Sponsors() {
             src="/Images/Homepage/Sponsors/Wai Wai.png"
             alt="Stag"
             width={200}
-            height={100}
+            height={90}
             className="Sponsors__content--card--image"
           />
         </motion.div>
@@ -47,7 +47,7 @@ function Sponsors() {
             src="/Images/Homepage/Sponsors/Dassault Systems.png"
             alt="Stag"
             width={200}
-            height={100}
+            height={90}
             className="Sponsors__content--card--image"
           />
         </motion.div>
@@ -61,11 +61,11 @@ function Sponsors() {
             src="/Images/Homepage/Sponsors/HCL.png"
             alt="Stag"
             width={200}
-            height={100}
+            height={90}
             className="Sponsors__content--card--image"
           />
         </motion.div>
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ type: "spring", stiffness: 100, delay: 4 * 0.1 }}
@@ -75,7 +75,7 @@ function Sponsors() {
             src="/Images/Homepage/Sponsors/HCL.png"
             alt="Stag"
             width={200}
-            height={100}
+            height={90}
             className="Sponsors__content--card--image"
           />
         </motion.div>
@@ -120,7 +120,7 @@ function Sponsors() {
             height={100}
             className="Sponsors__content--card--image"
           />
-        </motion.div>
+        </motion.div> */}
       </div>
       <Link href="/sponsors">
         <button className="CTA">View All Sponsors</button>

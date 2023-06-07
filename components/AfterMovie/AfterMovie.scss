@@ -49,9 +49,11 @@
     text-transform: uppercase;
     font-family: "Migra";
     width: auto;
+    line-height: 4.5rem;
 
     @include respondAt(915px) {
       font-size: 3rem;
+      line-height: 3rem;
     }
 
     span {

@@ -6,9 +6,10 @@
 }
 
 .NavbarContainer {
+  background-color: rgb(0 0 0 / 50%);
   padding: 0.75rem 2rem;
   min-height: 4.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid  rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   @include make-flex($dir: row, $just: space-between, $align: center);
 
@@ -27,8 +28,8 @@
     @include make-flex($dir: row, $just: space-between, $align: center);
   }
 
-  -webkit-backdrop-filter: saturate(180%) blur(18px);
-  backdrop-filter: saturate(180%) blur(18px);
+  -webkit-backdrop-filter: saturate(280%) blur(18px);
+  backdrop-filter: saturate(280%) blur(18px);
 
   &__Menu {
     &--list {
@@ -57,6 +58,9 @@
 
       &-item {
         display: block;
+        @include respondAt(915px){
+          font-size: 2rem;
+        }
         &::after {
           content: "";
           display: block;
@@ -73,6 +77,9 @@
 
       &-activeItem {
         display: block;
+        @include respondAt(915px){
+          font-size: 2rem;
+        }
         color: $primaryColor;
         &::after {
           content: "";

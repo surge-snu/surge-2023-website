@@ -6,7 +6,7 @@
 
   &__statistics {
     @include box(100%, auto);
-    padding: 3rem 20rem;
+    padding: 3rem 0rem;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -25,7 +25,7 @@
       margin: 0;
 
       h1 {
-        font-size: 5rem;
+        font-size: 4.5rem;
         font-family: "Poppins", sans-serif;
 
         @include respondAt(915px) {
@@ -34,7 +34,7 @@
       }
 
       h2 {
-        font-size: 3rem;
+        font-size: 2.5rem;
         text-transform: uppercase;
         font-family: "Migra";
         margin-bottom: -0.75rem;
@@ -62,7 +62,7 @@
   }
 
   &__sports {
-    @include box(calc(100vw - 40rem), auto);
+    @include box(100vw, auto);
     margin: auto;
     overflow-x: hidden;
 

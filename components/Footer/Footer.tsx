@@ -15,30 +15,30 @@ const Footer = () => {
           className="Footer__logoSocials--logo"
         />
         <div className="Footer__logoSocials--socials">
-          <Link href="www.instagram.com">
+          <Link href="https://www.instagram.com/surge.snu/">
             <Image
               src="Images/Icons/Facebook.svg"
               alt="Instagram Link"
-              width={40}
-              height={40}
+              width={30}
+              height={30}
               className="Footer__logoSocials--socials--icon"
             />
           </Link>
-          <Link href="www.instagram.com">
+          <Link href="https://www.instagram.com/surge.snu/">
             <Image
               src="Images/Icons/Linkedin.svg"
               alt="Instagram Link"
-              width={40}
-              height={40}
+              width={30}
+              height={30}
               className="Footer__logoSocials--socials--icon"
             />
           </Link>
-          <Link href="www.instagram.com">
+          <Link href="https://www.instagram.com/surge.snu/">
             <Image
               src="Images/Icons/Instagram.svg"
               alt="Instagram Link"
-              width={40}
-              height={40}
+              width={30}
+              height={30}
               className="Footer__logoSocials--socials--icon"
             />
           </Link>
@@ -47,18 +47,24 @@ const Footer = () => {
       <div className="Footer__links">
         <div className="Footer__links--category">
           <h2 className="Footer__links--category--heading">Pages</h2>
-          <Link href="/">
-            <h2>Home</h2>
-          </Link>
-          <Link href="/gallery">
-            <h2>Gallery</h2>
-          </Link>
-          <Link href="/events">
-            <h2>Events</h2>
-          </Link>
-          <Link href="/team">
-            <h2>Team</h2>
-          </Link>
+          <div className="Footer__links--category--links">
+            <div className="Footer__links--category--links__content">
+              <Link href="/">
+                <h2>Home</h2>
+              </Link>
+              <Link href="/gallery">
+                <h2>Gallery</h2>
+              </Link>
+            </div>
+            <div className="Footer__links--category--links__content">
+              <Link href="/events">
+                <h2>Events</h2>
+              </Link>
+              <Link href="/team">
+                <h2>Team</h2>
+              </Link>
+            </div>
+          </div>
         </div>
         <div className="Footer__links--category">
           <h2 className="Footer__links--category--heading">Contact</h2>
