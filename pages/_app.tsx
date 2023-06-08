@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar/Navbar";
 import "../styles/root/globals.scss";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import AuthModal from "../components/AuthModal/AuthModal";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [isSmall , setIsSmall] = useState(false);
@@ -25,6 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/Images/Favicon.png" />
       </Head>
       <Navbar isSmall={isSmall} />
+      <AuthModal />
       <Component {...pageProps} />
       <Footer />
     </>
