@@ -1,9 +1,32 @@
 import "./SignUp.scss";
 import { useEffect, useState } from "react";
+const bcrypt = require("bcryptjs");
 import PinInput from "react-pin-input";
+import useForm from "../../../hooks/useForm";
+import BlurredSpinner from "../../BlurredSpinner/BlurredSpinner";
+import { register, sendOtp } from "../../../operations/auth.fetch";
+import { isEmail, isPassword, isName, isPhone } from "../../../utils/validate";
 
-function SignUp() {
+export default function SignUp({ onSignUp }) {
+  const initialValues = {
+    friendlyName: "",
+    phone: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  };
   const [showOtp, setShowOtp] = useState(false);
+  const [cryptOtp, setCryptOtp] = useState("");
+  const [showLoader, setShowLoader] = useState(false);
+  const [otpError, setOtpError] = useState("");
+  const [duplicateError, setDuplicateError] = useState({
+    friendlyName: "",
+    phone: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    name: "",
+  });
 
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -14,8 +37,72 @@ function SignUp() {
     }
   });
 
+  async function validate(formValues) {
+    const errs = {
+      friendlyName: "",
+      phone: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    };
+    setDuplicateError({
+      friendlyName: "",
+      phone: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+      name: "",
+    });
+    if (formValues.friendlyName && !isName(formValues.friendlyName)) {
+      errs.friendlyName = "Invalid Name";
+    }
+
+    if (formValues.phone && !isPhone(formValues.phone)) {
+      errs.phone = "Invalid Phone number";
+    }
+
+    if (formValues.email && !isEmail(formValues.email)) {
+      errs.email = "Invalid Email";
+    }
+
+    if (formValues.password && !isPassword(formValues.password.trim())) {
+      errs.password =
+        "Password must have at least one digit, one uppercase, one lowercase letter and min. 8 characters length";
+    }
+
+    if (
+      formValues.confirmPassword &&
+      formValues.confirmPassword.trim() !== formValues.password.trim()
+    ) {
+      errs.confirmPassword = "Password and confirm password must match";
+    }
+
+    return errs;
+  }
+
+  const { formData, onChange, handleSubmit, errors } = useForm({
+    validate,
+    initialValues,
+    onSubmit: async (formData) => {
+      if (Object.keys(errors).length !== 0) return;
+
+      setShowLoader(true);
+
+      await sendOtp(formData).then((res) => {
+        setCryptOtp(res.otp);
+        setShowLoader(false);
+        if (res.status === 200) {
+          setShowOtp(true);
+        } else {
+          setDuplicateError(res.message);
+        }
+      });
+    },
+  });
+
   return (
     <>
+      {showLoader && <BlurredSpinner style={{ borderRadius: "7px" }} />}
       {showOtp && (
         <div className="Otp">
           <div className="Otp__container">
@@ -31,7 +118,7 @@ function SignUp() {
               <p>Verification Code</p>
             </div>
             <div className="Otp__desc">
-              <p>Please type the verification code sent to email</p>
+              <p>Please type the verification code sent to {formData.email}</p>
               <em>(Also check your spam folder)</em>
             </div>
             <div className="Otp__pin">
@@ -55,18 +142,45 @@ function SignUp() {
                 inputFocusStyle={{
                   border: "2px solid",
                 }}
-                onComplete={() => {}}
+                onComplete={async (value) => {
+                  const isMatch = bcrypt.compareSync(value, cryptOtp);
+                  setShowLoader(true);
+
+                  if (isMatch) {
+                    await register(formData).then((res) => {
+                      if (res.status === 200) {
+                        setShowLoader(false);
+                        setShowOtp(false);
+                        onSignUp();
+                      } else {
+                        setCryptOtp(res.json.name);
+                      }
+                    });
+                  } else {
+                    setShowLoader(false);
+                    setOtpError("Invalid OTP");
+                  }
+                }}
                 autoSelect={true}
                 validate={(value) => (/^[a-z0-9]*$/.test(value) ? value : "")}
               />
             </div>
-            {/* {otpError !== "" && <span className="Otp__error">{otpError}</span>} */}
+            {otpError !== "" && <span className="Otp__error">{otpError}</span>}
             <div className="Otp__again">
               <div className="Otp__again--text">
                 <p>Didn't get the code? &nbsp;</p>
               </div>
               <span
-                onClick={() => {}}
+                onClick={async () => {
+                  setShowLoader(true);
+                  setShowOtp(false);
+
+                  await sendOtp(formData).then((res) => {
+                    setCryptOtp(res.otp);
+                    setShowOtp(true);
+                    setShowLoader(false);
+                  });
+                }}
               >
                 Send Again
               </span>
@@ -74,21 +188,21 @@ function SignUp() {
           </div>
         </div>
       )}
-      <form method="POST" className="SignUp" onSubmit={() => {}}>
+      <form method="POST" className="SignUp" onSubmit={handleSubmit}>
         <div className="SignUp__row">
           <label htmlFor="friendlyName">Name</label>
           <input
             id="friendlyName"
             type="text"
             required
-            // onChange={(e) => onChange("friendlyName", e)}
+            onChange={(e) => onChange("friendlyName", e)}
           />
-          {/* {errors.friendlyName && (
+          {errors.friendlyName && (
             <span className="SignUp__row--error">{errors.friendlyName}</span>
           )}
           {duplicateError.name && (
             <span className="SignUp__row--error">{duplicateError.name}</span>
-          )} */}
+          )}
         </div>
         <div className="SignUp__row">
           <label htmlFor="phone">Phone</label>
@@ -96,14 +210,14 @@ function SignUp() {
             id="phone"
             type="number"
             required
-            // onChange={(e) => onChange("phone", e)}
+            onChange={(e) => onChange("phone", e)}
           />
-          {/* {errors.phone && (
+          {errors.phone && (
             <span className="SignUp__row--error">{errors.phone}</span>
           )}
           {duplicateError.phone && (
             <span className="SignUp__row--error">{duplicateError.phone}</span>
-          )} */}
+          )}
         </div>
         <div className="SignUp__row">
           <label htmlFor="email">Email ID</label>
@@ -111,14 +225,14 @@ function SignUp() {
             id="email"
             type="email"
             required
-            // onChange={(e) => onChange("email", e)}
+            onChange={(e) => onChange("email", e)}
           />
-          {/* {errors.email && (
+          {errors.email && (
             <span className="SignUp__row--error">{errors.email}</span>
           )}
           {duplicateError.email && (
             <span className="SignUp__row--error">{duplicateError.email}</span>
-          )} */}
+          )}
         </div>
         <div className="SignUp__col">
           <div>
@@ -127,7 +241,7 @@ function SignUp() {
               id="password"
               type="password"
               required
-            //   onChange={(e) => onChange("password", e)}
+              onChange={(e) => onChange("password", e)}
             />
           </div>
           <div className="SignUp__col--confirm">
@@ -136,11 +250,11 @@ function SignUp() {
               id="confirmPassword"
               type="password"
               required
-            //   onChange={(e) => onChange("confirmPassword", e)}
+              onChange={(e) => onChange("confirmPassword", e)}
             />
           </div>
         </div>
-        {/* {errors.password && (
+        {errors.password && (
           <span className="SignUp__row--error">{errors.password}</span>
         )}
         {errors.confirmPassword && (
@@ -148,7 +262,7 @@ function SignUp() {
         )}
         {duplicateError.password && (
           <span className="SignUp__row--error">{duplicateError.password}</span>
-        )} */}
+        )}
         <div className="SignUp__bottom">
           <div className="SignUp__bottom--signedIn">
             <input
@@ -177,5 +291,3 @@ function SignUp() {
     </>
   );
 }
-
-export default SignUp;
