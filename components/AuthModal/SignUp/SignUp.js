@@ -18,7 +18,6 @@ export default function SignUp({ onSignUp }) {
   const [showOtp, setShowOtp] = useState(false);
   const [cryptOtp, setCryptOtp] = useState("");
   const [showLoader, setShowLoader] = useState(false);
-  const [otpError, setOtpError] = useState("");
   const [duplicateError, setDuplicateError] = useState({
     friendlyName: "",
     phone: "",
@@ -27,6 +26,7 @@ export default function SignUp({ onSignUp }) {
     confirmPassword: "",
     name: "",
   });
+  const [otpError, setOtpError] = useState("");
 
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {

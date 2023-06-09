@@ -46,9 +46,8 @@ async function SendOtp(req, res) {
     };
     let transporter = nodemailer.createTransport({
         service: "Gmail",
-
         auth: {
-            user: "verify.surge@gmail.com",
+            user: "as188@snu.edu.in",
             pass: process.env.GMAIL_PASS,
         },
     });

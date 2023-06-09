@@ -11,8 +11,8 @@ function AuthModal() {
   const router = useRouter();
 
   useEffect(() => {
+    console.log("running");
     setHash(window.location.hash);
-
     if (
       window.location.hash === "#login" ||
       window.location.hash === "#signup" ||
@@ -30,10 +30,8 @@ function AuthModal() {
         window.location.hash === "#signup" ||
         window.location.hash === "#reset-password"
       ) {
-        console.log("here");
         setIsOpen(true);
       } else {
-        console.log("hello");
         setIsOpen(false);
       }
     });
@@ -63,7 +61,6 @@ function AuthModal() {
             >
               &#10799;
             </span>
-            {/* <h2>SURGE</h2> */}
             <img
               className="AuthModal__logo"
               src="/Images/surgeLogoPC.svg"
@@ -83,6 +80,7 @@ function AuthModal() {
                 href="#signup"
                 className={hash === "#signup" ? "route--active" : ""}
                 onClick={() => {
+                  console.log("hrllo")
                   setHash("#signup");
                 }}
               >
