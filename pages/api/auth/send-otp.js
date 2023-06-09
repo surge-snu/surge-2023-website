@@ -45,15 +45,18 @@ async function SendOtp(req, res) {
         ),
     };
     let transporter = nodemailer.createTransport({
-        service: "Gmail",
+        port: 465,
+        host: "smtp.gmail.com",
         auth: {
-            user: "as188@snu.edu.in",
+            user: 'as188@snu.edu.in',
             pass: process.env.GMAIL_PASS,
         },
+        secure: true,
     });
 
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
+            console.log(error);
             return res.status(400).json({
                 status: 400,
                 message: { email: "Something went wrong, Try again later..." },
