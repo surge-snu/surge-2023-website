@@ -37,10 +37,11 @@ function MyApp({ Component, pageProps }: AppProps, user: any) {
     </>
   );
 }
-MyApp.getInitialProps = async (appContext) => {
+MyApp.getInitialProps = async (appContext: any) => {
   if (appContext.router.isSsr === undefined) {
     const appProps = await App.getInitialProps(appContext);
     const user = await getUserFromSession(appContext.ctx);
+    console.log(user);
     return { ...appProps, user: user };
   } else {
     const appProps = await App.getInitialProps(appContext);

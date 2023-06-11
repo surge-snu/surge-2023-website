@@ -11,7 +11,6 @@ function AuthModal() {
   const router = useRouter();
 
   useEffect(() => {
-    console.log("running");
     setHash(window.location.hash);
     if (
       window.location.hash === "#login" ||
@@ -80,13 +79,12 @@ function AuthModal() {
                 href="#signup"
                 className={hash === "#signup" ? "route--active" : ""}
                 onClick={() => {
-                  console.log("hrllo")
                   setHash("#signup");
                 }}
               >
                 <p>Sign Up</p>
               </a>
-              <a
+              {/* <a
                 href="#reset-password"
                 className={hash === "#reset-password" ? "route--active" : ""}
                 onClick={() => {
@@ -94,9 +92,18 @@ function AuthModal() {
                 }}
               >
                 <p>Reset password</p>
-              </a>
+              </a> */}
             </div>
-            {hash === "#login" && <Login />}
+            {hash === "#login" && (
+              <Login
+                onLogin={() => {
+                  setIsOpen(false);
+                  setHash("");
+                  window.location.hash = "";
+                  router.replace(window.location.pathname);
+                }}
+              />
+            )}
             {hash === "#signup" && (
               <SignUp
                 onSignUp={() => {
@@ -108,7 +115,7 @@ function AuthModal() {
                 }}
               />
             )}
-            {hash === "#reset-password" && <ResetPassword />}
+            {/* {hash === "#reset-password" && <ResetPassword />} */}
           </div>
         </div>
       )}

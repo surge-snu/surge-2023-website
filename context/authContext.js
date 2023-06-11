@@ -6,10 +6,8 @@ export const AuthContext = createContext({});
 
 export const getUserFromSession = withIronSessionSsr(async ({ req }) => {
     if (req.session.user === undefined) {
-        console.log("no user");
         return null;
     } else {
-        console.log("user is there")
         const user = req.session.user;
         return user;
     }
