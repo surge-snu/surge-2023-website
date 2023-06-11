@@ -2,18 +2,26 @@ import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import useAuth from "../../hooks/useAuth";
 import "./Navbar.scss";
 
-function Navbar({ isSmall = false }) {
+function Navbar({ isSmall = false } , {userThere = null}) {
   const [navState, setNavState] = useState(false);
   const pathName = usePathname();
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [hash, setHash] = useState("");
+  const { user } : any = useAuth();
 
   useEffect(() => {
     setNavState(false);
   }, [pathName]);
   useEffect(() => {
+    if (user === null) {
+      console.log("no user is there");
+    } else {
+      console.log('yes user is there');
+      console.log(user)
+    }
     if (window.innerWidth <= 960) {
       setIsSmallScreen(true);
     } else {
@@ -23,11 +31,21 @@ function Navbar({ isSmall = false }) {
     window.addEventListener("hashchange", () => {
       setHash(window.location.hash);
     });
-
     return () => {
-      window.removeEventListener("hashchange", () => {});
+      window.removeEventListener("hashchange", () => { });
     };
   });
+
+  // const handleLogout = async () => {
+  //   await logout.then((res) => {
+  //     if (res.status === 200) {
+  //       console.log("Loged out successfully");
+  //     } else {
+  //       console.log("some error occured");
+  //     }
+  //   });
+  //   // window.location.reload();
+  // };
   return (
     <nav
       className={`NavbarWrapper ${isSmallScreen ? "NavbarWrapper--small" : ""}`}
@@ -78,65 +96,67 @@ function Navbar({ isSmall = false }) {
         </div>
         <div className="NavbarContainer__Menu">
           <ul
-            className={`NavbarContainer__Menu--list ${
-              navState ? "NavbarContainer__Menu--list-open" : ""
-            }`}
+            className={`NavbarContainer__Menu--list ${navState ? "NavbarContainer__Menu--list-open" : ""
+              }`}
           >
             <li
-              className={`${
-                pathName === "/"
-                  ? "NavbarContainer__Menu--list-activeItem"
-                  : "NavbarContainer__menu--list-item"
-              }`}
+              className={`${pathName === "/"
+                ? "NavbarContainer__Menu--list-activeItem"
+                : "NavbarContainer__menu--list-item"
+                }`}
             >
               <Link href="/">Home</Link>
             </li>
             <li
-              className={`${
-                pathName === "/about"
-                  ? "NavbarContainer__Menu--list-activeItem"
-                  : "NavbarContainer__Menu--list-item"
-              }`}
+              className={`${pathName === "/about"
+                ? "NavbarContainer__Menu--list-activeItem"
+                : "NavbarContainer__Menu--list-item"
+                }`}
             >
               <Link href="/about">About us</Link>
             </li>
             <li
-              className={`${
-                pathName === "/gallery"
-                  ? "NavbarContainer__Menu--list-activeItem"
-                  : "NavbarContainer__Menu--list-item"
-              }`}
+              className={`${pathName === "/gallery"
+                ? "NavbarContainer__Menu--list-activeItem"
+                : "NavbarContainer__Menu--list-item"
+                }`}
             >
               <Link href="/gallery">Gallery</Link>
             </li>
             <li
-              className={`${
-                pathName === "/events"
-                  ? "NavbarContainer__Menu--list-activeItem"
-                  : "NavbarContainer__Menu--list-item"
-              }`}
+              className={`${pathName === "/events"
+                ? "NavbarContainer__Menu--list-activeItem"
+                : "NavbarContainer__Menu--list-item"
+                }`}
             >
               <Link href="/events">Events</Link>
             </li>
 
             <li
-              className={`${
-                pathName === "/gallery"
-                  ? "NavbarContainer__Menu--list-activeItem"
-                  : "NavbarContainer__Menu--list-item"
-              }`}
+              className={`${pathName === "/gallery"
+                ? "NavbarContainer__Menu--list-activeItem"
+                : "NavbarContainer__Menu--list-item"
+                }`}
             >
               <Link href="/contact">Contact</Link>
             </li>
             <li className="NavbarContainer__Menu--list-account">
-              <a href="#login">
-                <Image
-                  src="/Images/Navbar/Account.png"
-                  alt="Account Navigation Link"
-                  width={40}
-                  height={40}
-                />
-              </a>
+              {!user ? (
+                <a href="#login">
+                  <Image
+                    src="/Images/Navbar/Account.png"
+                    alt="Account Navigation Link"
+                    width={40}
+                    height={40}
+                  />
+                </a>
+              ) : (
+                <p
+                  className="NavbarContainer__Menu--list-item"
+                >
+                  Logout
+                </p>
+              )}
             </li>
           </ul>
         </div>
