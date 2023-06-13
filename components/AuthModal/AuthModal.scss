@@ -19,8 +19,8 @@
     border-radius: 7px;
     @include make-flex($just: flex-start);
     @include box(600px, auto);
-    border: 1px solid #cafa0a;
-    background-color: #0f1621;
+    border: 1px solid white;
+    background-color: black;
 
     @include respondAt(400px) {
       min-height: 400px;
@@ -69,6 +69,7 @@
     @include make-flex($dir: row, $just: flex-start);
     @include box(100%, auto);
     padding: 0 30px;
+    font-weight: 600;
     flex-wrap: wrap;
     gap: 30px;
 
@@ -88,15 +89,12 @@
         @include respondAt(915px) {
           width: 100%;
         }
-        background-color: #0f1621;
-        border: 1px dashed #cafa0a;
 
         &:before {
           z-index: -1;
           @include box();
           content: "";
           position: absolute;
-          border: 1px dashed #ffffff;
           bottom: -5px;
           right: -5px;
         }

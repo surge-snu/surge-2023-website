@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps, user: any) {
   });
   return (
     <>
-      <AuthProvider ssrUser={user}>
+      <AuthProvider ssrUser={null}>
         <Head>
           <title>Surge 2023</title>
           <meta
