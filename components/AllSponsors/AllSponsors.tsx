@@ -104,6 +104,7 @@ function AllSponsors(){
                 <div className="AllSponsors__content">
                     {sponsors.map((sponsor : SponsImage) => (
                         <Image
+                            key={sponsor.name}
                             src={sponsor.image}
                             alt={sponsor.alt}
                             width={200}
