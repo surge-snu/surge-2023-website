@@ -9,7 +9,7 @@ type SponsImage = {
 
 function AllSponsors(){
 
-    const sponsors = [
+    const sponsors: SponsImage[] = [
         {
             name: "Stag",
             image: "/Images/Sponsors/stag.png",
@@ -96,6 +96,7 @@ function AllSponsors(){
             alt : "Red Bull"
         }
     ]
+
 
     return(
         <div>
