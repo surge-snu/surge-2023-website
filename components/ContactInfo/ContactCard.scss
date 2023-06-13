@@ -1,0 +1,111 @@
+.ContactCard {
+    box-sizing: border-box;
+    position: relative;
+    width: 461px;
+    height: 510px;
+    background: linear-gradient(180deg, #2F39CE 0%, rgba(9, 11, 38, 0) 100%);
+    border: 1.13677px solid #FFFFFF;
+    border-radius: 40px;
+  }
+  
+  .ContactCard__photo {
+    position: absolute;
+    width: 90.27px;
+    height: 90.27px;
+    left: 38.79px;
+    top: 45.11px;
+    background: #FFFFFF;
+    border-radius: 64.4805px;
+  }
+  
+  .ContactCard__name {
+    position: absolute;
+    width: 169px;
+    height: 51px;
+    left: 39px;
+    top: 148px;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 37.8507px;
+    line-height: 51px;
+    color: #FFFFFF;
+  }
+  
+  .ContactCard__designation {
+    position: absolute;
+    width: 249px;
+    height: 30px;
+    left: 39px;
+    top: 193.14px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22.2896px;
+    line-height: 30px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .ContactCard__button--call {
+    position: absolute;
+    width: 398px;
+    height: 74px;
+    left: 32px;
+    top: 294px;
+    background: #90FA08;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    backdrop-filter: blur(17px);
+    border-radius: 45px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #060606;
+  }
+  
+  .ContactCard__button--call::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("/Images/arrow.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 10px;
+  }
+
+  .ContactCard__button--mail {
+    box-sizing: border-box;
+    position: absolute;
+    width: 398px;
+    height: 74px;
+    left: 32px;
+    top: 393px;
+    background: rgba(217, 217, 217, 0.1);
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    border: 1px solid #FFFFFF;
+    backdrop-filter: blur(17px);
+    border-radius: 45px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #90FA08;
+  }
+  
+  .ContactCard__arrow {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("/Images/arrow2.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 10px;
+  }
