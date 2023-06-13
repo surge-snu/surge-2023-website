@@ -1,111 +1,116 @@
 .ContactCard {
-    box-sizing: border-box;
-    position: relative;
-    width: 461px;
-    height: 510px;
-    background: linear-gradient(180deg, #2F39CE 0%, rgba(9, 11, 38, 0) 100%);
-    border: 1.13677px solid #FFFFFF;
-    border-radius: 40px;
+  box-sizing: border-box;
+  padding: 3rem 2rem;
+  @include box($height: 30rem, $width: 25rem);
+  background: linear-gradient(180deg, #2f39ce 0%, rgba(9, 11, 38, 0) 100%);
+  border: 1.13677px solid #ffffff;
+  border-radius: 40px;
+  @include respondAt(950px) {
+    @include make-flex($dir: column);
+    @include box($height: 20rem, $width: 20rem);
   }
-  
-  .ContactCard__photo {
-    position: absolute;
-    width: 90.27px;
-    height: 90.27px;
-    left: 38.79px;
-    top: 45.11px;
-    background: #FFFFFF;
-    border-radius: 64.4805px;
-  }
-  
-  .ContactCard__name {
-    position: absolute;
-    width: 169px;
-    height: 51px;
-    left: 39px;
-    top: 148px;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 37.8507px;
-    line-height: 51px;
-    color: #FFFFFF;
-  }
-  
-  .ContactCard__designation {
-    position: absolute;
-    width: 249px;
-    height: 30px;
-    left: 39px;
-    top: 193.14px;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 22.2896px;
-    line-height: 30px;
-    color: rgba(255, 255, 255, 0.5);
-  }
-  
-  .ContactCard__button--call {
-    position: absolute;
-    width: 398px;
-    height: 74px;
-    left: 32px;
-    top: 294px;
-    background: #90FA08;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 30px;
-    backdrop-filter: blur(17px);
-    border-radius: 45px;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #060606;
-  }
-  
-  .ContactCard__button--call::after {
-    content: "";
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-image: url("/Images/arrow.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin-left: 10px;
-  }
+}
 
-  .ContactCard__button--mail {
-    box-sizing: border-box;
-    position: absolute;
-    width: 398px;
-    height: 74px;
-    left: 32px;
-    top: 393px;
-    background: rgba(217, 217, 217, 0.1);
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 30px;
-    border: 1px solid #FFFFFF;
-    backdrop-filter: blur(17px);
-    border-radius: 45px;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: #90FA08;
+.ContactCard__photo {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+}
+
+.ContactCard__name {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 2rem;
+  color: #ffffff;
+  @include respondAt(950px) {
+    font-size: 1.5rem;
+    margin-top: 10px;
   }
-  
-  .ContactCard__arrow {
-    content: "";
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-image: url("/Images/arrow2.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin-left: 10px;
+}
+
+.ContactCard__designation {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 30px;
+  color: rgba(255, 255, 255, 0.5);
+  @include respondAt(950px) {
+    font-size: 1rem;
   }
+}
+
+.ContactCard__button--call {
+  margin: 4rem 0 1.5rem 0;
+  width: 20rem;
+  padding: 1rem 1.5rem;
+  background: #90fa08;
+  font-family: "Poppins";
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 30px;
+  border-radius: 45px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #060606;
+  @include respondAt(950px) {
+    width: 15rem;
+    font-size: 15px;
+    padding: 0.5rem 1rem;
+    margin: 1.5rem 0 1rem 0;
+  }
+}
+
+.ContactCard__button--call::after {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  @include respondAt(950px) {
+    width: 10px;
+    height: 10px;
+  }
+  background-image: url("/Images/arrow.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 10px;
+}
+
+.ContactCard__button--mail {
+  width: 20rem;
+  padding: 1rem 1.5rem;
+  background: rgba(217, 217, 217, 0.1);
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  border: 1px solid #ffffff;
+  backdrop-filter: blur(17px);
+  border-radius: 45px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #90fa08;
+  @include respondAt(950px) {
+    width: 15rem;
+    font-size: 15px;
+    padding: 0.5rem 1rem;
+  }
+}
+
+.ContactCard__arrow {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-image: url("/Images/arrow2.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 10px;
+  @include respondAt(950px) {
+    width: 10px;
+    height: 10px;
+  }
+}

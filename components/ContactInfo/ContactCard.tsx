@@ -45,7 +45,7 @@ const contacts: Contact[] = [
     designation: 'Development Team Lead',
     phoneNumber: '123-456-7890',
     email: 'santhosh.abcd@example.com',
-    photo: "/Images/Homepage/Sponsors/Stag.png",
+    photo: "/Images/profile_image.png",
   },
 ];
 
