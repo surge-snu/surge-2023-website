@@ -62,7 +62,7 @@ function Contact() {
       </div>
       <div className="ContactPage__cards">
         {displayArray.map((item, index) => (
-          <div className="ContactPage__cards--card">
+          <div key={index} className="ContactPage__cards--card">
             <img className="ContactPage__cards--card__image" src={item.photo} />
             <div className="ContactPage__cards--card__title">
               <div className="ContactPage__cards--card__title--name">
