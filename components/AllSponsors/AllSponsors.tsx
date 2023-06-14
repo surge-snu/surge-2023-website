@@ -103,14 +103,16 @@ function AllSponsors(){
             <section className="AllSponsors">
                 <div className="AllSponsors__content">
                     {sponsors.map((sponsor : SponsImage) => (
+                        <div className="AllSponsors__content--card">
                         <Image
                             key={sponsor.name}
                             src={sponsor.image}
                             alt={sponsor.alt}
-                            width={200}
+                            width={180}
                             height={90}
                             className="AllSponsors__content--card--image"
                         />
+                        </div>
                     ))}
                 </div>
             </section>

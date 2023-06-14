@@ -1,14 +1,23 @@
 .AllSponsors{
 
     &__content{
+        
+        @include make-flex(row, center, space-around);
+        flex-wrap: wrap;
+        &--card{
+            width: 200px;
+            height: 100px;
 
-        @include make-flex(column, center, center);
 
-        &--card_image{
-            width: 400px;
-            height: 200px;
-            background-color: white;
-            border-radius: 10px;
+            &--image{
+                width: 150px;
+                height: 95px;
+                background-color: white;
+                border-radius: 20px;
+                margin: 20px;
+                padding: 15px;
+            }
         }
+
     }
 }

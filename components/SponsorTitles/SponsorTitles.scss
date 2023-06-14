@@ -5,6 +5,22 @@
 
         &--sponsor{
             
+            &--card{
+                @include make-flex(column, center, space-evenly);
+                background-color: #171717;
+                border-radius: 20px;
+                height: 300px;
+                width: 300px;
+                padding: 20px !important;
+                margin: 0 20px;
+                border: 2px solid #FF3916;
+            }
+
+            &--image{
+                border-radius: 100%;
+                width: 104px;
+                height: auto;
+            }
         }
     }
 

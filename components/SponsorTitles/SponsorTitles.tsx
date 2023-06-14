@@ -191,7 +191,7 @@ function SponsorTitles() {
                                 '--swiper-theme-color': 'red',
                             }}
                             modules={[Navigation, Pagination, Autoplay]}
-                            slidesPerView={4}
+                            slidesPerView={3}
                             navigation
                             pagination={{
                                 clickable: true,
@@ -202,14 +202,17 @@ function SponsorTitles() {
                                 return (
                                     <SwiperSlide key={sponsorTitle.name}>
                                         <div className="SponsorTitles__container--sponsor">
-                                            <Image
-                                                src={sponsorTitle.image}
-                                                alt={sponsorTitle.alt}
-                                                width={150}
-                                                height={50}
-                                            />
-                                            <h3>{sponsorTitle.title}</h3>
-                                            <h4>{sponsorTitle.name}</h4>
+                                            <div className="SponsorTitles__container--sponsor--card">
+                                                <Image
+                                                    src={sponsorTitle.image}
+                                                    alt={sponsorTitle.alt}
+                                                    width={100}
+                                                    height={104}
+                                                    className="SponsorTitles__container--sponsor--image"
+                                                />
+                                                <h3>{sponsorTitle.title}</h3>
+                                                <h4>{sponsorTitle.name}</h4>
+                                            </div>
                                         </div>
                                     </SwiperSlide>
                                 )
