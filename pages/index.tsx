@@ -7,11 +7,12 @@ import ScrollItems from "../components/ScrollItems/ScrollItems";
 import Stats from "../components/Stats/Stats";
 import Sponsors from "../components/Sponsors/Sponsors";
 import AfterMovie from "../components/AfterMovie/AfterMovie";
-
+// import { AllSponsors } from "../components/AllSponsors/AllSponsors";
+import AllSponsors from "../components/AllSponsors/AllSponsors"
 function Home() {
   return (
     <main>
-      <section className="HeroSection">
+      {/* <section className="HeroSection">
         <div className="HeroSection__overlay"></div>
         <div className="HeroSection__content">
           <motion.h1
@@ -59,7 +60,9 @@ function Home() {
       </section>
       <section className="SponsorsSection">
         <Sponsors />
-      </section>
+      </section> */}
+      <AllSponsors/>
+
     </main>
   );
 }
