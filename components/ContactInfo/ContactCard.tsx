@@ -47,6 +47,13 @@ const contacts: Contact[] = [
     email: 'santhosh.abcd@example.com',
     photo: "/Images/profile_image.png",
   },
+  {
+    name: 'Santhosh',
+    designation: 'Development Team Lead',
+    phoneNumber: '123-456-7890',
+    email: 'santhosh.abcd@example.com',
+    photo: "/Images/profile_image.png",
+  },
 ];
 
 const ContactCardList: React.FC = () => (
