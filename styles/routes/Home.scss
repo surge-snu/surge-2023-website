@@ -85,3 +85,147 @@
     }
   }
 }
+
+.ContactPage {
+  gap: 50px;
+  max-width: 1500px;
+  position: relative;
+  padding: 0 55px 100px;
+  background: linear-gradient(
+    179.37deg,
+    #2e38ce 25.22%,
+    rgba(0, 0, 0, 0) 102.2%
+  );
+  @include respondAt(950px) {
+    gap: 30px;
+  }
+  @include respondAt(480px) {
+    padding: 0px 17px 80px;
+  }
+  &__container {
+    &--top {
+      padding-top: 123px;
+      @include make-flex($dir: column, $just: center);
+      @include box(100%, auto);
+      text-align: center;
+      &__title {
+        font-family: "Migra";
+        color: #ffffff;
+        font-size: 60px;
+
+        span {
+          font-family: "Poppins";
+          color: #cafa08;
+        }
+
+        @include respondAt(950px) {
+          font-size: 30px;
+        }
+      }
+    }
+    &--tabs {
+      margin-bottom: 10px;
+      @include box(100%, auto);
+      @include make-flex($dir: row, $just: center);
+      gap: 30px;
+      font-family: "Poppins";
+      font-weight: 400;
+      margin-top: 2rem;
+      &__tab {
+        cursor: pointer;
+        @include box(150px, auto);
+        @include make-flex();
+        padding: 7px 0;
+        background-color: #193559;
+        border-radius: 74px;
+        color: $primaryColor;
+        font-family: "Poppins";
+        // font-size: 20px;
+
+        @include respondAt(950px) {
+          @include box(120px, auto);
+          font-size: 15px;
+          padding: 3px 0;
+        }
+
+        &--link {
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            background: rgba(217, 217, 217, 0.1);
+            border: 1px solid #ffffff;
+            color: #ffffff;
+          }
+        }
+
+        &--active {
+          background: rgba(217, 217, 217, 0.1);
+          border: 2px solid #ffffff;
+          color: $primaryColor;
+        }
+      }
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    &--card {
+      margin: 1rem;
+      padding: 0.5rem 2.5rem 0.5rem 2.5rem;
+      background: linear-gradient(180deg, #2f39ce 0%, rgba(9, 11, 38, 0) 100%);
+      border: 1.13677px solid #ffffff;
+      border-radius: 20px;
+      @include box($width: 20rem, $height: 20rem);
+      @include make-flex($dir: column, $align: flex-start);
+      @include respondAt(950px) {
+        @include make-flex($dir: column, $align: center)
+      }
+      gap: 20px;
+      &__image {
+        width: 70px;
+        height: 70px;
+      }
+      &__title {
+        &--name {
+          font-family: "Satoshi";
+          font-style: normal;
+          font-weight: 900;
+          font-size: 20px;
+        }
+        &--designation {
+          font-family: "Satoshi";
+          font-weight: 500;
+          font-size: 15px;
+          color: rgba(255, 255, 255, 0.5);
+        }
+      }
+      &__phone {
+        background: #90fa08;
+        backdrop-filter: blur(17px);
+        border-radius: 45px;
+        width: 15rem;
+        height: 2rem;
+        text-align: center;
+        color: black;
+        p {
+          margin-top: 4px;
+        }
+      }
+      &__email {
+        background: rgba(217, 217, 217, 0.1);
+        border: 1px solid #ffffff;
+        backdrop-filter: blur(17px);
+        border-radius: 45px;
+        width: 15rem;
+        height: 2rem;
+        text-align: center;
+        color: $primaryColor;
+        p {
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+}
