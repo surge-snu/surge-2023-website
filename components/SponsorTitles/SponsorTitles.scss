@@ -14,27 +14,26 @@
                 padding: 20px !important;
                 margin: 0 20px;
                 border: 2px solid #FF3916;
+
+                &__title {
+                    font-size: 1rem;
+                    font-weight: 100;
+                }
+
+                &__name {
+                    font-size: 1.2rem;
+                }
             }
-
-            &--image{
-                border-radius: 100%;
-                width: 104px;
-                height: auto;
-            }
-        }
-    }
-
-    &__pagination{
-
-        &--bullet{  
-            background-color: #fff !important;
         }
     }
 
 }
 
+.swiper-pagination-bullets {
+    display: none;
+}
+
 .swiper, swiper-containter {
     margin: 25px !important;;
     padding: 45px !important;;
-    
 }

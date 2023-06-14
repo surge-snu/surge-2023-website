@@ -4,10 +4,10 @@ import SponsorTitles from "../components/SponsorTitles/SponsorTitles"
 
 function Sponsors() {
   return (
-    <div>
+    <section className="AllSponsorsSection">
         <AllSponsors />
         <SponsorTitles/>
-    </div>
+    </section>
   )
 }
 
