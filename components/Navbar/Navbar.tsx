@@ -12,6 +12,13 @@ function Navbar({ isSmall = false }) {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [hash, setHash] = useState("");
   const { user }: any = useAuth();
+  const {logout} : any = useAuth();
+
+  const handleLogout = async () => {
+    await logout();
+    console.log("Logged out ", user);
+    window.location.reload();
+  };
 
   useEffect(() => {
     setNavState(false);
@@ -142,7 +149,10 @@ function Navbar({ isSmall = false }) {
                   />
                 </a>
               ) : (
-                <p className="NavbarContainer__Menu--list-item">Logout</p>
+                <p 
+                // logout on click
+                onClick={() => handleLogout()}
+                className="NavbarContainer__Menu--list-item">Logout</p>
               )}
             </li>
           </ul>
