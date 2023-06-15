@@ -34,25 +34,32 @@ function AllSponsors() {
           between the best and the brightest.
         </motion.p>
         <div className="Buttons">
-        <Link
-          href="https://www.youtube.com/watch?v=FvefgmkZbdQ"
-          target="_blank"
-        >
-          <p style={{color: "#90FA08"}}>Watch Aftermovie</p>
-        </Link>
-        <Link
-          href="https://www.youtube.com/watch?v=FvefgmkZbdQ"
-          target="_blank"
-        >
-          <motion.button
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ type: "spring", stiffness: 100 }}
-            className="Talk"
+          <Link
+            href="https://www.youtube.com/watch?v=FvefgmkZbdQ"
+            target="_blank"
           >
-            <p style={{color: "#90FA08"}}>Let's Talk</p>
-          </motion.button>
-        </Link>
+            <motion.button
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 100 }}
+              className="cta_buttons"
+            >
+              Watch Aftermovie
+            </motion.button>
+          </Link>
+          <Link
+            href="https://www.youtube.com/watch?v=FvefgmkZbdQ"
+            target="_blank"
+          >
+            <motion.button
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ type: "spring", stiffness: 100 }}
+              className="cta_buttons talk"
+            >
+              Let's Talk
+            </motion.button>
+          </Link>
         </div>
       </div>
     </section>

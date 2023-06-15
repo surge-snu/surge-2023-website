@@ -25,9 +25,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/Images/Favicon.png" />
       </Head>
       <Navbar isSmall={isSmall} />
-      {/* <Component {...pageProps} />
-      <Footer /> */}
-      <AllSponsors/>
+      <Component {...pageProps} />
+      <Footer />
     </>
   );
 }
