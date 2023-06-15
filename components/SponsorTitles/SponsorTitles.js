@@ -6,12 +6,6 @@ import "./SponsorTitles.scss";
 import SponsorTitleScroll from "../SponsorTitleScroll/SponsorTitleScroll";
 import Slider from "react-slick";
 
-type SponsorTitle = {
-  title: string;
-  name: string;
-  image: string;
-  alt: string;
-};
 
 function SponsorTitles() {
   const settings = {
@@ -23,7 +17,7 @@ function SponsorTitles() {
     autoplaySpeed: 3000,
     cssEase: "linear",
   };
-  const sponsorTitles: SponsorTitle[] = [
+  const sponsorTitles = [
     {
       title: "Title Sponsor",
       name: "Wai Wai",
@@ -243,7 +237,6 @@ function SponsorTitles() {
                     </SwiperSlide>
                   );
                 })}
-                //{" "}
               </Slider>
             </Swiper>
           }

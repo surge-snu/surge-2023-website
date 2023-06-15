@@ -16,7 +16,7 @@
     "incremental": true,
     "noImplicitAny": false
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/auth/register.js", "hooks/useForm.js", "operations/auth.fetch.js", "components/AuthModal/SignUp/SignUp.js", "components/AuthModal/AuthModal.tsx", "context/authContext.js", "components/Navbar/Navbar.tsx", "pages/_app.tsx", "components/AuthModal/Login/Login.js", "components/AuthModal/ResetPassword/ResetPassword.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/auth/register.js", "hooks/useForm.js", "operations/auth.fetch.js", "components/AuthModal/SignUp/SignUp.js", "components/AuthModal/AuthModal.tsx", "context/authContext.js", "components/Navbar/Navbar.tsx", "pages/_app.tsx", "components/AuthModal/Login/Login.js", "components/AuthModal/ResetPassword/ResetPassword.js", "components/SponsorTitles/SponsorTitles.js"],
 
   "exclude": ["node_modules"]
 }
