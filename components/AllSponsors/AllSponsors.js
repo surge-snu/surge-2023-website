@@ -2,14 +2,8 @@ import "./AllSponsors.scss";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-type SponsImage = {
-  name: string;
-  image: string;
-  alt: string;
-};
-
 function AllSponsors() {
-  const sponsors: SponsImage[] = [
+  const sponsors = [
     {
       name: "Stag",
       image: "/Images/Sponsors/stag.png",
@@ -105,7 +99,7 @@ function AllSponsors() {
         transition={{ type: "spring", stiffness: 100, delay: 0 * 0.1 }}
         className="AllSponsors__tiles"
       >
-        {sponsors.map((sponsor: SponsImage) => (
+        {sponsors.map((sponsor) => (
           <Image
             key={sponsor.name}
             src={sponsor.image}

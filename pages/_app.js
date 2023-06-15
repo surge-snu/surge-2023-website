@@ -2,18 +2,13 @@ import { useEffect, useState } from "react";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import "../styles/root/globals.scss";
-import type { AppProps } from "next/app";
 import Head from "next/head";
 import AuthModal from "../components/AuthModal/AuthModal";
 import App from "next/app";
 import { AuthProvider, getUserFromSession } from "../context/authContext";
 
-interface MyAppProps extends AppProps {
-  user: any;
-}
-
-function MyApp({ Component, pageProps, user }: MyAppProps) {
-  const [isSmall , setIsSmall] = useState(false);
+function MyApp({ Component, pageProps, user }) {
+  const [isSmall, setIsSmall] = useState(false);
   useEffect(() => {
     if (window.innerWidth <= 960) {
       setIsSmall(true);
@@ -40,7 +35,7 @@ function MyApp({ Component, pageProps, user }: MyAppProps) {
     </>
   );
 }
-MyApp.getInitialProps = async (appContext: any) => {
+MyApp.getInitialProps = async (appContext) => {
   if (appContext.router.isSsr === undefined) {
     const appProps = await App.getInitialProps(appContext);
     const user = await getUserFromSession(appContext.ctx);
