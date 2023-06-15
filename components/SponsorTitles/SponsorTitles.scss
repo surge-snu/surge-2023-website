@@ -1,0 +1,39 @@
+.SponsorTitles{
+
+    &__container{
+        
+
+        &--sponsor{
+            
+            &--card{
+                @include make-flex(column, center, space-evenly);
+                background-color: #171717;
+                border-radius: 20px;
+                height: 300px;
+                width: 300px;
+                padding: 20px !important;
+                margin: 0 20px;
+                border: 2px solid #FF3916;
+
+                &__title {
+                    font-size: 1rem;
+                    font-weight: 100;
+                }
+
+                &__name {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+}
+
+.swiper-pagination-bullets {
+    display: none;
+}
+
+.swiper, swiper-containter {
+    margin: 25px !important;;
+    padding: 45px !important;;
+}
