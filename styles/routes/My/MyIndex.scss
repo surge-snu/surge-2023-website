@@ -13,7 +13,7 @@
       @include box();
       @include make-flex($just: space-evenly);
       h1 {
-        font-family: "Poppins";
+        font-family: "Poppins", sans-serif;
         line-height: 100%;
         font-size: 54px;
       }
@@ -23,7 +23,7 @@
       a {
         padding: 8px 10px 8px 10px;
         position: relative;
-        font-family: "Poppins";
+        font-family: "Poppins", sans-serif;
         font-size: 19px;
         line-height: 100%;
         background-color: #0f1621;

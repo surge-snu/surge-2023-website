@@ -196,7 +196,7 @@ function SponsorTitles() {
               breakpoints={{
                 0: {
                   slidesPerView: 1,
-                  spaceBetween: 10,
+                  spaceBetween: 30,
                 },
                 950: {
                   slidesPerView: 3,
