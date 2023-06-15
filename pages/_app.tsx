@@ -4,7 +4,6 @@ import Navbar from "../components/Navbar/Navbar";
 import "../styles/root/globals.scss";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-
 function MyApp({ Component, pageProps }: AppProps) {
   const [isSmall , setIsSmall] = useState(false);
   useEffect(() => {
