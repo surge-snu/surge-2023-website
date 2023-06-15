@@ -1,7 +1,5 @@
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import "../styles/routes/Home.scss";
-import ContactCardList from "../components/ContactInfo/ContactCard";
+import "../styles/routes/Contact.scss";
 import details from "../public/json/Surge_team_details.json";
 
 function Contact() {
