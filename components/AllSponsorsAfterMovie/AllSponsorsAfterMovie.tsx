@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import "./AllSponsors.scss";
 
-function AllSponsors() {
+function AllSponsorsAfterMovie() {
   return (
     <section className="Aftermovie">
       <div className="Aftermovie__video">
@@ -66,4 +66,4 @@ function AllSponsors() {
   );
 }
 
-export default AllSponsors;
+export default AllSponsorsAfterMovie;

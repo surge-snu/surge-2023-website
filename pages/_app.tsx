@@ -4,7 +4,6 @@ import Navbar from "../components/Navbar/Navbar";
 import "../styles/root/globals.scss";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import AllSponsors from "../components/AllSponsors/AllSponsors";
 function MyApp({ Component, pageProps }: AppProps) {
   const [isSmall , setIsSmall] = useState(false);
   useEffect(() => {
