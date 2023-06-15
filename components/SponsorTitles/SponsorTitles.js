@@ -4,7 +4,6 @@ import { Autoplay, Navigation, Pagination } from "swiper";
 import "swiper/css/bundle";
 import "./SponsorTitles.scss";
 import SponsorTitleScroll from "../SponsorTitleScroll/SponsorTitleScroll";
-import Slider from "react-slick";
 
 
 function SponsorTitles() {
