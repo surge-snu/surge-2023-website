@@ -114,8 +114,6 @@
         }
       }
       &__phone {
-        font-family: "Poppins";
-        font-weight: 400;
         background: #90fa08;
         backdrop-filter: blur(17px);
         border-radius: 45px;
@@ -125,11 +123,11 @@
         color: black;
         p {
           margin-top: 4px;
+          font-family: "Poppins";
+          font-weight: 400;
         }
       }
       &__email {
-        font-family: "Poppins";
-        font-weight: 400;
         background: rgba(217, 217, 217, 0.1);
         border: 1px solid #ffffff;
         backdrop-filter: blur(17px);
@@ -140,6 +138,8 @@
         color: $primaryColor;
         p {
           margin-top: 4px;
+          font-family: "Poppins";
+          font-weight: 400;
         }
       }
     }
