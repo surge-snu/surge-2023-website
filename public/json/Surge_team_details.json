@@ -36,7 +36,7 @@
         "designation": "Administrator",
         "phoneNumber": "123-456-7890",
         "email": "santhosh.abcd@example.com",
-        "photo": "/Images/profile_image.png",
+        "photo": "/Images/TeamMembers/sharan.png",
         "team": "Core"
     },
     {
@@ -52,7 +52,7 @@
         "designation": "Tournament Director",
         "phoneNumber": "123-456-7890",
         "email": "santhosh.abcd@example.com",
-        "photo": "/Images/profile_image.png",
+        "photo": "/Images/TeamMembers/pranav.png",
         "team": "POC"
     },
     {

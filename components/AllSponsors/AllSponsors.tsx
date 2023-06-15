@@ -99,15 +99,23 @@ function AllSponsors() {
 
   return (
     <section className="AllSponsors">
-      {sponsors.map((sponsor: SponsImage) => (
-        <Image
-          src={sponsor.image}
-          alt={sponsor.alt}
-          width={200}
-          height={90}
-          className="AllSponsors__card"
-        />
-      ))}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ type: "spring", stiffness: 100, delay: 0 * 0.1 }}
+        className="AllSponsors__tiles"
+      >
+        {sponsors.map((sponsor: SponsImage) => (
+          <Image
+            key={sponsor.name}
+            src={sponsor.image}
+            alt={sponsor.alt}
+            width={200}
+            height={90}
+            className="AllSponsors__tiles--card"
+          />
+        ))}
+      </motion.div>
     </section>
   );
 }

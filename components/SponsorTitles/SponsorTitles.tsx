@@ -4,6 +4,7 @@ import { Autoplay, Navigation, Pagination } from "swiper";
 import "swiper/css/bundle";
 import "./SponsorTitles.scss";
 import SponsorTitleScroll from "../SponsorTitleScroll/SponsorTitleScroll";
+import Slider from "react-slick";
 
 type SponsorTitle = {
   title: string;
@@ -13,6 +14,15 @@ type SponsorTitle = {
 };
 
 function SponsorTitles() {
+  const settings = {
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 3000,
+    cssEase: "linear",
+  };
   const sponsorTitles: SponsorTitle[] = [
     {
       title: "Title Sponsor",
@@ -189,37 +199,52 @@ function SponsorTitles() {
                 "--swiper-navigation-size": "24px",
                 "--swiper-theme-color": "red",
               }}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                  spaceBetween: 10,
+                },
+                950: {
+                  slidesPerView: 3,
+                  spaceBetween: 40,
+                },
+              }}
               modules={[Navigation, Pagination, Autoplay]}
-              slidesPerView={3}
+              slidesPerView={4}
               navigation
               pagination={{
                 clickable: true,
               }}
               autoplay={{ delay: 2000 }}
+              centeredSlides
+              loop
             >
-              {sponsorTitles.map((sponsorTitle) => {
-                return (
-                  <SwiperSlide key={sponsorTitle.name}>
-                    <div className="SponsorTitles__container--sponsor">
-                      <div className="SponsorTitles__container--sponsor--card">
-                        <Image
-                          src={sponsorTitle.image}
-                          alt={sponsorTitle.alt}
-                          width={200}
-                          height={90}
-                          className="SponsorTitles__container--sponso--card__image"
-                        />
-                        <h3 className="SponsorTitles__container--sponsor--card__title">
-                          {sponsorTitle.title}
-                        </h3>
-                        <h4 className="SponsorTitles__container--sponsor--card__name">
-                          {sponsorTitle.name}
-                        </h4>
+              <Slider {...settings}>
+                {sponsorTitles.map((sponsorTitle) => {
+                  return (
+                    <SwiperSlide key={sponsorTitle.name}>
+                      <div className="SponsorTitles__container--sponsor">
+                        <div className="SponsorTitles__container--sponsor--card">
+                          <Image
+                            src={sponsorTitle.image}
+                            alt={sponsorTitle.alt}
+                            width={200}
+                            height={90}
+                            className="SponsorTitles__container--sponso--card__image"
+                          />
+                          <h3 className="SponsorTitles__container--sponsor--card__title">
+                            {sponsorTitle.title}
+                          </h3>
+                          <h4 className="SponsorTitles__container--sponsor--card__name">
+                            {sponsorTitle.name}
+                          </h4>
+                        </div>
                       </div>
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
+                    </SwiperSlide>
+                  );
+                })}
+                //{" "}
+              </Slider>
             </Swiper>
           }
         </div>

@@ -1,39 +1,49 @@
-.SponsorTitles{
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
 
-    &__container{
-        
-
-        &--sponsor{
-            
-            &--card{
-                @include make-flex(column, center, space-evenly);
-                background-color: #171717;
-                border-radius: 20px;
-                height: 300px;
-                width: 300px;
-                padding: 20px !important;
-                margin: 0 20px;
-                border: 2px solid #FF3916;
-
-                &__title {
-                    font-size: 1rem;
-                    font-weight: 100;
-                }
-
-                &__name {
-                    font-size: 1.2rem;
-                }
-            }
+.SponsorTitles {
+  &__container {
+    &--sponsor {
+      &--card {
+        @include make-flex(column, center, space-evenly);
+        background-color: #171717;
+        border-radius: 20px;
+        height: 300px;
+        width: 300px;
+        padding: 20px !important;
+        margin: 0 20px;
+        border: 1px solid #ff3916;
+        @include respondAt(915px) {
+            padding: 0;
+            height: 250px;
+            width: 250px;
+            margin: 0;
         }
-    }
+        &__title {
+          font-size: 1rem;
+          font-weight: 100;
+        }
 
+        &__name {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
 }
 
 .swiper-pagination-bullets {
-    display: none;
+  display: none;
 }
 
-.swiper, swiper-containter {
-    margin: 25px !important;;
-    padding: 45px !important;;
+.swiper,
+swiper-containter {
+  margin: 25px !important;
+  padding: 45px !important;
+}
+
+@include respondAt(950px) {
+  .swiper-container {
+    width: 640px;
+  }
 }

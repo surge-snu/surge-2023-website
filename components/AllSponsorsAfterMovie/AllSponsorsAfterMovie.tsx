@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
-import "./AllSponsors.scss";
+import "./AllSponsorsAfterMovie.scss";
 
 function AllSponsorsAfterMovie() {
   return (
