@@ -11,6 +11,7 @@ async function Register(req, res) {
         name: body.friendlyName,
         email: body.email,
         phone: body.phone,
+        college: "",
         password: hashSync(body.password, 10),
     });
 
