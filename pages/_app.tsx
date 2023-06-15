@@ -7,8 +7,12 @@ import Head from "next/head";
 import AuthModal from "../components/AuthModal/AuthModal";
 import App from "next/app";
 import { AuthProvider, getUserFromSession } from "../context/authContext";
-import { GetServerSidePropsResult } from "next";
-function MyApp({ Component, pageProps, user }: AppProps) {
+
+interface MyAppProps extends AppProps {
+  user: any;
+}
+
+function MyApp({ Component, pageProps, user }: MyAppProps) {
   const [isSmall , setIsSmall] = useState(false);
   useEffect(() => {
     if (window.innerWidth <= 960) {
