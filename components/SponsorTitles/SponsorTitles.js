@@ -212,7 +212,6 @@ function SponsorTitles() {
               centeredSlides
               loop
             >
-              <Slider {...settings}>
                 {sponsorTitles.map((sponsorTitle) => {
                   return (
                     <SwiperSlide key={sponsorTitle.name}>
@@ -236,7 +235,6 @@ function SponsorTitles() {
                     </SwiperSlide>
                   );
                 })}
-              </Slider>
             </Swiper>
           }
         </div>
