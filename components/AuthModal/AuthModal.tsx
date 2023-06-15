@@ -84,7 +84,7 @@ function AuthModal() {
               >
                 <p>Sign Up</p>
               </a>
-              {/* <a
+              <a
                 href="#reset-password"
                 className={hash === "#reset-password" ? "route--active" : ""}
                 onClick={() => {
@@ -92,7 +92,7 @@ function AuthModal() {
                 }}
               >
                 <p>Reset password</p>
-              </a> */}
+              </a>
             </div>
             {hash === "#login" && (
               <Login
@@ -115,7 +115,15 @@ function AuthModal() {
                 }}
               />
             )}
-            {/* {hash === "#reset-password" && <ResetPassword />} */}
+            {hash === "#reset-password" && (
+              <ResetPassword
+                onPasswordReset={() => {
+                  setIsOpen(false);
+                  setHash("#login");
+                  window.location.hash = "#login";
+                }}
+              />
+            )}
           </div>
         </div>
       )}

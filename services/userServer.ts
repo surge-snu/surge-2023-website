@@ -14,7 +14,7 @@ export async function createUser(data: any) {
     });
 }
 
-export async function fetchUserData(email : any) {
+export async function fetchUserData(email: any) {
     return db.user.findUnique({
         where: {
             email,
@@ -59,5 +59,16 @@ export async function fetchUserData(email : any) {
         //         },
         //     },
         // },
+    });
+}
+
+export async function changeUserPassword(data: { email: any; password: any; }) {
+    return db.user.update({
+        where: {
+            email: data.email,
+        },
+        data: {
+            password: data.password,
+        },
     });
 }
