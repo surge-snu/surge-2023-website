@@ -19,46 +19,46 @@ export async function fetchUserData(email: any) {
         where: {
             email,
         },
-        // include: {
-        //     Team: {
-        //         include: {
-        //             Event: {
-        //                 select: {
-        //                     category: true,
-        //                     winnerPrize: true,
-        //                     winningTeamPrize: true,
-        //                     runnerUpTeamPrize: true,
-        //                     runnerUpPrize: true,
-        //                     minPlayers: true,
-        //                     maxPlayers: true,
-        //                     pricePerPlayer: true,
-        //                     venue: true,
-        //                     location: true,
-        //                     eventName: true,
-        //                 },
-        //             },
-        //             TeamMembers: {
-        //                 select: {
-        //                     id: true,
-        //                     teamId: true,
-        //                     name: true,
-        //                     email: true,
-        //                     phone: true,
-        //                     eventId: true,
-        //                     playerType: true,
-        //                 },
-        //             },
-        //             PaymentDetails: {
-        //                 select: {
-        //                     id: true,
-        //                     teamId: true,
-        //                     paymentId: true,
-        //                     amount: true,
-        //                 },
-        //             },
-        //         },
-        //     },
-        // },
+        include: {
+            Team: {
+                include: {
+                    Event: {
+                        select: {
+                            category: true,
+                            winnerPrize: true,
+                            winningTeamPrize: true,
+                            runnerUpTeamPrize: true,
+                            runnerUpPrize: true,
+                            minPlayers: true,
+                            maxPlayers: true,
+                            pricePerPlayer: true,
+                            venue: true,
+                            location: true,
+                            eventName: true,
+                        },
+                    },
+                    TeamMembers: {
+                        select: {
+                            id: true,
+                            teamId: true,
+                            name: true,
+                            email: true,
+                            phone: true,
+                            eventId: true,
+                            playerType: true,
+                        },
+                    },
+                    PaymentDetails: {
+                        select: {
+                            id: true,
+                            teamId: true,
+                            paymentId: true,
+                            amount: true,
+                        },
+                    },
+                },
+            },
+        },
     });
 }
 
