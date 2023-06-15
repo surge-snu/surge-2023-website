@@ -12,12 +12,12 @@ function AllSponsors() {
   const sponsors: SponsImage[] = [
     {
       name: "Stag",
-      image: "/Images/Sponsors/Stag.png",
+      image: "/Images/Sponsors/stag.png",
       alt: "Stag",
     },
     {
       name: "Wai Wai",
-      image: "/Images/Sponsors/waiWai.png",
+      image: "/Images/Sponsors/waiwai.png",
       alt: "Wai Wai",
     },
     {
@@ -27,7 +27,7 @@ function AllSponsors() {
     },
     {
       name: "HCL Tech",
-      image: "/Images/Sponsors/hclTech.png",
+      image: "/Images/Sponsors/hcltech.png",
       alt: "HCL Tech",
     },
     {
@@ -57,7 +57,7 @@ function AllSponsors() {
     },
     {
       name: "Fujifilm",
-      image: "/Images/Sponsors/fujiFilm.png",
+      image: "/Images/Sponsors/fujifilm.png",
       alt: "Fujifilm",
     },
     {
@@ -77,7 +77,7 @@ function AllSponsors() {
     },
     {
       name: "SNU Xplore",
-      image: "/Images/Sponsors/snuXplore.png",
+      image: "/Images/Sponsors/snuxplore.png",
       alt: "SNU Xplore",
     },
     {

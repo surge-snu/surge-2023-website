@@ -27,7 +27,7 @@ function SponsorTitles() {
     {
       title: "Title Sponsor",
       name: "Wai Wai",
-      image: "/Images/Sponsors/waiWai.png",
+      image: "/Images/Sponsors/waiwai.png",
       alt: "Wai Wai",
     },
     {
@@ -51,7 +51,7 @@ function SponsorTitles() {
     {
       title: "Creative Partner",
       name: "Fujifilm India",
-      image: "/Images/Sponsors/fujiFilm.png",
+      image: "/Images/Sponsors/fujifilm.png",
       alt: "Fujifilm India",
     },
     {
@@ -111,7 +111,7 @@ function SponsorTitles() {
     {
       title: "Navigation Partner",
       name: "SNUxplore",
-      image: "/Images/Sponsors/snuXplore.png",
+      image: "/Images/Sponsors/snuxplore.png",
       alt: "SNUxplore",
     },
     {

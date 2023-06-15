@@ -8,7 +8,7 @@ import AuthModal from "../components/AuthModal/AuthModal";
 import App from "next/app";
 import { AuthProvider, getUserFromSession } from "../context/authContext";
 import { GetServerSidePropsResult } from "next";
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, user }: AppProps) {
   const [isSmall , setIsSmall] = useState(false);
   useEffect(() => {
     if (window.innerWidth <= 960) {
@@ -19,7 +19,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   });
   return (
     <>
-      <AuthProvider ssrUser={null}>
+      <AuthProvider 
+        ssrUser={user}
+      >
         <Head>
           <title>Surge 2023</title>
           <meta
