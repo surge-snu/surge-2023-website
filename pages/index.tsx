@@ -1,18 +1,13 @@
 import "../styles/routes/Home.scss";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import SportsScroll from "../components/SportsScroll/SportsScroll";
-import ScrollItems from "../components/ScrollItems/ScrollItems";
 import Stats from "../components/Stats/Stats";
 import Sponsors from "../components/Sponsors/Sponsors";
 import AfterMovie from "../components/AfterMovie/AfterMovie";
-// import { AllSponsors } from "../components/AllSponsors/AllSponsors";
-import AllSponsors from "../components/AllSponsors/AllSponsors"
 function Home() {
   return (
     <main>
-      {/* <section className="HeroSection">
+      <section className="HeroSection">
         <div className="HeroSection__overlay"></div>
         <div className="HeroSection__content">
           <motion.h1
@@ -60,9 +55,7 @@ function Home() {
       </section>
       <section className="SponsorsSection">
         <Sponsors />
-      </section> */}
-      <AllSponsors/>
-
+      </section>
     </main>
   );
 }
