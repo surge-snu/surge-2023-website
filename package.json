@@ -9,10 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "4.14.0",
+    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
     "framer-motion": "^10.12.16",
+    "iron-session": "^6.3.1",
+    "nanoid": "^4.0.2",
     "next": "13.4.4",
+    "nodemailer": "^6.9.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-pin-input": "^1.3.1"
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
     "swiper": "^9.4.0"
@@ -24,6 +31,7 @@
     "@types/react-slick": "^0.23.10",
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.4",
+    "prisma": "^4.14.0",
     "sass": "^1.62.1",
     "typescript": "5.1.3"
   }

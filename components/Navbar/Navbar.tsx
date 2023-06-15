@@ -2,24 +2,35 @@ import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import useAuth from "../../hooks/useAuth";
 import "./Navbar.scss";
+
 
 function Navbar({ isSmall = false }) {
   const [navState, setNavState] = useState(false);
   const pathName = usePathname();
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [hash, setHash] = useState("");
+  const { user }: any = useAuth();
+
   useEffect(() => {
     setNavState(false);
   }, [pathName]);
   useEffect(() => {
     if (window.innerWidth <= 960) {
-      console.log("heh");
       setIsSmallScreen(true);
     } else {
-      console.log("jiji");
       setIsSmallScreen(false);
     }
+
+    window.addEventListener("hashchange", () => {
+      setHash(window.location.hash);
+    });
+    return () => {
+      window.removeEventListener("hashchange", () => {});
+    };
   });
+
   return (
     <nav
       className={`NavbarWrapper ${isSmallScreen ? "NavbarWrapper--small" : ""}`}
@@ -121,14 +132,18 @@ function Navbar({ isSmall = false }) {
               <Link href="/contact">Contact</Link>
             </li>
             <li className="NavbarContainer__Menu--list-account">
-              <Link href="/account">
-                <Image
-                  src="/Images/Navbar/Account.png"
-                  alt="Account Navigation Link"
-                  width={40}
-                  height={40}
-                />
-              </Link>
+              {!user ? (
+                <a href="#login">
+                  <Image
+                    src="/Images/Navbar/Account.png"
+                    alt="Account Navigation Link"
+                    width={40}
+                    height={40}
+                  />
+                </a>
+              ) : (
+                <p className="NavbarContainer__Menu--list-item">Logout</p>
+              )}
             </li>
           </ul>
         </div>
