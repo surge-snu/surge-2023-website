@@ -1,0 +1,22 @@
+.AllSponsors {
+  &__tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    &--card {
+      margin: 1.5rem;
+      // aspect-ratio: 16/9;
+      filter: saturate(0);
+
+      @include respondAt(950px) {
+        margin: 1rem;
+      }
+      transition: all 0.2s ease-in-out;
+  
+      &:hover {
+        transform: scale(1.1);
+        filter: saturate(1);
+      }
+    }
+  }
+}
