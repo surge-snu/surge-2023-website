@@ -1,0 +1,60 @@
+.EventsPage {
+  padding-top: 7.5rem;
+//   margin-bottom: 2.5rem;
+  // background-image: url('/Images/comingSoonBg.png');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: center;
+  @include respondAt(915px) {
+    padding-top: 7.7rem;
+    margin: 0;
+  }
+  background: linear-gradient(
+    179.37deg,
+    #ff3916 25.22%,
+    rgba(0, 0, 0, 0) 102.2%
+  );
+  &__text {
+    position: absolute;
+    h2 {
+      font-size: 8.5rem;
+      text-transform: uppercase;
+      font-family: "Migra";
+      margin-bottom: -2.75rem;
+      color: $primaryColor;
+
+      @include respondAt(915px) {
+        font-size: 2.5rem;
+        margin-bottom: 0;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4) {
+        color: transparent;
+        -webkit-text-stroke: 1px $primaryColor;
+      }
+
+      &:nth-child(4) {
+        opacity: 0.5;
+      }
+
+      &:nth-child(5) {
+        opacity: 0.2;
+      }
+    }
+  }
+  &__imageContainer {
+    // position: relative;
+    // margin-bottom: 20px;
+    z-index: 1;
+    &--image {
+      height: 40rem;
+      width: auto;
+      @include respondAt(915px) {
+        height: 15rem;
+      }
+    }
+  }
+}
