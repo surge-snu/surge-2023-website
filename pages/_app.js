@@ -5,9 +5,9 @@ import "../styles/root/globals.scss";
 import Head from "next/head";
 import AuthModal from "../components/AuthModal/AuthModal";
 import App from "next/app";
-import { withIronSessionSsr } from "iron-session/next";
+// import { withIronSessionSsr } from "iron-session/next";
 import { AuthProvider, getUserFromSession } from "../context/authContext";
-import { ironOptions } from "../lib/ironOptions";
+// import { ironOptions } from "../lib/ironOptions";
 
 function MyApp({ Component, pageProps, user }) {
   const [isSmall, setIsSmall] = useState(false);
