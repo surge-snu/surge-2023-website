@@ -1,18 +1,18 @@
 import { withIronSessionSsr } from "iron-session/next";
 import { createContext, useState } from "react";
 import { ironOptions } from "../lib/ironOptions";
-import { withSessionSsr } from "../lib/ironOptions";
+// import { withSessionSsr } from "../lib/ironOptions";
 
 export const AuthContext = createContext({});
 
-export const getUserFromSession = withSessionSsr(async ({ req }) => {
+export const getUserFromSession = withIronSessionSsr(async ({ req }) => {
     if (req.session.user === undefined) {
         return null;
     } else {
         const user = req.session.user;
         return user;
     }
-});
+}, ironOptions);
 
 export function AuthProvider({ children, ssrUser, ...props }) {
     const [user, setUser] = useState(ssrUser);

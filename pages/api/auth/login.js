@@ -2,7 +2,6 @@ import { withIronSessionApiRoute } from "iron-session/next";
 import { ironOptions } from "../../../lib/ironOptions";
 import { compareSync } from "bcrypt";
 import { fetchUser } from "../../../services/userServer";
-import { withSessionRoute } from "../../../lib/ironOptions";
 
 export default withIronSessionApiRoute(async function loginRoute(req, res) {
     const { email, password } = await req.body;
