@@ -7,6 +7,11 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import BlurredSpinner from "../../components/BlurredSpinner/BlurredSpinner";
 import GInput from "../../components/GInput/GInput"
+import { updateCollegeName, updatePhone } from "../../operations/auth.fetch";
+import useForm from "../../hooks/useForm";
+import Link from "next/link";
+import Navbar from "../../components/Navbar/Navbar";
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 export async function getServerSideProps(context) {
     if (context.req.session.user === undefined) {
@@ -18,7 +23,7 @@ export async function getServerSideProps(context) {
         };
     }
     const userData = await fetchUserData(context.req.session.user.email);
-
+    console.log(userData);
     return {
         props: { user: userData },
     };
@@ -34,8 +39,40 @@ export default function MyHome({ user }) {
     const [collegeError, setCollegeError] = useState("");
 
     const [phoneLoader, setPhoneLoader] = useState(false);
+
+    function validate(formValues) {
+        const errs = {};
+
+        if (formValues.phone && !isPhone(formValues.phone)) {
+            errs.phone = "Phone number should only contain 10 digits";
+        }
+
+        return errs;
+    }
+
+    const { onChange, handleSubmit, errors } = useForm({
+        validate,
+        initialValues: { phone: "" },
+        onSubmit: async (formData) => {
+            if (Object.keys(errors).length !== 0) return;
+
+            setPhoneLoader(true);
+            await updatePhone({
+                phone: formData.phone,
+                email: user.email,
+            }).then((res) => {
+                setPhoneLoader(false);
+                console.log(res);
+                if (res.status === 200) {
+                    router.reload();
+                }
+            });
+        },
+    });
     return (
         <div className="MyHome">
+            {/* <Sidebar user={user} /> */}
+
             <div className="MyHome__QrBox">
                 <div className="MyHome__QrBox--left">
                     <div className="MyHome__QrBox--leftTop">
@@ -103,7 +140,7 @@ export default function MyHome({ user }) {
                         <span>
                             {user.college === "" ? (
                                 <>
-                                    <img alt="Error" src="/Img/Red Exclamation.svg" height={14} />{" "}
+                                    <img alt="Error" src="/Images/Utils/RedExclamation.svg" height={14} />{" "}
                                     Data Needed
                                 </>
                             ) : (
@@ -153,7 +190,87 @@ export default function MyHome({ user }) {
                         )}
                     </form>
                 </DashRow>
+                <DashRow
+                    isDropDown={user.phone === ""}
+                    dropdownIndex={personalIndex}
+                    setDropdownIndex={setPersonalIndex}
+                    index={1}
+                    contentCols={[
+                        <span>Phone</span>,
+                        <span>
+                            {user.phone === "" ? (
+                                <>
+                                    <img alt="Error" src="/Img/Red Exclamation.svg" height={14} />{" "}
+                                    Data Needed
+                                </>
+                            ) : (
+                                user.phone
+                            )}
+                        </span>,
+                    ]}
+                >
+                    <form
+                        className="MyHome__collegeDropdownContent"
+                        onSubmit={handleSubmit}
+                    >
+                        {phoneLoader && <BlurredSpinner />}
+                        <i>
+                            *Please enter correct, 10 digit phone number as it cannot be
+                            changed later*
+                        </i>
+                        <i>*eg: 8526750301*</i>
+                        <GInput
+                            id="phone"
+                            label=""
+                            setValue={(e) => onChange("phone", e)}
+                        />
+                        {errors.phone !== "" && (
+                            <span className="MyHome__collegeDropdownContent--error">
+                                {errors.phone}
+                            </span>
+                        )}
+                        <button
+                            className="MyHome__collegeDropdownContent--update"
+                            type="submit"
+                        >
+                            Update
+                        </button>
+                    </form>
+                </DashRow>
+            </DashTable>
+            <DashTable title="Account Settings">
+                <DashRow
+                    isDropDown={false}
+                    contentCols={[<span>Email</span>, <span>{user.email}</span>]}
+                />
+                <DashRow
+                    dropdownIndex={accountIndex}
+                    setDropdownIndex={setAccountIndex}
+                    index={0}
+                    contentCols={[
+                        <span>Change Password</span>,
+                        <span>************</span>,
+                    ]}
+                >
+                    <Link href="#reset-password">
+                        <p className="MyHome__collegeDropdownContent--update" type="submit">
+                            Change Password
+                        </p>
+                    </Link>
+                </DashRow>
             </DashTable>
         </div>
     )
 }
+
+MyHome.getLayout = function getLayout(page) {
+    return (
+        <div className="MyLayout">
+            {/* <Navbar
+                isSmall={true}
+            /> */}
+            {/* <Sidebar user={page.props.user} /> */}
+            <div className="MyLayout__page">{page}</div>
+        </div>
+    );
+};

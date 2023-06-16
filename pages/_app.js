@@ -18,6 +18,8 @@ function MyApp({ Component, pageProps, user }) {
       setIsSmall(false);
     }
   });
+  const getLayout = Component.getLayout || ((page) => page);
+
   return (
     <>
       <AuthProvider ssrUser={user}>
@@ -31,7 +33,7 @@ function MyApp({ Component, pageProps, user }) {
         </Head>
         <Navbar isSmall={isSmall} />
         <AuthModal />
-        <Component {...pageProps} />
+        {getLayout(<Component {...pageProps} />)}
         <Footer />
       </AuthProvider>
     </>
