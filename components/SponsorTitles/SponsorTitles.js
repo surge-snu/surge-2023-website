@@ -183,7 +183,7 @@ function SponsorTitles() {
 
   return (
     <div>
-      <SponsorTitleScroll heading="Sponsor Title" />
+      <SponsorTitleScroll heading="Sponsor Titles" />
       <div className="SponsorTitles">
         <div className="SponsorTitles__container">
           {

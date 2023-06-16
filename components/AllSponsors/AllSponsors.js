@@ -20,11 +20,6 @@ function AllSponsors() {
       alt: "Dassault Systems",
     },
     {
-      name: "HCL Tech",
-      image: "/Images/Sponsors/hcltech.png",
-      alt: "HCL Tech",
-    },
-    {
       name: "Career Launcher",
       image: "/Images/Sponsors/careerLauncher.png",
       alt: "Career Launcher",

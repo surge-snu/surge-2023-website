@@ -16,7 +16,7 @@ function Sponsors() {
           className="Sponsors__content--card"
         >
           <Image
-            src="/Images/Sponsors/Stag.png"
+            src="/Images/Sponsors/stag.png"
             alt="Stag"
             width={200}
             height={90}
@@ -31,7 +31,7 @@ function Sponsors() {
         >
           <Image
             src="/Images/Sponsors/waiwai.png"
-            alt="Stag"
+            alt="Wai Wai"
             width={200}
             height={90}
             className="Sponsors__content--card--image"
@@ -45,7 +45,7 @@ function Sponsors() {
         >
           <Image
             src="/Images/Sponsors/dassaultSystems.png"
-            alt="Stag"
+            alt="Daddault Systems"
             width={200}
             height={90}
             className="Sponsors__content--card--image"
@@ -58,69 +58,13 @@ function Sponsors() {
           className="Sponsors__content--card"
         >
           <Image
-            src="/Images/Sponsors/hcltech.png"
-            alt="Stag"
+            src="/Images/Sponsors/careerLauncher.png"
+            alt="Career Launcher"
             width={200}
             height={90}
             className="Sponsors__content--card--image"
           />
         </motion.div>
-        {/* <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ type: "spring", stiffness: 100, delay: 4 * 0.1 }}
-          className="Sponsors__content--card"
-        >
-          <Image
-            src="/Images/Homepage/Sponsors/HCL.png"
-            alt="Stag"
-            width={200}
-            height={90}
-            className="Sponsors__content--card--image"
-          />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ type: "spring", stiffness: 100, delay: 5 * 0.1 }}
-          className="Sponsors__content--card"
-        >
-          <Image
-            src="/Images/Homepage/Sponsors/Stag.png"
-            alt="Stag"
-            width={200}
-            height={100}
-            className="Sponsors__content--card--image"
-          />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ type: "spring", stiffness: 100, delay: 6 * 0.1 }}
-          className="Sponsors__content--card"
-        >
-          <Image
-            src="/Images/Homepage/Sponsors/Wai Wai.png"
-            alt="Stag"
-            width={200}
-            height={100}
-            className="Sponsors__content--card--image"
-          />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ type: "spring", stiffness: 100, delay: 7 * 0.1 }}
-          className="Sponsors__content--card"
-        >
-          <Image
-            src="/Images/Homepage/Sponsors/Dassault Systems.png"
-            alt="Stag"
-            width={200}
-            height={100}
-            className="Sponsors__content--card--image"
-          />
-        </motion.div> */}
       </div>
       <Link href="/sponsors">
         <button className="CTA">View All Sponsors</button>

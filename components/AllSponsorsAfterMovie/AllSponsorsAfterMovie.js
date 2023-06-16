@@ -57,7 +57,7 @@ function AllSponsorsAfterMovie() {
               transition={{ type: "spring", stiffness: 100 }}
               className="cta_buttons talk"
             >
-              Let&apos;s Talk
+              Let's Talk
             </motion.button>
           </Link>
         </div>
