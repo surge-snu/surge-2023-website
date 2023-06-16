@@ -1,6 +1,6 @@
 import db from '../lib/prisma'
 
-export async function fetchUser(email: any) {
+export async function fetchUser(email) {
     return (db).user.findUnique({
         where: {
             email,
@@ -8,13 +8,13 @@ export async function fetchUser(email: any) {
     });
 }
 
-export async function createUser(data: any) {
+export async function createUser(data) {
     return db.user.create({
         data,
     });
 }
 
-export async function fetchUserData(email: any) {
+export async function fetchUserData(email) {
     return db.user.findUnique({
         where: {
             email,
@@ -62,7 +62,7 @@ export async function fetchUserData(email: any) {
     });
 }
 
-export async function changeUserPassword(data: { email: any; password: any; }) {
+export async function changeUserPassword(data) {
     return db.user.update({
         where: {
             email: data.email,
