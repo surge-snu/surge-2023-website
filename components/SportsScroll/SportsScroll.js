@@ -24,7 +24,7 @@ const SportsScroll = () => {
     "Basketball.png",
     "Tennis.png",
     "Badminton.png",
-    "Table Tennis.png",
+    "TableTennis.png",
     "Squash.png",
     "Chess.png",
   ];

@@ -16,7 +16,7 @@ function Sponsors() {
           className="Sponsors__content--card"
         >
           <Image
-            src="/Images/Homepage/Sponsors/Stag.png"
+            src="/Images/Sponsors/Stag.png"
             alt="Stag"
             width={200}
             height={90}
@@ -30,7 +30,7 @@ function Sponsors() {
           className="Sponsors__content--card"
         >
           <Image
-            src="/Images/Homepage/Sponsors/Wai Wai.png"
+            src="/Images/Sponsors/waiwai.png"
             alt="Stag"
             width={200}
             height={90}
@@ -44,7 +44,7 @@ function Sponsors() {
           className="Sponsors__content--card"
         >
           <Image
-            src="/Images/Homepage/Sponsors/Dassault Systems.png"
+            src="/Images/Sponsors/dassaultSystems.png"
             alt="Stag"
             width={200}
             height={90}
@@ -58,7 +58,7 @@ function Sponsors() {
           className="Sponsors__content--card"
         >
           <Image
-            src="/Images/Homepage/Sponsors/HCL.png"
+            src="/Images/Sponsors/hcltech.png"
             alt="Stag"
             width={200}
             height={90}
