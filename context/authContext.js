@@ -1,6 +1,7 @@
 import { withIronSessionSsr } from "iron-session/next";
 import { createContext, useState } from "react";
 import { ironOptions } from "../lib/ironOptions";
+// import { withSessionSsr } from "../lib/ironOptions";
 
 export const AuthContext = createContext({});
 

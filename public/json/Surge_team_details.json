@@ -12,7 +12,7 @@
         "designation": "Co-chairperson",
         "phoneNumber": "123-456-7890",
         "email": "santhosh.abcd@example.com",
-        "photo": "/Images/profile_image.png",
+        "photo": "/Images/TeamMembers/nandini.png",
         "team": "Core"
     },
     {
@@ -20,7 +20,7 @@
         "designation": "Co-chairperson",
         "phoneNumber": "123-456-7890",
         "email": "santhosh.abcd@example.com",
-        "photo": "/Images/profile_image.png",
+        "photo": "/Images/TeamMembers/prabhav.png",
         "team": "Core"
     },
     {
@@ -28,7 +28,7 @@
         "designation": "Administrator",
         "phoneNumber": "123-456-7890",
         "email": "santhosh.abcd@example.com",
-        "photo": "/Images/profile_image.png",
+        "photo": "/Images/TeamMembers/tanuj.png",
         "team": "Core"
     },
     {
@@ -76,7 +76,7 @@
         "designation": "Chess",
         "phoneNumber": "123-456-7890",
         "email": "santhosh.abcd@example.com",
-        "photo": "/Images/profile_image.png",
+        "photo": "/Images/TeamMembers/snehil.png",
         "team": "POC"
     },
     {

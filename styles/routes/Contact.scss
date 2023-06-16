@@ -26,7 +26,7 @@
         font-size: 60px;
 
         span {
-          font-family: "Poppins";
+          font-family: "Poppins", sans-serif;
           color: #cafa08;
         }
 
@@ -40,7 +40,7 @@
       @include box(100%, auto);
       @include make-flex($dir: row, $just: center);
       gap: 30px;
-      font-family: "Poppins";
+      font-family: "Poppins", sans-serif;
       font-weight: 400;
       margin-top: 2rem;
       &__tab {
@@ -51,7 +51,7 @@
         background-color: #193559;
         border-radius: 74px;
         color: $primaryColor;
-        font-family: "Poppins";
+        font-family: "Poppins", sans-serif;
         // font-size: 20px;
 
         @include respondAt(950px) {
@@ -122,8 +122,8 @@
         text-align: center;
         color: black;
         p {
-          margin-top: 4px;
-          font-family: "Poppins";
+          margin-top: 5.25px;
+          font-family: "Poppins", sans-serif;
           font-weight: 400;
         }
       }
@@ -138,7 +138,7 @@
         color: $primaryColor;
         p {
           margin-top: 4px;
-          font-family: "Poppins";
+          font-family: "Poppins", sans-serif;
           font-weight: 400;
         }
       }

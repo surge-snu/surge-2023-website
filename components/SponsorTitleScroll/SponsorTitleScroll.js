@@ -1,11 +1,7 @@
 import React from "react";
 import "./SponsorTitleScroll.scss";
 
-type ScrollItemsProps = {
-  heading: string;
-};
-
-const SponsorTitleScroll: React.FC<ScrollItemsProps> = ({ heading }) => {
+const SponsorTitleScroll = ({ heading }) => {
   const list = [heading, heading, heading, heading, heading, heading];
 
   return (

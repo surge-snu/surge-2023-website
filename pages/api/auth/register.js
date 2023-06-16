@@ -2,8 +2,8 @@ import { hashSync } from "bcrypt";
 import { ironOptions } from "../../../lib/ironOptions";
 import { createUser, fetchUser } from "../../../services/userServer";
 import { withIronSessionApiRoute } from "iron-session/next";
-
-export default withIronSessionApiRoute(Register, ironOptions);
+import { withSessionRoute } from "../../../lib/ironOptions";
+export default withSessionRoute(Register);
 
 async function Register(req, res) {
     const body = await req.body;

@@ -1,11 +1,7 @@
 import React from "react";
 import "./ScrollItems.scss";
 
-type ScrollItemsProps = {
-  heading: string;
-};
-
-const ScrollItems: React.FC<ScrollItemsProps> = ({ heading }) => {
+const ScrollItems = ({ heading }) => {
   const list = [heading, heading, heading, heading, heading, heading];
 
   return (

@@ -26,7 +26,7 @@ function Stats() {
                     transition={{ type: "spring", stiffness: 100, delay: 1 * 0.15 }}
                     className="GameStats__statistics--card"
                 >
-                    <h1>17</h1>
+                    <h1>18</h1>
                     <h2>Events</h2>
                     <h2>Events</h2>
                     <h2>Events</h2>

@@ -4,14 +4,7 @@ import { Autoplay, Navigation, Pagination } from "swiper";
 import "swiper/css/bundle";
 import "./SponsorTitles.scss";
 import SponsorTitleScroll from "../SponsorTitleScroll/SponsorTitleScroll";
-import Slider from "react-slick";
 
-type SponsorTitle = {
-  title: string;
-  name: string;
-  image: string;
-  alt: string;
-};
 
 function SponsorTitles() {
   const settings = {
@@ -23,11 +16,11 @@ function SponsorTitles() {
     autoplaySpeed: 3000,
     cssEase: "linear",
   };
-  const sponsorTitles: SponsorTitle[] = [
+  const sponsorTitles = [
     {
       title: "Title Sponsor",
       name: "Wai Wai",
-      image: "/Images/Sponsors/waiWai.png",
+      image: "/Images/Sponsors/waiwai.png",
       alt: "Wai Wai",
     },
     {
@@ -51,7 +44,7 @@ function SponsorTitles() {
     {
       title: "Creative Partner",
       name: "Fujifilm India",
-      image: "/Images/Sponsors/fujiFilm.png",
+      image: "/Images/Sponsors/fujifilm.png",
       alt: "Fujifilm India",
     },
     {
@@ -111,7 +104,7 @@ function SponsorTitles() {
     {
       title: "Navigation Partner",
       name: "SNUxplore",
-      image: "/Images/Sponsors/snuXplore.png",
+      image: "/Images/Sponsors/snuxplore.png",
       alt: "SNUxplore",
     },
     {
@@ -190,7 +183,7 @@ function SponsorTitles() {
 
   return (
     <div>
-      <SponsorTitleScroll heading="Sponsor Title" />
+      <SponsorTitleScroll heading="Sponsor Titles" />
       <div className="SponsorTitles">
         <div className="SponsorTitles__container">
           {
@@ -202,7 +195,7 @@ function SponsorTitles() {
               breakpoints={{
                 0: {
                   slidesPerView: 1,
-                  spaceBetween: 10,
+                  spaceBetween: 30,
                 },
                 950: {
                   slidesPerView: 3,
@@ -219,7 +212,6 @@ function SponsorTitles() {
               centeredSlides
               loop
             >
-              <Slider {...settings}>
                 {sponsorTitles.map((sponsorTitle) => {
                   return (
                     <SwiperSlide key={sponsorTitle.name}>
@@ -243,8 +235,6 @@ function SponsorTitles() {
                     </SwiperSlide>
                   );
                 })}
-                //{" "}
-              </Slider>
             </Swiper>
           }
         </div>

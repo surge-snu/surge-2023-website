@@ -71,7 +71,7 @@ const Footer = () => {
           <Link href="mailto:surge@snu.edu.in">
             <h2>surge@snu.edu.in</h2>
           </Link>
-          <h2>SNIOE, Delhi, Noida</h2>
+          <h2>SNIoE, Delhi, Noida</h2>
         </div>
       </div>
     </div>

@@ -2,14 +2,15 @@ import { useEffect, useState } from "react";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
 import "../styles/root/globals.scss";
-import type { AppProps } from "next/app";
 import Head from "next/head";
 import AuthModal from "../components/AuthModal/AuthModal";
 import App from "next/app";
+// import { withIronSessionSsr } from "iron-session/next";
 import { AuthProvider, getUserFromSession } from "../context/authContext";
-import { GetServerSidePropsResult } from "next";
-function MyApp({ Component, pageProps }: AppProps) {
-  const [isSmall , setIsSmall] = useState(false);
+// import { ironOptions } from "../lib/ironOptions";
+
+function MyApp({ Component, pageProps, user }) {
+  const [isSmall, setIsSmall] = useState(false);
   useEffect(() => {
     if (window.innerWidth <= 960) {
       setIsSmall(true);
@@ -19,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   });
   return (
     <>
-      <AuthProvider ssrUser={null}>
+      <AuthProvider ssrUser={user}>
         <Head>
           <title>Surge 2023</title>
           <meta
@@ -36,7 +37,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     </>
   );
 }
-MyApp.getInitialProps = async (appContext: any) => {
+
+
+MyApp.getInitialProps = async (appContext) => {
   if (appContext.router.isSsr === undefined) {
     const appProps = await App.getInitialProps(appContext);
     const user = await getUserFromSession(appContext.ctx);
@@ -47,5 +50,24 @@ MyApp.getInitialProps = async (appContext: any) => {
     return { ...appProps };
   }
 };
+
+// export const getServerSideProps = withIronSessionSsr(
+//   async function getServerSideProps({ req }) {
+//     const user = req.session.user;
+
+//     // if (user.admin !== true) {
+//     //   return {
+//     //     notFound: true,
+//     //   };
+//     // }
+
+//     return {
+//       props: {
+//         user: req.session.user,
+//       },
+//     };
+//   },
+//   ironOptions
+// );
 
 export default MyApp;

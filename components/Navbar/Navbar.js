@@ -11,7 +11,14 @@ function Navbar({ isSmall = false }) {
   const pathName = usePathname();
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [hash, setHash] = useState("");
-  const { user }: any = useAuth();
+  const { user } = useAuth();
+  const { logout } = useAuth();
+
+  const handleLogout = async () => {
+    await logout();
+    console.log("Logged out ", user);
+    window.location.reload();
+  };
 
   useEffect(() => {
     setNavState(false);
@@ -27,7 +34,7 @@ function Navbar({ isSmall = false }) {
       setHash(window.location.hash);
     });
     return () => {
-      window.removeEventListener("hashchange", () => {});
+      window.removeEventListener("hashchange", () => { });
     };
   });
 
@@ -81,53 +88,47 @@ function Navbar({ isSmall = false }) {
         </div>
         <div className="NavbarContainer__Menu">
           <ul
-            className={`NavbarContainer__Menu--list ${
-              navState ? "NavbarContainer__Menu--list-open" : ""
-            }`}
+            className={`NavbarContainer__Menu--list ${navState ? "NavbarContainer__Menu--list-open" : ""
+              }`}
           >
             <li
-              className={`${
-                pathName === "/"
+              className={`${pathName === "/"
                   ? "NavbarContainer__Menu--list-activeItem"
                   : "NavbarContainer__menu--list-item"
-              }`}
+                }`}
             >
               <Link href="/">Home</Link>
             </li>
             <li
-              className={`${
-                pathName === "/about"
+              className={`${pathName === "/about"
                   ? "NavbarContainer__Menu--list-activeItem"
                   : "NavbarContainer__Menu--list-item"
-              }`}
+                }`}
             >
               <Link href="/about">About us</Link>
             </li>
             <li
-              className={`${
-                pathName === "/gallery"
+              className={`${pathName === "/gallery"
                   ? "NavbarContainer__Menu--list-activeItem"
                   : "NavbarContainer__Menu--list-item"
-              }`}
+                }`}
             >
               <Link href="/gallery">Gallery</Link>
             </li>
             <li
-              className={`${
-                pathName === "/events"
+              className={`${pathName === "/events"
                   ? "NavbarContainer__Menu--list-activeItem"
                   : "NavbarContainer__Menu--list-item"
-              }`}
+                }`}
             >
               <Link href="/events">Events</Link>
             </li>
 
             <li
-              className={`${
-                pathName === "/gallery"
+              className={`${pathName === "/gallery"
                   ? "NavbarContainer__Menu--list-activeItem"
                   : "NavbarContainer__Menu--list-item"
-              }`}
+                }`}
             >
               <Link href="/contact">Contact</Link>
             </li>
@@ -142,7 +143,10 @@ function Navbar({ isSmall = false }) {
                   />
                 </a>
               ) : (
-                <p className="NavbarContainer__Menu--list-item">Logout</p>
+                <p
+                  // logout on click
+                  onClick={() => handleLogout()}
+                  className="NavbarContainer__Menu--list-item">Logout</p>
               )}
             </li>
           </ul>

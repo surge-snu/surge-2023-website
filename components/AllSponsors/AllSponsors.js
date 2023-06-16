@@ -2,33 +2,22 @@ import "./AllSponsors.scss";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-type SponsImage = {
-  name: string;
-  image: string;
-  alt: string;
-};
-
 function AllSponsors() {
-  const sponsors: SponsImage[] = [
+  const sponsors = [
     {
       name: "Stag",
-      image: "/Images/Sponsors/Stag.png",
+      image: "/Images/Sponsors/stag.png",
       alt: "Stag",
     },
     {
       name: "Wai Wai",
-      image: "/Images/Sponsors/waiWai.png",
+      image: "/Images/Sponsors/waiwai.png",
       alt: "Wai Wai",
     },
     {
       name: "Dassault Systems",
       image: "/Images/Sponsors/dassaultSystems.png",
       alt: "Dassault Systems",
-    },
-    {
-      name: "HCL Tech",
-      image: "/Images/Sponsors/hclTech.png",
-      alt: "HCL Tech",
     },
     {
       name: "Career Launcher",
@@ -57,7 +46,7 @@ function AllSponsors() {
     },
     {
       name: "Fujifilm",
-      image: "/Images/Sponsors/fujiFilm.png",
+      image: "/Images/Sponsors/fujifilm.png",
       alt: "Fujifilm",
     },
     {
@@ -77,7 +66,7 @@ function AllSponsors() {
     },
     {
       name: "SNU Xplore",
-      image: "/Images/Sponsors/snuXplore.png",
+      image: "/Images/Sponsors/snuxplore.png",
       alt: "SNU Xplore",
     },
     {
@@ -105,7 +94,7 @@ function AllSponsors() {
         transition={{ type: "spring", stiffness: 100, delay: 0 * 0.1 }}
         className="AllSponsors__tiles"
       >
-        {sponsors.map((sponsor: SponsImage) => (
+        {sponsors.map((sponsor) => (
           <Image
             key={sponsor.name}
             src={sponsor.image}

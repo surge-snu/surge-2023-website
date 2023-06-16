@@ -1,9 +1,8 @@
 import { hashSync } from "bcrypt";
-import { ironOptions } from "../../../lib/ironOptions";
+import { ironOptions, withSessionRoute } from "../../../lib/ironOptions";
 import { changeUserPassword, fetchUser } from "../../../services/userServer";
 import { withIronSessionApiRoute } from "iron-session/next";
-
-export default withIronSessionApiRoute(ChangePassword, ironOptions);
+export default withSessionRoute(ChangePassword);
 
 async function ChangePassword(req, res) {
   const body = await req.body;

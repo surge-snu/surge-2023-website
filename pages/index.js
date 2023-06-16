@@ -37,7 +37,7 @@ function Home() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="HeroSection__dates"
         >
-          <p className="HeroSection__dates--date">3 4 5 November&apos;23</p>
+          {/* <p className="HeroSection__dates--date">3 4 5 November'23</p> */}
           <p className="HeroSection__dates--scroll">Scroll for more</p>
           <Image
             src="/Images/Icons/chevronsDown.svg"
