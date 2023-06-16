@@ -5,8 +5,8 @@ import { ironOptions } from "../../../lib/ironOptions";
 import { hashSync } from "bcrypt";
 import { fetchUser } from "../../../services/userServer";
 import { OTPTemplate } from "../../../public/Templates/OTP-template";
-
-export default withIronSessionApiRoute(SendPasswordOtp, ironOptions);
+import { withSessionRoute } from "../../../lib/ironOptions";
+export default withSessionRoute(SendPasswordOtp);
 
 async function SendPasswordOtp(req, res) {
     const { email, password, confirmPassword } = req.body;
