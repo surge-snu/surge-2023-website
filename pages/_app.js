@@ -5,7 +5,9 @@ import "../styles/root/globals.scss";
 import Head from "next/head";
 import AuthModal from "../components/AuthModal/AuthModal";
 import App from "next/app";
+import { withIronSessionSsr } from "iron-session/next";
 import { AuthProvider, getUserFromSession } from "../context/authContext";
+import { ironOptions } from "../lib/ironOptions";
 
 function MyApp({ Component, pageProps, user }) {
   const [isSmall, setIsSmall] = useState(false);
@@ -35,16 +37,34 @@ function MyApp({ Component, pageProps, user }) {
     </>
   );
 }
-MyApp.getInitialProps = async (appContext) => {
-  if (appContext.router.isSsr === undefined) {
-    const appProps = await App.getInitialProps(appContext);
-    const user = await getUserFromSession(appContext.ctx);
-    console.log(user);
-    return { ...appProps, user: user };
-  } else {
-    const appProps = await App.getInitialProps(appContext);
-    return { ...appProps };
-  }
-};
+// MyApp.getInitialProps = async (appContext) => {
+//   if (appContext.router.isSsr === undefined) {
+//     const appProps = await App.getInitialProps(appContext);
+//     const user = await getUserFromSession(appContext.ctx);
+//     console.log(user);
+//     return { ...appProps, user: user };
+//   } else {
+//     const appProps = await App.getInitialProps(appContext);
+//     return { ...appProps };
+//   }
+// };
+export const getServerSideProps = withIronSessionSsr(
+  async function getServerSideProps({ req }) {
+    const user = req.session.user;
+
+    // if (user.admin !== true) {
+    //   return {
+    //     notFound: true,
+    //   };
+    // }
+
+    return {
+      props: {
+        user: req.session.user,
+      },
+    };
+  },
+  ironOptions
+);
 
 export default MyApp;
