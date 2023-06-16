@@ -37,34 +37,16 @@ function MyApp({ Component, pageProps, user }) {
     </>
   );
 }
-// MyApp.getInitialProps = async (appContext) => {
-//   if (appContext.router.isSsr === undefined) {
-//     const appProps = await App.getInitialProps(appContext);
-//     const user = await getUserFromSession(appContext.ctx);
-//     console.log(user);
-//     return { ...appProps, user: user };
-//   } else {
-//     const appProps = await App.getInitialProps(appContext);
-//     return { ...appProps };
-//   }
-// };
-export const getServerSideProps = withIronSessionSsr(
-  async function getServerSideProps({ req }) {
-    const user = req.session.user;
-
-    // if (user.admin !== true) {
-    //   return {
-    //     notFound: true,
-    //   };
-    // }
-
-    return {
-      props: {
-        user: req.session.user,
-      },
-    };
-  },
-  ironOptions
-);
+MyApp.getInitialProps = async (appContext) => {
+  if (appContext.router.isSsr === undefined) {
+    const appProps = await App.getInitialProps(appContext);
+    const user = await getUserFromSession(appContext.ctx);
+    console.log(user);
+    return { ...appProps, user: user };
+  } else {
+    const appProps = await App.getInitialProps(appContext);
+    return { ...appProps };
+  }
+};
 
 export default MyApp;
