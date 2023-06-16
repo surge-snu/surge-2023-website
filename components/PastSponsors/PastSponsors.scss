@@ -1,0 +1,112 @@
+.PastSponsors {
+    @include box(100vw, 100vh);
+    @include make-flex(column, center, center);
+    background-image: url("/Images/sponsorbg.png");
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    position: relative;
+    
+    /*padding: 0 20rem;*/
+
+    @include respondAtLarge(915px, 1300px) {
+      padding: 0 10rem;
+    }
+  
+    @include respondAt(915px) {
+      padding: 0 2rem;
+    }
+    
+    &__overlaybg {
+      @include box(100%, 100%);
+      background-image: linear-gradient(
+        (0deg, #000000 5%, rgba(0, 0, 0, 0) 80%)
+      );
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+
+    &__overlaybg2 {
+        @include box(100%, 100%);
+        background-image: linear-gradient(
+            (180deg, #030303 2%, rgba(0, 0, 0, 0) 20%)
+        );
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+      }
+  
+    &__content {
+      @include make-flex(column, center, center);
+      gap: 2rem;
+      z-index: 1000;
+      text-align: center;
+      margin-bottom: 4rem;
+      color: white;
+      padding-bottom: 30px;
+  
+      &--heading {
+        font-size: 5rem;
+        text-transform: uppercase;
+        font-family: "Migra";
+        width: auto;
+        max-width: 45rem;
+        line-height: 4.5rem;
+        text-align: center;
+        z-index: 100;
+        margin-top: -70px;
+        margin-bottom: 25px;
+        text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.881);
+        @include respondAt(915px) {
+          font-size: 3rem;
+          line-height: 3rem;
+        }
+  
+        span {
+          color: red; 
+        }
+      }
+  
+      &--paragraph {
+        @include box(65vw, auto);
+        font-size: 1.3rem;
+        line-height: 1.5rem;
+        font-weight: 400;
+        color: white;
+        z-index: 100;
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+        bottom: 100px;
+        margin-bottom: 30px;
+        text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.881);
+        @include respondAt(915px) {
+          @include box(80vw, auto);
+          font-size: 1.1rem;
+          line-height: 1.2rem;
+        }
+      }
+    }
+    .ctabutton {
+        padding: 0.75rem 3rem;
+        border-radius: 30px;
+        border: 2px solid rgb(255, 255, 255);
+        border-color: $primaryColor;
+        background-color: rgb(0 0 0 / 50%);
+        color: $primaryColor;
+        text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.881);
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.881);
+        font-family: "Poppins", sans-serif;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      
+        &:hover {
+          background-color: $primaryColorOnHover;
+        }
+      }
+}
+  
+  

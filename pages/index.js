@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Stats from "../components/Stats/Stats";
 import Sponsors from "../components/Sponsors/Sponsors";
 import AfterMovie from "../components/AfterMovie/AfterMovie";
+import PastSponsors from "../components/PastSponsors/PastSponsors";
+
 function Home() {
   return (
     <main>
