@@ -2,7 +2,7 @@
     {
         "name": "Akshita Jakhar",
         "designation": "Chairperson",
-        "phoneNumber": "123-456-7890",
+        "phoneNumber": "8448585442",
         "email": "santhosh.abcd@example.com",
         "photo": "/Images/profile_image.png",
         "team": "Core"
@@ -10,7 +10,7 @@
     {
         "name": "Nandini Bhusri",
         "designation": "Co-chairperson",
-        "phoneNumber": "123-456-7890",
+        "phoneNumber": "99115966223",
         "email": "santhosh.abcd@example.com",
         "photo": "/Images/TeamMembers/nandini.png",
         "team": "Core"
@@ -18,7 +18,7 @@
     {
         "name": "Prabhav Pandey",
         "designation": "Co-chairperson",
-        "phoneNumber": "123-456-7890",
+        "phoneNumber": "9110449419",
         "email": "santhosh.abcd@example.com",
         "photo": "/Images/TeamMembers/prabhav.png",
         "team": "Core"
@@ -26,7 +26,7 @@
     {
         "name": "Tanuj Singh",
         "designation": "Administrator",
-        "phoneNumber": "123-456-7890",
+        "phoneNumber": "9968590900",
         "email": "santhosh.abcd@example.com",
         "photo": "/Images/TeamMembers/tanuj.png",
         "team": "Core"
@@ -34,7 +34,7 @@
     {
         "name": "Sharan PY",
         "designation": "Administrator",
-        "phoneNumber": "123-456-7890",
+        "phoneNumber": "9136121122",
         "email": "santhosh.abcd@example.com",
         "photo": "/Images/TeamMembers/sharan.png",
         "team": "Core"
@@ -42,7 +42,7 @@
     {
         "name": "Deepak Padmanabhan",
         "designation": "Advisor",
-        "phoneNumber": "123-456-7890",
+        "phoneNumber": "9550820302",
         "email": "santhosh.abcd@example.com",
         "photo": "/Images/profile_image.png",
         "team": "Core"
@@ -50,7 +50,7 @@
     {
         "name": "Pranav Mallipudi",
         "designation": "Tournament Director",
-        "phoneNumber": "123-456-7890",
+        "phoneNumber": "9440068111",
         "email": "santhosh.abcd@example.com",
         "photo": "/Images/TeamMembers/pranav.png",
         "team": "POC"
@@ -58,136 +58,136 @@
     {
         "name": "Sourish Panda",
         "designation": "Athletics (M)",
-        "phoneNumber": "123-456-7890",
-        "email": "santhosh.abcd@example.com",
+        "phoneNumber": "8374427155",
+        "email": "sp761@snu.edu.in",
         "photo": "/Images/profile_image.png",
         "team": "POC"
     },
     {
         "name": "Aleena Aby",
         "designation": "Athletics (F)",
-        "phoneNumber": "123-456-7890",
-        "email": "santhosh.abcd@example.com",
-        "photo": "/Images/profile_image.png",
+        "phoneNumber": "9384870225",
+        "email": "aa608@snu.edu.in",
+        "photo": "/Images/TeamMembers/aleena.png",
         "team": "POC"
     },
     {
         "name": "Snehil Konatham",
         "designation": "Chess",
-        "phoneNumber": "123-456-7890",
-        "email": "santhosh.abcd@example.com",
+        "phoneNumber": "9502985728",
+        "email": "sk562@snu.edu.in",
         "photo": "/Images/TeamMembers/snehil.png",
         "team": "POC"
     },
     {
         "name": "Aman Sanjay Sarda",
         "designation": "Cricket",
-        "phoneNumber": "123-456-7890",
-        "email": "santhosh.abcd@example.com",
+        "phoneNumber": "7588859900",
+        "email": "as988@snu.edu.in",
         "photo": "/Images/profile_image.png",
         "team": "POC"
     },
     {
         "name": "Jai Sachdeva",
         "designation": "Basketball (M)",
-        "phoneNumber": "123-456-7890",
-        "email": "santhosh.abcd@example.com",
+        "phoneNumber": "9650250012",
+        "email": "js376@snu.edu.in",
         "photo": "/Images/profile_image.png",
         "team": "POC"
     },
     {
         "name": "Sakshi Mishra",
         "designation": "Basketball (F)",
-        "phoneNumber": "123-456-7890",
-        "email": "santhosh.abcd@example.com",
+        "phoneNumber": "6306914237",
+        "email": "sm334@snu.edu.in",
         "photo": "/Images/profile_image.png",
         "team": "POC"
     },
     {
         "name": "Prabhjyot Singh",
         "designation": "Football (M)",
-        "phoneNumber": "123-456-7890",
-        "email": "santhosh.abcd@example.com",
+        "phoneNumber": "8766362226",
+        "email": "ps189@snu.edu.in",
         "photo": "/Images/profile_image.png",
         "team": "POC"
     },
     {
         "name": "Mahitha Prasanna",
         "designation": "Football (F)",
-        "phoneNumber": "123-456-7890",
-        "email": "santhosh.abcd@example.com",
-        "photo": "/Images/profile_image.png",
+        "phoneNumber": "9739411610",
+        "email": "mp809@snu.edu.in",
+        "photo": "/Images/TeamMembers/mahita.png",
         "team": "POC"
     },
     {
         "name": "Vidur Oberoi",
         "designation": "Tennis (M)",
-        "phoneNumber": "123-456-7890",
-        "email": "santhosh.abcd@example.com",
-        "photo": "/Images/profile_image.png",
+        "phoneNumber": "9818010905",
+        "email": "vu332@snu.edu.in",
+        "photo": "/Images/TeamMembers/vidur.png",
         "team": "POC"
     },
     {
         "name": "Aditi Srinivasan",
         "designation": "Tennis (F)",
-        "phoneNumber": "123-456-7890",
-        "email": "santhosh.abcd@example.com",
+        "phoneNumber": "9811999012",
+        "email": "as348@snu.edu.in",
         "photo": "/Images/profile_image.png",
         "team": "POC"
     },
     {
         "name": "Karan Bellak",
         "designation": "TT (M)",
-        "phoneNumber": "123-456-7890",
-        "email": "santhosh.abcd@example.com",
+        "phoneNumber": "8925194896",
+        "email": "ks367@snu.edu.in",
         "photo": "/Images/profile_image.png",
         "team": "POC"
     },
     {
         "name": "Meena Nachiyar",
         "designation": "TT (F)",
-        "phoneNumber": "123-456-7890",
-        "email": "santhosh.abcd@example.com",
+        "phoneNumber": "7397182810",
+        "email": "mk672@snu.edu.in",
         "photo": "/Images/profile_image.png",
         "team": "POC"
     },
     {
         "name": "Anjali Semwal",
         "designation": "Squash",
-        "phoneNumber": "123-456-7890",
-        "email": "santhosh.abcd@example.com",
+        "phoneNumber": "9322765644",
+        "email": "as377@snu.edu.in",
         "photo": "/Images/profile_image.png",
         "team": "POC"
     },
     {
         "name": "Anjani Nandan",
         "designation": "Volleyball (M)",
-        "phoneNumber": "123-456-7890",
-        "email": "santhosh.abcd@example.com",
+        "phoneNumber": "7275043980",
+        "email": "as895@snu.edu.in",
         "photo": "/Images/profile_image.png",
         "team": "POC"
     },
     {
         "name": "Aayushi Bajpai",
         "designation": "Volleyball (F)",
-        "phoneNumber": "123-456-7890",
-        "email": "santhosh.abcd@example.com",
+        "phoneNumber": "7355434861",
+        "email": "ab657@snu.edu.in",
         "photo": "/Images/profile_image.png",
         "team": "POC"
     },
     {
         "name": "Kushaan Sethi",
         "designation": "Badminton (M)",
-        "phoneNumber": "123-456-7890",
-        "email": "santhosh.abcd@example.com",
+        "phoneNumber": "9711633513",
+        "email": "ks214@snu.edu.in",
         "photo": "/Images/profile_image.png",
         "team": "POC"
     },
     {
         "name": "Kushi Athreya",
         "designation": "Badminton (F)",
-        "phoneNumber": "123-456-7890",
-        "email": "santhosh.abcd@example.com",
+        "phoneNumber": "8660576775",
+        "email": "ka789@snu.edu.in",
         "photo": "/Images/profile_image.png",
         "team": "POC"
     }

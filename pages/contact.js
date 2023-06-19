@@ -6,7 +6,7 @@ function Contact() {
   var core = details.filter((member) => member["team"] === "Core");
   const [showCore, setShowCore] = useState(true);
   const [display, setDisplay] = useState("core");
-  const [displayArray , setDisplayArray] = useState(core);
+  const [displayArray, setDisplayArray] = useState(core);
   useEffect(() => {
     if (display === "core") {
       core = details.filter((member) => member["team"] === "Core");
@@ -15,7 +15,7 @@ function Contact() {
       core = details.filter((member) => member["team"] === "POC");
       setDisplayArray(core);
     }
-  },[display]);
+  }, [display]);
   return (
     <section className="ContactPage">
       <div className="ContactPage__container">
@@ -27,9 +27,8 @@ function Contact() {
         </div>
         <div className="ContactPage__container--tabs">
           <button
-            className={`ContactPage__container--tabs__tab ${
-              showCore ? "ContactPage__container--tabs__tab--active" : ""
-            }`}
+            className={`ContactPage__container--tabs__tab ${showCore ? "ContactPage__container--tabs__tab--active" : ""
+              }`}
             onClick={() => {
               setShowCore(true);
               setDisplay("core");
@@ -38,9 +37,8 @@ function Contact() {
             CORE
           </button>
           <button
-            className={`ContactPage__container--tabs__tab ContactPage__container--tabs__tab--inactive ${
-              showCore ? "" : "ContactPage__container--tabs__tab--active"
-            }`}
+            className={`ContactPage__container--tabs__tab ContactPage__container--tabs__tab--inactive ${showCore ? "" : "ContactPage__container--tabs__tab--active"
+              }`}
             onClick={() => {
               setShowCore(false);
               setDisplay("poc");
@@ -71,10 +69,10 @@ function Contact() {
               </div>
             </div>
             <div className="ContactPage__cards--card__phone">
-              <p>Place a call</p>
+              <p>{item.phoneNumber}</p>
             </div>
             <div className="ContactPage__cards--card__email">
-              <p>Mail</p>
+              <p><a style={{ "textDecoration": "none" }} href={`mailto:${item.email}`}>Mail</a></p>
             </div>
           </div>
         ))}
