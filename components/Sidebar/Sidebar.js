@@ -72,7 +72,7 @@ function Sidebar() {
                             ))}
                     </p>
                 </Link>
-                <Link href="/my/home">
+                <Link href="/my/events">
                     <p
                         className={`MySidebarWrapper__item ${activeTab === "events" && "MySidebarWrapper__item--active"
                             }`}

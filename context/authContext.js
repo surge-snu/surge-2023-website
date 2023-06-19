@@ -1,5 +1,5 @@
 import { withIronSessionSsr } from "iron-session/next";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { ironOptions } from "../lib/ironOptions";
 // import { withSessionSsr } from "../lib/ironOptions";
 
@@ -15,8 +15,11 @@ export const getUserFromSession = withIronSessionSsr(async ({ req }) => {
 }, ironOptions);
 
 export function AuthProvider({ children, ssrUser, ...props }) {
+    const [tempTeamDetails, setTempTeamDetails] = useState(null);
+    useEffect(() => {
+        console.log(tempTeamDetails);
+    },[tempTeamDetails]);
     const [user, setUser] = useState(ssrUser);
-    // const [tempTeamDetails, setTempTeamDetails] = useState(null);
 
     async function login(formData, setSetAuthError) {
         return fetch("/api/auth/login", {
@@ -55,8 +58,8 @@ export function AuthProvider({ children, ssrUser, ...props }) {
         user,
         login,
         logout,
-        // tempTeamDetails,
-        // setTempTeamDetails,
+        tempTeamDetails,
+        setTempTeamDetails,
         ...props,
     };
 
