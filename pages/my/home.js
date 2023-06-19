@@ -269,7 +269,7 @@ MyHome.getLayout = function getLayout(page) {
             {/* <Navbar
                 isSmall={true}
             /> */}
-            {/* <Sidebar user={page.props.user} /> */}
+            <Sidebar />
             <div className="MyLayout__page">{page}</div>
         </div>
     );

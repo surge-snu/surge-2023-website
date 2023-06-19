@@ -4,7 +4,8 @@ import "./Sidebar.scss";
 import Link from "next/link";
 
 
-function Sidebar({ user }) {
+function Sidebar() {
+    const { user } = useAuth();
     const [activeTab, setActiveTab] = useState("home");
     const [navState, setNavState] = useState(false);
     const cartCount = user.Team
@@ -45,13 +46,13 @@ function Sidebar({ user }) {
             </div>
             <div className="MySidebarWrapper__top">
                 <Link href="/">
-                    <p
+                    <div
                         className="MySidebarWrapper__top--right"
                         aria-label="Go to home page"
                     >
                         <img alt="left arrow" src="/Img/Arrow Right Variant.svg" />
                         <h2>Home</h2>
-                    </p>
+                    </div>
                 </Link>
                 <div className="MySidebarWrapper__top--left">
                     <h2>{user.name}</h2>
@@ -60,7 +61,7 @@ function Sidebar({ user }) {
             </div>
             <div className="MySidebarWrapper__bottom">
                 <Link href="/my/home">
-                    <a
+                    <p
                         className={`MySidebarWrapper__item ${activeTab === "home" && "MySidebarWrapper__item--active"
                             }`}
                     >
@@ -69,19 +70,19 @@ function Sidebar({ user }) {
                             (user.phone === "" && (
                                 <img alt="Error" src="/Img/Red Exclamation.svg" height={20} />
                             ))}
-                    </a>
+                    </p>
                 </Link>
-                <Link href="/my/events">
-                    <a
+                <Link href="/my/home">
+                    <p
                         className={`MySidebarWrapper__item ${activeTab === "events" && "MySidebarWrapper__item--active"
                             }`}
                     >
                         Events
-                    </a>
+                    </p>
                 </Link>
 
-                <Link href="/my/cart">
-                    <a
+                <Link href="/my/home">
+                    <p
                         className={`MySidebarWrapper__item ${activeTab === "cart" && "MySidebarWrapper__item--active"
                             }`}
                     >
@@ -89,7 +90,7 @@ function Sidebar({ user }) {
                         {cartCount > 0 && (
                             <span className="MySidebarWrapper__item--count">{cartCount}</span>
                         )}
-                    </a>
+                    </p>
                 </Link>
             </div>
         </aside>
