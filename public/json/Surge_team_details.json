@@ -4,7 +4,7 @@
         "designation": "Chairperson",
         "phoneNumber": "8448585442",
         "email": "santhosh.abcd@example.com",
-        "photo": "/Images/profile_image.png",
+        "photo": "/Images/TeamMembers/akshita.png",
         "team": "Core"
     },
     {
@@ -84,7 +84,7 @@
         "designation": "Cricket",
         "phoneNumber": "7588859900",
         "email": "as988@snu.edu.in",
-        "photo": "/Images/profile_image.png",
+        "photo": "/Images/TeamMembers/aman.png",
         "team": "POC"
     },
     {
@@ -92,7 +92,7 @@
         "designation": "Basketball (M)",
         "phoneNumber": "9650250012",
         "email": "js376@snu.edu.in",
-        "photo": "/Images/profile_image.png",
+        "photo": "/Images/TeamMembers/jai.png",
         "team": "POC"
     },
     {
@@ -100,7 +100,7 @@
         "designation": "Basketball (F)",
         "phoneNumber": "6306914237",
         "email": "sm334@snu.edu.in",
-        "photo": "/Images/profile_image.png",
+        "photo": "/Images/TeamMembers/sakshi.png",
         "team": "POC"
     },
     {
@@ -132,7 +132,7 @@
         "designation": "Tennis (F)",
         "phoneNumber": "9811999012",
         "email": "as348@snu.edu.in",
-        "photo": "/Images/profile_image.png",
+        "photo": "/Images/TeamMembers/aditi.png",
         "team": "POC"
     },
     {
@@ -156,7 +156,7 @@
         "designation": "Squash",
         "phoneNumber": "9322765644",
         "email": "as377@snu.edu.in",
-        "photo": "/Images/profile_image.png",
+        "photo": "/Images/TeamMembers/anjali.png",
         "team": "POC"
     },
     {
@@ -164,7 +164,7 @@
         "designation": "Volleyball (M)",
         "phoneNumber": "7275043980",
         "email": "as895@snu.edu.in",
-        "photo": "/Images/profile_image.png",
+        "photo": "/Images/TeamMembers/anjani.png",
         "team": "POC"
     },
     {
@@ -172,7 +172,7 @@
         "designation": "Volleyball (F)",
         "phoneNumber": "7355434861",
         "email": "ab657@snu.edu.in",
-        "photo": "/Images/profile_image.png",
+        "photo": "/Images/TeamMembers/ayushi.png",
         "team": "POC"
     },
     {
@@ -180,7 +180,7 @@
         "designation": "Badminton (M)",
         "phoneNumber": "9711633513",
         "email": "ks214@snu.edu.in",
-        "photo": "/Images/profile_image.png",
+        "photo": "/Images/TeamMembers/kushaan.png",
         "team": "POC"
     },
     {
@@ -188,7 +188,7 @@
         "designation": "Badminton (F)",
         "phoneNumber": "8660576775",
         "email": "ka789@snu.edu.in",
-        "photo": "/Images/profile_image.png",
+        "photo": "/Images/TeamMembers/kushi.png",
         "team": "POC"
     }
 ]

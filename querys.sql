@@ -1,0 +1,1 @@
+INSERT INTO Event (eventId,rules,dateTo,dateFrom,category,winnerPrize,winningTeamPrize,runnerUpTeamPrize,runnerUpPrize,minPlayers,maxPlayers,pricePerPlayer,venue,location,eventName) VALUES (1,"",'12/11/2023','13/11/2023','MALE',20000,20000,20000,20000,1,11,100,'Cricket Ground','OUTDOOR','Cricket');
