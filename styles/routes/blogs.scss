@@ -1,0 +1,126 @@
+.BlogsContainer {
+margin-bottom: 15rem;
+  @include respondAt(915px) {
+    margin-bottom: 45rem;
+  }
+  &__background {
+    position: relative;
+    &--image {
+      width: 100vw;
+    }
+  }
+  &__title {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 10rem;
+    left: 35rem;
+    @include respondAt(600px) {
+        left: 70px;
+        top: 120px;
+    }
+    // @include respondAt(915px) {
+    //   top: 7rem;
+    //   left: 5.5rem;
+    // }
+    &--image {
+      width: 15rem;
+      @include respondAt(915px) {
+        width: 10rem;
+      }
+    }
+    &--text {
+      font-family: "Migra";
+      color: $primaryColor;
+      font-size: 7rem;
+      @include respondAt(915px) {
+        font-size: 5rem;
+      }
+    }
+  }
+  &__content {
+    @include respondAt(915px) {
+      top: 15rem;
+      padding: 2rem 3rem 2rem 3rem;
+      margin: 0;
+      width: 95vw;
+      left: 0.3rem;
+    }
+    position: absolute;
+    z-index: 1;
+    top: 25rem;
+    border-radius: 2.8125rem;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    backdrop-filter: blur(50px);
+    padding: 4rem 8rem 4rem 8rem;
+    margin: 0 8rem 0 8rem;
+    &--card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include respondAt(915px) {
+        flex-direction: column-reverse;
+      }
+      &__left {
+        margin-right: 2rem;
+        @include respondAt(915px) {
+          margin-right: 0rem;
+        }
+        &--author {
+          display: flex;
+          align-items: center;
+          &__image {
+            width: 2.5rem;
+            margin-right: 1rem;
+            @include respondAt(915px) {
+              width: 2rem;
+            }
+          }
+          &__name {
+            color: $primaryColor;
+            font-size: 1.1rem;
+            font-family: "Poppins", sans-serif;
+            font-style: normal;
+            font-weight: 300;
+            @include respondAt(915px) {
+              font-size: 0.8rem;
+            }
+          }
+        }
+        &--heading {
+          color: #fff;
+          font-size: 2rem;
+          font-family: "Poppins", sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          @include respondAt(915px) {
+            font-size: 1.5rem;
+          }
+        }
+        &--content {
+          color: #fff;
+          font-size: 1rem;
+          font-family: "Poppins", sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          @include respondAt(915px) {
+            font-size: 0.8rem;
+          }
+        }
+      }
+      &__right {
+        &--image {
+          width: 18rem;
+          @include respondAt(915px) {
+            width: 14rem;
+          }
+        }
+      }
+    }
+  }
+}

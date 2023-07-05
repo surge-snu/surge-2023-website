@@ -1,5 +1,5 @@
 .Footer {
-  position: relative;
+  position: absolute;
 
   @include box(100vw, auto);
   @include make-flex(row, center, space-between);

@@ -125,6 +125,15 @@ function Navbar({ isSmall = false }) {
             </li>
 
             <li
+              className={`${pathName === "/blogs"
+                  ? "NavbarContainer__Menu--list-activeItem"
+                  : "NavbarContainer__Menu--list-item"
+                }`}
+            >
+              <Link href="/blogs">Blogs</Link>
+            </li>
+
+            <li
               className={`${pathName === "/gallery"
                   ? "NavbarContainer__Menu--list-activeItem"
                   : "NavbarContainer__Menu--list-item"
