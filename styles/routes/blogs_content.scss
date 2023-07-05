@@ -1,0 +1,103 @@
+.Blog {
+  padding-top: 8rem;
+  background: linear-gradient(180deg, #2f39ce 0%, #000000 100%);
+  &__header {
+    position: relative;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &--image {
+      width: 75rem;
+      @include respondAt(915px) {
+        width: 20rem;
+      }
+    }
+    &--text {
+        @include respondAt(915px) {
+            position: static;
+            font-size: 1.3rem;
+            width: 90vw;
+            padding: 0 1rem 0 2rem;
+            margin-top: 1rem;
+            text-align: left;
+        }
+      position: absolute;
+      top: 23rem;
+      color: #fff;
+      font-size: 3rem;
+      width: 80vw;
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: 700;
+    }
+  }
+  &__author {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6.25rem;
+    border: 1px solid #90fa08;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(2px);
+    padding: 1rem 3rem 1rem 4rem;
+    margin: 2rem 8rem 0 8rem;
+    @include respondAt(915px) {
+        flex-direction: column;
+        padding: 0;
+        margin: 2rem 2rem 0 2rem;
+    }
+    &--name {
+      display: flex;
+      align-items: center;
+      @include respondAt(915px) {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
+      &__image {
+        width: 3.5rem;
+        margin-right: 2rem;
+      }
+      &__text {
+        color: #90fa08;
+        font-size: 1.2rem;
+        font-family: "Poppins", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+      }
+    }
+    &--id {
+      color: #90fa08;
+      text-align: right;
+      font-size: 1.2rem;
+      font-family: "Poppins", sans-serif;
+      font-style: normal;
+      font-weight: 300;
+      @include respondAt(915px) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    margin: 2rem 8.5rem 2rem 8.5rem;
+    @include respondAt(915px) {
+        margin: 2rem 2.5rem 3rem 2.5rem;
+        flex-direction: column;
+
+    }
+    &--left,
+    &--right {
+      color: #989898;
+      font-size: 1.2rem;
+      font-family: 'Poppins' , sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      margin: 1rem;
+      @include respondAt(915px) {
+        margin: 0;
+      }
+    }
+  }
+}

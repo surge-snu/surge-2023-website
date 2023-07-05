@@ -20,10 +20,6 @@ margin-bottom: 15rem;
         left: 70px;
         top: 120px;
     }
-    // @include respondAt(915px) {
-    //   top: 7rem;
-    //   left: 5.5rem;
-    // }
     &--image {
       width: 15rem;
       @include respondAt(915px) {
