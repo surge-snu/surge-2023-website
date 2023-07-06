@@ -26,7 +26,7 @@ export default function Blogs() {
                 <div className="BlogsContainer__content">
                     {blogs.map((blog) => {
                         return (
-                            <Link href={`/blogs/${blog.id}`}>
+                            <Link key={blog.id} href={`/blogs/${blog.id}`}>
                                 <div className="BlogsContainer__content--card">
                                     <div className="BlogsContainer__content--card__left">
                                         <div className="BlogsContainer__content--card__left--author">
