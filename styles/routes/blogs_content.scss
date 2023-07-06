@@ -14,19 +14,19 @@
       }
     }
     &--text {
-        @include respondAt(915px) {
-            position: static;
-            font-size: 1.3rem;
-            width: 90vw;
-            padding: 0 1rem 0 2rem;
-            margin-top: 1rem;
-            text-align: left;
-        }
-      position: absolute;
-      top: 23rem;
+      @include respondAt(915px) {
+        position: static;
+        font-size: 1.3rem;
+        width: 90vw;
+        padding: 0 1rem 0 2rem;
+        margin-top: 1rem;
+        text-align: left;
+      }
+      padding-left: 7.2rem;
+      margin-top: 1rem;
       color: #fff;
       font-size: 3rem;
-      width: 80vw;
+      width: 100vw;
       font-family: "Poppins", sans-serif;
       font-style: normal;
       font-weight: 700;
@@ -43,9 +43,9 @@
     padding: 1rem 3rem 1rem 4rem;
     margin: 2rem 8rem 0 8rem;
     @include respondAt(915px) {
-        flex-direction: column;
-        padding: 0;
-        margin: 2rem 2rem 0 2rem;
+      flex-direction: column;
+      padding: 0;
+      margin: 2rem 2rem 0 2rem;
     }
     &--name {
       display: flex;
@@ -83,20 +83,21 @@
     display: flex;
     margin: 2rem 8.5rem 2rem 8.5rem;
     @include respondAt(915px) {
-        margin: 2rem 2.5rem 3rem 2.5rem;
-        flex-direction: column;
-
+      margin: 2rem 2.5rem 3rem 2.5rem;
+      flex-direction: column;
     }
     &--left,
     &--right {
       color: #989898;
       font-size: 1.2rem;
-      font-family: 'Poppins' , sans-serif;
+      font-family: "Poppins", sans-serif;
       font-style: normal;
       font-weight: 400;
       margin: 1rem;
+      width: 50%;
       @include respondAt(915px) {
         margin: 0;
+        width: 100%;
       }
     }
   }
