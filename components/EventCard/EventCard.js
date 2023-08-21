@@ -6,47 +6,25 @@ export default function EventCard({ event }) {
 
     return (
         <div className="EventCard">
-            <div className="EventCard__top">
-                <div className="EventCard__top--indoor">{event.location}</div>
-                <div className="EventCard__top--title">
-                    <h2>
-                        {event.eventName} ({event.category})
-                    </h2>
-                    <p>{event.description}</p>
+            <div className="EventCard__name">
+                {event.eventName.toUpperCase()} ({event.category})
+            </div>
+            <div className="EventCard__desc">
+                {event?.description ? `${event.description}` : ""}
+            </div>
+            <div className="EventCard__detail">
+                <div className="EventCard__detail--price">
+                    <img src="/Images/eye.png" />
+                    <p>₹{event.pricePerPlayer} / person</p>
                 </div>
-                <div className="EventCard__details">
-                    <div className="EventCard__details--price">
-                        <img src="/Images/Utils/eye.svg" alt="eye image" />
-                        <p>₹{event.pricePerPlayer} / person</p>
-                    </div>
-                    <div className="EventCard__details--calender">
-                        <img src="/Images/Utils/calendar.svg" alt="Calender" />
-                        <p>{`${date[0]}, ${date[2]} November ${date[3]}`}</p>
-                    </div>
+                <div className="EventCard__detail--date">
+                    <img src="/Images/calender.png" />
+                    <p>{event.dateTo} - {event.dateFrom}</p>
                 </div>
             </div>
-            <Link href={`/event/${event.eventId}/overview`}>
-                <p
-                    className="EventCard__bottom"
-                    aria-label={`Register for ${event.eventName} (${event.category})`}
-                >
-                    <span className="EventCard__bottom--register">Register</span>
-                    <svg
-                        width="15"
-                        height="15"
-                        viewBox="0 0 28 28"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M5.86816 14.3217H21.5115M21.5115 14.3217L13.6898 6.5M21.5115 14.3217L13.6898 22.1433"
-                            stroke="#CAFA08"
-                            strokeWidth="3.35214"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        />
-                    </svg>
-                </p>
+            <Link className="EventCard__reg" href={`/event/${event.eventId}/overview`}>
+                <p>Register Now</p>
+                <img src="/Images/arrow-right.png" />
             </Link>
         </div>
     );

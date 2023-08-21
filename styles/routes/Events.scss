@@ -1,105 +1,27 @@
 .EventsPage {
-  @include make-flex($dir: column, $just: flex-start);
-  @include box($height: unset);
-  overflow-y: auto;
-  overflow-x: hidden;
-  background-color: #0f1621;
-
   &__container {
-    @include box(100%, auto);
-    max-width: 1500px;
-    position: relative;
-    margin-top: 101px;
-    @include make-flex($align: flex-start);
-    padding: 0 55px 100px;
-    gap: 30px;
-
-    @include respondAt(480px) {
-      padding: 0px 17px 80px;
-    }
-  }
-
-  &__top {
-    @include make-flex($dir: column, $just: flex-start, $align: flex-start);
-    gap: 15px;
-
-    &--title {
-      font-family: "Sequel100Black-105";
-      font-size: 40px;
-      line-height: 60px;
-
-      span {
-        color: #cafa08;
-      }
-
-      @include respondAt(800px) {
-        font-size: 30px;
-        line-height: 40px;
+    &--scrollItems {
+      padding-top: 100px;
+      background: linear-gradient(179deg, #ff3916 0%, rgba(0, 0, 0, 0) 80%);
+      position: relative;
+      img {
+        position: absolute;
+        width: 40rem;
+        top: 5rem;
+        left: 25rem;
+        @include respondAt(915px) {
+          width: 20rem;
+          left: 1rem;
+        }
       }
     }
-
-    &--desc {
-      @include box($width: 65%);
-      font-family: "Satoshi";
-      font-size: 20px;
-
-      @include respondAt(800px) {
-        font-size: 13px;
-      }
+    &--upcoming {
+      margin-top: 30px;
     }
-  }
-
-  &__bottom {
-    @include make-flex($dir: column, $just: flex-start, $align: flex-start);
-    gap: 10px;
-    @include box($height: auto);
-
-    &--title {
-      font-family: "Sequel100Black-55";
-      font-size: 20px;
+    &--popular {
       display: flex;
-      justify-content: space-between;
-      width: 100%;
-
-      @include respondAt(508px) {
-        flex-direction: column;
-      }
-
-      @include respondAt(800px) {
-        font-size: 15px;
-      }
+      justify-content: center;
+      flex-wrap: wrap;
     }
-
-    &--cards {
-      @include box($height: auto);
-      display: grid;
-      gap: 24px;
-      grid-auto-rows: 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-
-      @include respondAt(1236px) {
-        grid-template-columns: 1fr 1fr;
-      }
-      @include respondAt(866px) {
-        grid-template-columns: 1fr;
-      }
-    }
-  }
-}
-
-.Events {
-  @include box($width: fit-content, $height: fit-content);
-  margin-top: 80px;
-  padding: 50px;
-  overflow-y: auto;
-  overflow-x: hidden;
-
-  @include respondAt(800px) {
-    margin-top: 70px;
-    padding: 30px;
-  }
-
-  @include respondAt(340px) {
-    padding: 10px;
   }
 }
