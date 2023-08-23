@@ -59,26 +59,10 @@ function EventTabs({ eventId, currentTab }) {
                             onMouseEnter={() => setHoverTab("overview")}
                             onMouseLeave={() => setHoverTab(null)}
                         >
-                            OVERVIEW
+                            Overview
                         </p>
                     </Link>
                 </li>
-                {/* <li
-          className={`EventTabs--item ${
-            activeTab === "schedule" ? "EventTabs--activeItem" : ""
-          }`}
-        >
-          <Link href={`/event/${eventId}/schedule`}>
-            <a
-              id="schedule"
-              onClick={() => setActiveTab("schedule")}
-              onMouseEnter={() => setHoverTab("schedule")}
-              onMouseLeave={() => setHoverTab(null)}
-            >
-              SCHEDULE
-            </a>
-          </Link>
-        </li> */}
                 <li
                     className={`EventTabs--item ${activeTab === "general" ? "EventTabs--activeItem" : ""
                         }`}
@@ -90,7 +74,7 @@ function EventTabs({ eventId, currentTab }) {
                             onMouseEnter={() => setHoverTab("general")}
                             onMouseLeave={() => setHoverTab(null)}
                         >
-                            GENERAL RULES
+                            General Rules
                         </p>
                     </Link>
                 </li>
@@ -105,7 +89,7 @@ function EventTabs({ eventId, currentTab }) {
                             onMouseEnter={() => setHoverTab("prizes")}
                             onMouseLeave={() => setHoverTab(null)}
                         >
-                            PRIZES
+                            Prizes
                         </p>
                     </Link>
                 </li>
@@ -130,7 +114,7 @@ function EventTabs({ eventId, currentTab }) {
                             onMouseEnter={() => setHoverTab("register")}
                             onMouseLeave={() => setHoverTab(null)}
                         >
-                            REGISTER
+                            Register
                         </p>
                     </Link>
                 </li>

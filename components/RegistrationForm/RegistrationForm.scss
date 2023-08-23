@@ -42,7 +42,7 @@
         h3 {
           line-height: 100%;
           font-size: 19px;
-          font-family: "Sequel100Black-65";
+          font-family: "Poppins", sans-serif;
         }
 
         button {
@@ -50,7 +50,7 @@
           border: 0px;
           background-color: #fe5349;
           color: rgb(0, 0, 0);
-          font-family: "Sequel100Black-65";
+          font-family: "Poppins", sans-serif;
           font-size: 15px;
           padding: 5px 10px;
 
@@ -71,6 +71,21 @@
       gap: 24px;
       flex-wrap: wrap;
     }
+
+    &--buttons {
+      &__next, &__add {
+        font-family: "Poppins", sans-serif;
+        background-color: $primaryColor;
+        color: black;
+        border: none;
+        padding: 0.5rem 2rem 0.5rem 2rem;
+        font-size: 1rem;
+        border-radius: 0.2rem;
+        margin-right: 2rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
+      }
+    }
   }
 
   &__row {
@@ -89,9 +104,9 @@
     button {
       cursor: pointer;
       border: 0px;
-      background-color: white;
+      background-color: black;
       color: black;
-      font-family: "Sequel100Black-65";
+      font-family: "Poppins", sans-serif;
       font-size: 18px;
       padding: 0px 16px;
 

@@ -6,7 +6,6 @@
     @include make-flex($dir: column, $align: flex-start);
     padding: 17px 20px;
     gap: 20px;
-
     &--left,
     &--right {
       @include box($height: auto);

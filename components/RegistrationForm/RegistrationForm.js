@@ -173,12 +173,13 @@ export default function RegistrationForm({
                         </div>
                     ))}
                 </div>
-                <div className="SignUp__button">
+                <div className="RegForm__form--buttons">
                     {formData.length < maxPlayers && (
-                        <button onClick={() => addPlayer()}>Add player</button>
+                        <button className="RegForm__form--buttons__add" onClick={() => addPlayer()}>Add player</button>
                     )}
                     <button
                         type="submit"
+                        className="RegForm__form--buttons__next"
                         disabled={Object.values(errors).some(
                             (item) => Object.keys(item).length !== 0
                         )}

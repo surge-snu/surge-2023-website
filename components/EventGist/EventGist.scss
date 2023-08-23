@@ -6,6 +6,7 @@
   border-top: 8px solid #fe5349;
   padding: 35px 18px;
   gap: 30px;
+  margin-bottom: 40px;
 
   &__top {
     @include box($width: 100%, $height: fit-content);
@@ -77,14 +78,14 @@
       &__cta {
         &--cta {
           @include box($width: 100%, $height: 100%);
-          padding: 10px 0;
+          padding: 10px 15px;
           @include make-flex($dir: row, $just: center, $align: center);
           gap: 8px;
           border-radius: 10px;
           background-color: #cafa08;
           transition: 0.1s;
 
-          font-family: Satoshi Variable, "Satoshi", sans-serif;
+          font-family: "Poppins", sans-serif;
           font-weight: 600;
           font-size: 14px;
           color: black;

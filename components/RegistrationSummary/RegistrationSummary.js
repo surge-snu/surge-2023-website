@@ -22,42 +22,44 @@ function RegistrationSummary({ setRegisterStage, user, eventId }) {
                 />
             )}
             <h3>Team Summary</h3>
-            <DashTable>
-                <DashHeader
-                    style={{
-                        padding: "10px 0 10px 20px",
-                        gap: "20px",
-                        borderTop: "none",
-                    }}
-                    headerTitles={[
-                        "Name",
-                        "Email",
-                        "Phone",
-                        "Roll Number",
-                        "Player Type",
-                    ]}
-                />
-                {tempTeamDetails.map((member, index) => (
-                    <DashRow
-                        key={index}
-                        isDropDown={false}
+            <div className="RegistrationSummaryWrapper__table">
+                <DashTable>
+                    <DashHeader
                         style={{
-                            gap: "15px",
-                            cursor: "default",
+                            padding: "10px 0 10px 20px",
+                            gap: "20px",
+                            borderTop: "none",
                         }}
-                        contentCols={[
-                            member[`PlayerName`],
-                            member[`PlayerEmail`],
-                            member[`PlayerPhone`],
-                            member[`PlayerID`],
-                            member[`playerType`],
+                        headerTitles={[
+                            "Name",
+                            "Email",
+                            "Phone",
+                            "Roll Number",
+                            "Player Type",
                         ]}
                     />
-                ))}
-            </DashTable>
+                    {tempTeamDetails.map((member, index) => (
+                        <DashRow
+                            key={index}
+                            isDropDown={false}
+                            style={{
+                                gap: "15px",
+                                cursor: "default",
+                            }}
+                            contentCols={[
+                                member[`PlayerName`],
+                                member[`PlayerEmail`],
+                                member[`PlayerPhone`],
+                                member[`PlayerID`],
+                                member[`playerType`],
+                            ]}
+                        />
+                    ))}
+                </DashTable>
+            </div>
 
             <div className="RegistrationSummaryWrapper__note">
-                <h2>NOTE</h2>
+                <h2>Note</h2>
                 <ul className="markdownBody">
                     <li>Paid cash will not be refunded under any circumstances</li>
                     <li>
@@ -68,10 +70,11 @@ function RegistrationSummary({ setRegisterStage, user, eventId }) {
                 </ul>
             </div>
             <div className="RegistrationSummaryWrapper__actions">
-                <button onClick={() => setRegisterStage("Details")}>
+                <button className="RegForm__form--buttons__add" onClick={() => setRegisterStage("Details")}>
                     Edit details
                 </button>
                 <button
+                    className="RegForm__form--buttons__add"
                     onClick={async () => {
                         const teamMembers = tempTeamDetails.map((member, index) => {
                             return {
