@@ -1,0 +1,80 @@
+$animationSpeed: 60s;
+
+.slider2 {
+  width: 100%;
+  position: relative;
+  margin: 0 0;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    min-width: 500px;
+    z-index: 2;
+  }
+
+  &::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+
+  &::before {
+    left: 0;
+    top: 0;
+  }
+  &__track {
+    animation: scroll $animationSpeed linear infinite;
+  }
+  &__track2 {
+    animation: scroll2 $animationSpeed linear infinite;
+  }
+  &__track,
+  &__track2 {
+    display: flex;
+    width: max-content;
+
+    &--item2 {
+      padding: 0 10px;
+      font-size: 7rem;
+      font-family: "Migra";
+      text-transform: uppercase;
+      @include respondAt(915px) {
+        font-size: 3rem;
+      }
+
+      &--filled {
+        color: $primaryColor;
+      }
+
+      &--outlined {
+        color: transparent;
+        -webkit-text-stroke: 1px $primaryColor;
+      }
+
+      @include respondAt(580px) {
+        padding: 0 5px;
+      }
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll2 {
+    0% {
+      transform: translateX(-50%);
+    }
+  
+    100% {
+      transform: translateX(0%);
+    }
+  }

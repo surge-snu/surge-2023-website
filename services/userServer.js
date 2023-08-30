@@ -19,46 +19,46 @@ export async function fetchUserData(email) {
         where: {
             email,
         },
-        // include: {
-        //     Team: {
-        //         include: {
-        //             Event: {
-        //                 select: {
-        //                     category: true,
-        //                     winnerPrize: true,
-        //                     winningTeamPrize: true,
-        //                     runnerUpTeamPrize: true,
-        //                     runnerUpPrize: true,
-        //                     minPlayers: true,
-        //                     maxPlayers: true,
-        //                     pricePerPlayer: true,
-        //                     venue: true,
-        //                     location: true,
-        //                     eventName: true,
-        //                 },
-        //             },
-        //             TeamMembers: {
-        //                 select: {
-        //                     id: true,
-        //                     teamId: true,
-        //                     name: true,
-        //                     email: true,
-        //                     phone: true,
-        //                     eventId: true,
-        //                     playerType: true,
-        //                 },
-        //             },
-        //             PaymentDetails: {
-        //                 select: {
-        //                     id: true,
-        //                     teamId: true,
-        //                     paymentId: true,
-        //                     amount: true,
-        //                 },
-        //             },
-        //         },
-        //     },
-        // },
+        include: {
+            Team: {
+                include: {
+                    Event: {
+                        select: {
+                            category: true,
+                            winnerPrize: true,
+                            winningTeamPrize: true,
+                            runnerUpTeamPrize: true,
+                            runnerUpPrize: true,
+                            minPlayers: true,
+                            maxPlayers: true,
+                            pricePerPlayer: true,
+                            venue: true,
+                            location: true,
+                            eventName: true,
+                        },
+                    },
+                    TeamMembers: {
+                        select: {
+                            id: true,
+                            teamId: true,
+                            name: true,
+                            email: true,
+                            phone: true,
+                            eventId: true,
+                            playerType: true,
+                        },
+                    },
+                    PaymentDetails: {
+                        select: {
+                            id: true,
+                            teamId: true,
+                            paymentId: true,
+                            amount: true,
+                        },
+                    },
+                },
+            },
+        },
     });
 }
 
@@ -69,6 +69,28 @@ export async function changeUserPassword(data) {
         },
         data: {
             password: data.password,
+        },
+    });
+}
+
+export async function updateCollegeDB(data) {
+    return db.user.update({
+        where: {
+            email: data.email,
+        },
+        data: {
+            college: data.college,
+        },
+    });
+}
+
+export async function updatePhoneDB(data) {
+    return db.user.update({
+        where: {
+            email: data.email,
+        },
+        data: {
+            phone: data.phone,
         },
     });
 }

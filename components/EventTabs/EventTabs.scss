@@ -1,0 +1,154 @@
+.EventTabs {
+  &--desktop {
+    @include box(auto, 48px);
+    @include make-flex($dir: row);
+    list-style: none;
+    border-radius: 5px;
+    border: .5px solid $primaryColor;
+    background: rgba(35, 55, 97, 0.2);
+    padding: .5rem 2rem .5rem 2rem;
+    position: relative;
+    z-index: 1;
+    gap: 7px;
+
+    @include respondAt(770px) {
+      display: none;
+      flex-direction: column;
+      height: fit-content;
+      border: none;
+    }
+  }
+
+  &--ghostItem {
+    z-index: -1;
+    position: absolute;
+    @include make-flex($dir: row, $just: center, $align: center);
+    border-radius: 3px;
+    opacity: 0;
+    background: #cafa0a;
+    transition: all 0.3s ease-in-out;
+    height: calc(100% - 10px);
+    padding: 5px;
+
+    @include respondAt(500px) {
+      // display: none;
+      height: 35px;
+      top: 0;
+    }
+  }
+
+  &--ghostHoverItem {
+    z-index: -1;
+    opacity: 0;
+    position: absolute;
+    @include make-flex($dir: row, $just: center, $align: center);
+    border-radius: 3px;
+    background: #cafa0a71;
+    transition: all 0.3s ease-in-out;
+    height: calc(100% - 10px);
+    padding: 5px;
+
+    @include respondAt(500px) {
+      display: none;
+    }
+  }
+
+  &--item,
+  &--activeItem {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    z-index: 1;
+    @include box();
+    border-radius: 3px;
+    cursor: pointer;
+    a {
+      padding: 7px 20px;
+      @include make-flex();
+      @include box();
+      white-space: nowrap;
+    }
+
+    button {
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+
+      padding: 0px 13px;
+      @include make-flex();
+      @include box();
+    }
+
+    &:last-child {
+      color: #cafa0a;
+      font-family: "Poppins" , sans-serif;
+    }
+  }
+
+  &--activeItem {
+    background: #cafa0a;
+    a {
+      animation: changeColor 0.3s linear forwards;
+    }
+  }
+
+  &--mobile {
+    display: none;
+    @include box($width: 240px, $height: 150px);
+    padding: 5px 48px 5px 5px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: transparent;
+    list-style: none;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    border: none;
+    border: 1px solid #ffffff;
+    background: rgba(35, 55, 97, 0.2);
+    font-size: 20px;
+
+    @include respondAt(770px) {
+      display: block;
+    }
+  }
+
+  &__dropDown {
+    @include box(38px, 38px);
+    @include make-flex();
+    cursor: pointer;
+    outline: none;
+    border: none;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-color: #233761;
+    border-radius: 5px;
+
+    &:focus {
+      outline: unset;
+    }
+
+    img {
+      transition: all 0.2s ease-in-out;
+      transform: rotate(90deg);
+    }
+
+    &--rotate {
+      img {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}
+
+@keyframes changeColor {
+  0% {
+    color: white;
+  }
+  50% {
+    color: #0f162163;
+  }
+  100% {
+    color: #0f1621;
+  }
+}

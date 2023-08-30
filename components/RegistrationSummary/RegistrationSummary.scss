@@ -1,0 +1,27 @@
+.RegistrationSummaryWrapper {
+    h3 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        @include respondAt(915px) {
+            font-size: 1rem;
+        }
+    }
+    &__table {
+        margin-bottom: 1rem;
+    }
+    &__note {
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: .5rem;
+            @include respondAt(915px) {
+                font-size: 1rem;
+            }
+        }
+        .markdownBody {
+            margin-bottom: 1rem;
+            @include respondAt(915px) {
+                font-size: .8rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,545 @@
+.MyLayout {
+  @include box($height: 100vh);
+  @include make-flex($dir: row, $align: flex-start, $just: flex-start);
+  overflow-x: auto;
+  padding-top: 69px;
+  &__page {
+    @include make-flex($dir: column, $align: flex-start, $just: flex-start);
+    background-color: #193559;
+    overflow-y: auto;
+    @include box(calc(100% - 265px));
+    @include respondAt(915px) {
+      width: 100%;
+      padding-top: 20px;
+    }
+  }
+}
+
+.MyHome {
+  @include box($width: 100%, $height: auto);
+  @include make-flex($dir: column, $align: flex-start, $just: flex-start);
+  padding: 30px;
+  gap: 30px;
+
+  @include respondAt(915px) {
+    padding: 0 15px 15px;
+  }
+
+  &__QrBox {
+    @include box($width: 100%, $height: fit-content);
+    @include make-flex($dir: row, $just: space-between);
+    background: #0f1621;
+    border-radius: 8px;
+    border: 1px solid rgba(244, 244, 244, 0.6);
+    padding: 20px;
+    gap: 20px;
+
+    @include respondAt(614px) {
+      flex-direction: column;
+    }
+
+    &--left {
+      @include box();
+      @include make-flex($just: space-between, $align: flex-start);
+      gap: 15px;
+    }
+    &--leftTop,
+    &--leftBottom {
+      @include box($height: auto);
+      @include make-flex($just: flex-start, $align: flex-start);
+      gap: 20px;
+      max-width: 50%;
+      h2 {
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+        line-height: 100%;
+        font-size: 26px;
+      }
+
+      @include respondAt(1426px) {
+        max-width: 70%;
+      }
+      @include respondAt(1326px) {
+        max-width: 90%;
+      }
+      @include respondAt(1074px) {
+        max-width: unset;
+      }
+
+      button {
+        cursor: pointer;
+        border: 0px;
+        background-color: white;
+        color: black;
+        font-family: "Poppins", sans-serif;
+        font-size: 13px;
+        padding: 0px 16px;
+
+        @include respondAt(500px) {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  &__collegeDropdownContent {
+    padding: 10px;
+    @include make-flex($just: flex-start);
+    @include box();
+
+    &--update {
+      margin-top: 20px;
+      cursor: pointer;
+      border: 0px;
+      background-color: white;
+      color: black;
+      font-family: "Poppins", sans-serif;
+      font-size: 18px;
+      padding: 0px 16px;
+
+      @include respondAt(500px) {
+        font-size: 15px;
+      }
+    }
+
+    &--error {
+      color: #fe5349;
+      font-size: 15px;
+      width: 100%;
+    }
+  }
+  &__title {
+    font-family: "Poppins", sans-serif;
+  }
+
+  &__info,
+  &__payment,
+  &__events {
+    @include box($width: 100%, $height: fit-content);
+    @include make-flex($dir: column, $align: flex-start, $just: flex-start);
+    background: #0f1621;
+    border: 1px solid rgba(244, 244, 244, 0.6);
+    border-radius: 8px;
+  }
+
+  &__sectionTitle {
+    @include box($width: 100%, $height: fit-content);
+    @include make-flex($dir: row, $align: center, $just: flex-start);
+    gap: 20px;
+    padding: 10px;
+  }
+
+  &__divider {
+    @include box(100%, 1px);
+    background: rgba(244, 244, 244, 0.6);
+  }
+
+  &__infoRow {
+    @include box($width: 100%, $height: fit-content);
+    @include make-flex($dir: row, $align: center, $just: flex-start);
+    padding: 10px 20px;
+
+    p {
+      @include box($width: 100%, $height: fit-content);
+    }
+
+    &--green {
+      p {
+        color: #cafa08;
+      }
+    }
+  }
+
+  &__dropdown {
+    @include box();
+    @include make-flex($dir: column);
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    p {
+      text-align: left;
+    }
+  }
+
+  &__listTile {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+  }
+
+  &__paymentStatus {
+    @include box(100%, fit-content);
+    @include make-flex($dir: row, $align: center, $just: flex-start);
+    padding-left: 5px;
+    gap: 5px;
+  }
+
+  &__dropDownContent {
+    @include box($width: 100%, $height: fit-content);
+    @include make-flex($dir: column, $align: flex-end, $just: flex-start);
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    max-height: 0;
+
+    &--active {
+      max-height: 300px;
+    }
+  }
+
+  &__ListTileItems {
+    @include box($width: 100%, $height: fit-content);
+    @include make-flex($dir: row, $just: flex-end);
+    gap: 10px;
+    padding: 0 20px;
+  }
+
+  &__greenButton {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+
+    background-color: #cafa08;
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin: 20px 0 0 0;
+  }
+
+  &__teamItems {
+    @include box($width: 100%, $height: fit-content);
+    @include make-flex($dir: column, $just: center);
+    padding: 20px 40px;
+    gap: 10px;
+  }
+
+  &__teamTitle {
+    @include box($width: 100%, $height: fit-content);
+    @include make-flex($dir: row, $just: space-between);
+    padding-bottom: 10px;
+
+    p:first-child {
+      font-family: "Poppins", sans-serif;
+      font-size: 10px;
+      color: #cafa08;
+    }
+
+    p:last-child {
+      font-family: "Poppins", sans-serif;
+      font-size: 8px;
+      color: rgba($color: #ffffff, $alpha: 0.6);
+    }
+  }
+
+  &__teamRow {
+    @include box($width: 100%, $height: fit-content);
+    @include make-flex($dir: row, $just: space-between);
+
+    p {
+      font-family: Satoshi Variable, "Satoshi", sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+    }
+
+    &--green {
+      p:last-child {
+        color: #cafa08;
+      }
+    }
+    &--blue {
+      p:last-child {
+        color: #308cf8;
+      }
+    }
+    &--red {
+      p:last-child {
+        color: #fe5349;
+      }
+    }
+  }
+}
+
+.MyEvents {
+  @include box($width: 100%, $height: auto);
+  @include make-flex($dir: column, $align: flex-start, $just: flex-start);
+  padding: 30px;
+  gap: 30px;
+
+  @include respondAt(915px) {
+    padding: 0 15px 15px;
+  }
+}
+
+.MyCart {
+  @include box($width: 100%, $height: auto);
+  @include make-flex($dir: column, $align: flex-start, $just: flex-start);
+  padding: 30px;
+  gap: 10px;
+  margin-bottom: 74px;
+  position: relative;
+
+  @include respondAt(915px) {
+    padding: 0 15px 15px;
+  }
+
+  &__cartSection {
+    @include box($width: 100%, $height: auto);
+    @include make-flex($dir: column, $align: flex-start, $just: flex-start);
+    gap: 20px;
+
+    &--link {
+      cursor: pointer;
+      border: 0px;
+      background-color: white;
+      color: black;
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      padding: 0px 16px;
+      white-space: nowrap;
+    }
+  }
+
+  &__team {
+    &--addButton,
+    &--removeButton {
+      cursor: pointer;
+      border: 0px;
+      background-color: white;
+      color: black;
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      padding: 0px 16px;
+      white-space: nowrap;
+
+      @include respondAt(500px) {
+        font-size: 15px;
+      }
+      @include respondAt(535px) {
+        width: 100%;
+        padding: 2px 16px;
+      }
+    }
+
+    &--removeButton {
+      cursor: pointer;
+      border: 0px;
+      background-color: #fe5349;
+      color: rgb(0, 0, 0);
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      padding: 0 16px;
+    }
+
+    &--action {
+      display: none;
+
+      @include respondAt(420px) {
+        @include box();
+        @include make-flex();
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__CheckoutBox {
+    @include box(calc(100% - 265px), fit-content);
+    @include make-flex($dir: row, $just: space-between);
+    position: fixed;
+    min-height: 80px;
+    background-color: #222b48;
+    border-top: 1px solid lightgray;
+    bottom: 30px;
+    z-index: 1;
+    right: -30px;
+    padding: 0 30px;
+    transform: translate(-30px, 30px);
+    flex-wrap: wrap;
+    gap: 20px;
+    @include respondAt(915px) {
+      width: 100%;
+      transform: translate(-30px, 15px);
+      padding: 15px;
+      bottom: 15px;
+    }
+
+    &--left {
+      @include make-flex($dir: row);
+      gap: 10px;
+      flex-wrap: wrap;
+
+      h2,
+      span {
+        font-family: "Poppins", sans-serif;
+        font-size: 25px;
+        line-height: 100%;
+        text-transform: capitalize;
+        font-style: italic;
+        text-align: center;
+        color: #cafa08;
+      }
+    }
+    button {
+      cursor: pointer;
+      border: 0px;
+      background-color: white;
+      color: black;
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      padding: 0px 16px;
+      white-space: nowrap;
+    }
+  }
+
+  &__alert {
+    @include make-flex();
+    @include box();
+    gap: 18px;
+
+    @include respondAt(620px) {
+      justify-content: flex-start;
+      height: auto;
+    }
+
+    &--left,
+    &--right {
+      @include box(50%, 100%);
+      @include respondAt(620px) {
+        width: 100%;
+      }
+    }
+
+    &--top {
+      @include box(100%, calc(100% - 60px));
+      @include make-flex($dir: row);
+
+      @include respondAt(620px) {
+        flex-direction: column;
+      }
+    }
+
+    &--middle {
+      background-color: #193559;
+      @include box(100%, auto);
+      border-radius: 5px;
+      padding: 10px 10px 10px 30px;
+
+      font-family: "Poppins", sans-serif;
+      font-size: 18px;
+      text-align: center;
+      font-style: italic;
+      h3 {
+        span {
+          color: #cafa08;
+        }
+      }
+    }
+
+    &--right {
+      @include make-flex();
+      img {
+        @include box(250px, 250px);
+      }
+    }
+
+    &--left {
+      @include make-flex($just: flex-start);
+      gap: 17px;
+      h3,
+      h4 {
+        font-family: "Poppins", sans-serif;
+        font-size: 30px;
+        width: 100%;
+        line-height: 100%;
+        text-transform: capitalize;
+        font-style: italic;
+        color: #cafa08;
+        gap: 6px;
+      }
+
+      h4 {
+        font-size: 20px;
+        width: fit-content;
+      }
+
+      span {
+        @include box();
+        @include make-flex($dir: row, $just: space-between);
+      }
+    }
+
+    &--bottom {
+      @include make-flex($dir: row, $just: space-between);
+      @include box();
+      gap: 15px;
+
+      @include respondAt(493px) {
+        flex-direction: column;
+      }
+
+      button {
+        cursor: pointer;
+        border: 0px;
+        background-color: white;
+        color: black;
+        font-family: "Poppins", sans-serif;
+        font-size: 18px;
+        padding: 0px 16px;
+        white-space: nowrap;
+        height: 100%;
+
+        @include respondAt(500px) {
+          font-size: 15px;
+        }
+      }
+    }
+
+    &--bottom2 {
+      color: #cafa08;
+      text-decoration: underline;
+      font-style: italic;
+      cursor: pointer;
+    }
+    &--bottom2Alert {
+      @include make-flex();
+      @include box();
+      img {
+        height: 380px;
+      }
+    }
+  }
+  &__emptyCollege {
+    @include box();
+    @include make-flex();
+    gap: 10px;
+    img {
+      height: 60px;
+    }
+
+    h2,
+    p {
+      text-align: center;
+    }
+    a {
+      margin-top: 20px;
+      cursor: pointer;
+      border: 0px;
+      background-color: white;
+      color: black;
+      font-family: "Poppins", sans-serif;
+      font-size: 18px;
+      padding: 0px 16px;
+
+      @include respondAt(500px) {
+        font-size: 15px;
+      }
+    }
+  }
+}

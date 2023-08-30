@@ -1,0 +1,76 @@
+.EventCard {
+  background-color: #171717;
+  margin: 1rem 1rem 1rem 1rem;
+  padding: 2rem 7rem 2rem 3rem;
+  width: 27rem;
+  border-radius: 15px;
+  @include respondAt(915px) {
+    margin: 1rem 0 1.5rem 0;
+    padding: 1.5rem 5rem 1.5rem 1.5rem;
+  }
+  &__name {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    @include respondAt(915px) {
+      font-size: 1rem;
+    }
+  }
+  &__detail {
+    &--price {
+      display: flex;
+      align-items: center;
+      p {
+        font-size: 1rem;
+        @include respondAt(915px) {
+          font-size: 0.9rem;
+        }
+      }
+      img {
+        width: 2rem;
+        margin-right: 1rem;
+        @include respondAt(915px) {
+          width: 1.5rem;
+        }
+      }
+      margin-bottom: 0.5rem;
+    }
+    &--date {
+      display: flex;
+      align-items: center;
+      p {
+        @include respondAt(915px) {
+          font-size: 0.9rem;
+        }
+      }
+      img {
+        width: 2rem;
+        margin-right: 1rem;
+        @include respondAt(915px) {
+          width: 1.5rem;
+        }
+      }
+    }
+    margin-bottom: 1rem;
+  }
+  &__reg {
+    display: flex;
+    align-items: center;
+    p {
+      font-family: "Poppins", sans-serif;
+      color: $primaryColor;
+      font-weight: 600;
+      margin-right: 0.5rem;
+      @include respondAt(915px) {
+        font-size: 0.9rem;
+      }
+    }
+    img {
+      width: 1.4rem;
+      @include respondAt(915px) {
+        width: 1.2rem;
+      }
+    }
+  }
+}
