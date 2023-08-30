@@ -50,7 +50,7 @@ function Sidebar() {
                         className="MySidebarWrapper__top--right"
                         aria-label="Go to home page"
                     >
-                        <img alt="left arrow" src="/Img/Arrow Right Variant.svg" />
+                        <img alt="left arrow" src="/Images/Utils/Arrow Right Variant.svg" />
                         <h2>Home</h2>
                     </div>
                 </Link>

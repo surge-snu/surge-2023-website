@@ -19,7 +19,7 @@ const Footer = () => {
             <div className="Footer__logoSocials--socials">
               <Link href="https://www.instagram.com/surge.snu/">
                 <Image
-                  src="Images/Facebook.svg"
+                  src="Images/facebook.svg"
                   alt="Instagram Link"
                   width={30}
                   height={30}
@@ -28,7 +28,7 @@ const Footer = () => {
               </Link>
               <Link href="https://www.instagram.com/surge.snu/">
                 <Image
-                  src="Images/LinkedIn.svg"
+                  src="Images/linkedIn.svg"
                   alt="Instagram Link"
                   width={30}
                   height={30}
@@ -37,7 +37,7 @@ const Footer = () => {
               </Link>
               <Link href="https://www.instagram.com/surge.snu/">
                 <Image
-                  src="Images/Instagram.svg"
+                  src="Images/instagram.svg"
                   alt="Instagram Link"
                   width={30}
                   height={30}
@@ -46,7 +46,7 @@ const Footer = () => {
               </Link>
               <Link href="https://www.instagram.com/surge.snu/">
                 <Image
-                  src="Images/Youtube.svg"
+                  src="Images/youtube.svg"
                   alt="Instagram Link"
                   width={30}
                   height={30}

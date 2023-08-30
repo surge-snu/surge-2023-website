@@ -93,32 +93,32 @@ function Navbar({ isSmall = false }) {
           >
             <li
               className={`${pathName === "/"
-                  ? "NavbarContainer__Menu--list-activeItem"
-                  : "NavbarContainer__menu--list-item"
+                ? "NavbarContainer__Menu--list-activeItem"
+                : "NavbarContainer__menu--list-item"
                 }`}
             >
               <Link href="/">Home</Link>
             </li>
-            <li
+            {/* <li
               className={`${pathName === "/about"
-                  ? "NavbarContainer__Menu--list-activeItem"
-                  : "NavbarContainer__Menu--list-item"
+                ? "NavbarContainer__Menu--list-activeItem"
+                : "NavbarContainer__Menu--list-item"
                 }`}
             >
               <Link href="/about">About us</Link>
-            </li>
+            </li> */}
             <li
               className={`${pathName === "/gallery"
-                  ? "NavbarContainer__Menu--list-activeItem"
-                  : "NavbarContainer__Menu--list-item"
+                ? "NavbarContainer__Menu--list-activeItem"
+                : "NavbarContainer__Menu--list-item"
                 }`}
             >
               <Link href="/gallery">Gallery</Link>
             </li>
             <li
               className={`${pathName === "/events"
-                  ? "NavbarContainer__Menu--list-activeItem"
-                  : "NavbarContainer__Menu--list-item"
+                ? "NavbarContainer__Menu--list-activeItem"
+                : "NavbarContainer__Menu--list-item"
                 }`}
             >
               <Link href="/events">Events</Link>
@@ -126,8 +126,8 @@ function Navbar({ isSmall = false }) {
 
             <li
               className={`${pathName === "/gallery"
-                  ? "NavbarContainer__Menu--list-activeItem"
-                  : "NavbarContainer__Menu--list-item"
+                ? "NavbarContainer__Menu--list-activeItem"
+                : "NavbarContainer__Menu--list-item"
                 }`}
             >
               <Link href="/contact">Contact</Link>
@@ -143,10 +143,14 @@ function Navbar({ isSmall = false }) {
                   />
                 </a>
               ) : (
-                <p
-                  // logout on click
-                  onClick={() => handleLogout()}
-                  className="NavbarContainer__Menu--list-item">Logout</p>
+                <Link href='/my'>
+                  <Image
+                    src="/Images/Navbar/Account.png"
+                    alt="Account Navigation Link"
+                    width={40}
+                    height={40}
+                  />
+                </Link>
               )}
             </li>
           </ul>

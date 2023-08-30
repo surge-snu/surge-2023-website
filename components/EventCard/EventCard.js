@@ -19,7 +19,7 @@ export default function EventCard({ event }) {
                 </div>
                 <div className="EventCard__detail--date">
                     <img src="/Images/calender.png" />
-                    <p>{event.dateTo} - {event.dateFrom}</p>
+                    <p>{event.dateTo} to {event.dateFrom}</p>
                 </div>
             </div>
             <Link className="EventCard__reg" href={`/event/${event.eventId}/overview`}>

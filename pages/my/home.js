@@ -73,7 +73,7 @@ export default function MyHome({ user }) {
         <div className="MyHome">
             {/* <Sidebar user={user} /> */}
 
-            <div className="MyHome__QrBox">
+            {/* <div className="MyHome__QrBox">
                 <div className="MyHome__QrBox--left">
                     <div className="MyHome__QrBox--leftTop">
                         <h2>Proof of participation</h2>
@@ -124,7 +124,7 @@ export default function MyHome({ user }) {
                         size="218"
                     />
                 </div>
-            </div>
+            </div> */}
             <DashTable title="Personal information">
                 <DashRow
                     isDropDown={false}

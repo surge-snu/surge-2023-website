@@ -1,7 +1,8 @@
 .EventCard {
   background-color: #171717;
   margin: 1rem 1rem 1rem 1rem;
-  padding: 2rem 10rem 2rem 3rem;
+  padding: 2rem 7rem 2rem 3rem;
+  width: 27rem;
   border-radius: 15px;
   @include respondAt(915px) {
     margin: 1rem 0 1.5rem 0;
@@ -10,10 +11,10 @@
   &__name {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
     margin-bottom: 1rem;
     @include respondAt(915px) {
-      font-size: 1.3rem;
+      font-size: 1rem;
     }
   }
   &__detail {
@@ -21,6 +22,7 @@
       display: flex;
       align-items: center;
       p {
+        font-size: 1rem;
         @include respondAt(915px) {
           font-size: 0.9rem;
         }

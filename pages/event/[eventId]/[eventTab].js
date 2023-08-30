@@ -183,20 +183,19 @@ export default function EventTabContent({ eventDetails, eventTab, user, generalR
                                     <hr />
                                 </div>
                                 <div className="EventPage__container--prizes">
-                                    <p>
+                                    {eventDetails.winnerPrize != 0 ? <p>
                                         Winner Prize per athlete:{" "}
                                         {Cashify(eventDetails.winnerPrize)}
                                         <br />
                                         Runner Up Prize per athlete:{" "}
                                         {Cashify(eventDetails.runnerUpPrize)}
-                                    </p>
-
-                                    <p>
+                                    </p> : <p></p>}
+                                    {eventDetails.winningTeamPrize != 0 ? <p>
                                         Winner Team prize: {Cashify(eventDetails.winningTeamPrize)}
                                         <br />
                                         Runner Up Team prize:{" "}
                                         {Cashify(eventDetails.runnerUpTeamPrize)}
-                                    </p>
+                                    </p> : <p></p>}
                                 </div>
                             </div>
                             <EventGist

@@ -44,16 +44,6 @@ export default function Events({ allEvents }) {
                         <EventCard event={event} key={index} />
                     )
                 })}
-                {allFilteredEvents.map((event, index) => {
-                    return (
-                        <EventCard event={event} key={index} />
-                    )
-                })}
-                {allFilteredEvents.map((event, index) => {
-                    return (
-                        <EventCard event={event} key={index} />
-                    )
-                })}
             </div>
         </div>
     )
