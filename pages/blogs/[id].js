@@ -43,8 +43,4 @@ export default function Post() {
             </div>
         </div>
     );
-    // return (
-
-
-    // );
 }

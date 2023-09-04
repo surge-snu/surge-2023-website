@@ -34,9 +34,9 @@ function Contact() {
               setDisplay("core");
             }}
           >
-            CORE
+            TEAM
           </button>
-          <button
+          {/* <button
             className={`ContactPage__container--tabs__tab ContactPage__container--tabs__tab--inactive ${showCore ? "" : "ContactPage__container--tabs__tab--active"
               }`}
             onClick={() => {
@@ -45,7 +45,7 @@ function Contact() {
             }}
           >
             POC
-          </button>
+          </button> */}
           {/* <Link href="/">
             <p
               className={`ContactPage__container--tabs__tab ContactPage__container--tabs__tab--link`}

@@ -89,8 +89,8 @@ export default function MyCart({ user, allEvents }) {
                                 height: "fit-content",
                             }}
                             contentCols={[
-                                <h3>Register Teams in the Events page</h3>,
-                                <Link href="/events">
+                                <h3 key="register-teams">Register Teams in the Events page</h3>,
+                                <Link key="events-link" href="/events">
                                     <p className="MyCart__cartSection--link">Events</p>
                                 </Link>,
                             ]}
@@ -112,13 +112,13 @@ export default function MyCart({ user, allEvents }) {
                                     setDropdownIndex={setCartDropdown}
                                     isDropDown={true}
                                     contentCols={[
-                                        <span>{event.eventName}</span>,
-                                        <span>{team.paymentStatus}</span>,
-                                        <span>
+                                        <span key={'eventName'}>{event.eventName}</span>,
+                                        <span key={'paymentStatus'}>{team.paymentStatus}</span>,
+                                        <span key={'pricePerplayer'}>
                                             {team.TeamMembers.length} x{" "}
                                             {Cashify(event.pricePerPlayer)}
                                         </span>,
-                                        <span>
+                                        <span key={'pricePerPlayer2'}>
                                             {Cashify(
                                                 team.TeamMembers.reduce((acc, _) => {
                                                     return acc + event.pricePerPlayer;
@@ -126,6 +126,7 @@ export default function MyCart({ user, allEvents }) {
                                             )}
                                         </span>,
                                         <button
+                                        key={'removeButton'}
                                             className="MyCart__team--removeButton"
                                             onClick={() => {
                                                 setLocalTeams(
@@ -211,13 +212,13 @@ export default function MyCart({ user, allEvents }) {
                                         setDropdownIndex={setCartDropdown}
                                         isDropDown={true}
                                         contentCols={[
-                                            <span>{event.eventName}</span>,
-                                            <span>{team.paymentStatus}</span>,
-                                            <span>
+                                            <span key={'eventName'}>{event.eventName}</span>,
+                                            <span key={'paymentStatus'}>{team.paymentStatus}</span>,
+                                            <span key={'pricePerPlayer'}>
                                                 {team.TeamMembers.length} x{" "}
                                                 {Cashify(event.pricePerPlayer)}
                                             </span>,
-                                            <span>
+                                            <span key={'pricePerPlayer2'}>
                                                 {Cashify(
                                                     team.TeamMembers.reduce((acc, _) => {
                                                         return acc + event.pricePerPlayer;
@@ -225,6 +226,7 @@ export default function MyCart({ user, allEvents }) {
                                                 )}
                                             </span>,
                                             <button
+                                            key={'localteam'}
                                                 className="MyCart__team--addButton"
                                                 onClick={() => {
                                                     setLocalTeams(

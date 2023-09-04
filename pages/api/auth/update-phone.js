@@ -1,6 +1,6 @@
 import { ironOptions } from "../../../lib/ironOptions";
 import { withIronSessionApiRoute } from "iron-session/next";
-import { updatePhoneDB } from "../../../services/user.server";
+import { updatePhoneDB } from "../../../services/userServer";
 
 export default withIronSessionApiRoute(UpdatePhone, ironOptions);
 

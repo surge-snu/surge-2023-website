@@ -107,14 +107,14 @@ function Navbar({ isSmall = false }) {
             >
               <Link href="/about">About us</Link>
             </li> */}
-            <li
+            {/* <li
               className={`${pathName === "/gallery"
                 ? "NavbarContainer__Menu--list-activeItem"
                 : "NavbarContainer__Menu--list-item"
                 }`}
             >
               <Link href="/gallery">Gallery</Link>
-            </li>
+            </li> */}
             <li
               className={`${pathName === "/events"
                 ? "NavbarContainer__Menu--list-activeItem"

@@ -44,8 +44,8 @@ export default function MyEvents({ user }) {
                                 index={index}
                                 style={{ padding: "0 20px" }}
                                 contentCols={[
-                                    <span>{team.Event.eventName}</span>,
-                                    <span>
+                                    <span key={'eventName'}>{team.Event.eventName}</span>,
+                                    <span key={'paymentStatus'}>
                                         {team.paymentStatus === "PAID" ? (
                                             <img
                                                 alt="Success"
@@ -105,8 +105,8 @@ export default function MyEvents({ user }) {
                                     index={index}
                                     style={{ padding: "0 20px" }}
                                     contentCols={[
-                                        <span>{team.Event.eventName}</span>,
-                                        <span>
+                                        <span key={'eventName'}>{team.Event.eventName}</span>,
+                                        <span key={'paymentStatus'}>
                                             {team.paymentStatus === "PAID" ? (
                                                 <img
                                                     alt="Success"
@@ -175,8 +175,8 @@ export default function MyEvents({ user }) {
                                     index={index}
                                     style={{ padding: "0 20px" }}
                                     contentCols={[
-                                        <span>{team.Event.eventName}</span>,
-                                        <span>
+                                        <span key={'eventName'}>{team.Event.eventName}</span>,
+                                        <span key={'paymentStatus'}>
                                             {team.paymentStatus === "PAID" ? (
                                                 <img
                                                     alt="Success"
@@ -249,8 +249,8 @@ export default function MyEvents({ user }) {
                                 height: "fit-content",
                             }}
                             contentCols={[
-                                <h3>Register Teams in the Events page</h3>,
-                                <Link href="/events">
+                                <h3 key={'register'}>Register Teams in the Events page</h3>,
+                                <Link key={'eventLinks'} href="/events">
                                     <p className="MyCart__cartSection--link">Events</p>
                                 </Link>,
                             ]}

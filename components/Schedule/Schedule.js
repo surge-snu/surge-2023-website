@@ -5,8 +5,8 @@ export default function Schedule({ data }) {
     return (
         <div className="SchedulePage">
             <div className="SchedulePage__slotList">
-                {Object.keys(data).map((item) => (
-                    <div className="SchedulePage__slot">
+                {Object.keys(data).map((item,index) => (
+                    <div key={index} className="SchedulePage__slot">
                         <h3 className="SchedulePage__slot--title">{item}</h3>
                         <div className="SchedulePage__slot--content">
                             <div className="SchedulePage__slot--date">

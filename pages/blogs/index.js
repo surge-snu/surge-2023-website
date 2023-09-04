@@ -14,7 +14,6 @@ export default function Blogs() {
     ]
     return (
         <>
-            return (
             <div className="BlogsContainer">
                 <div className="BlogsContainer__background">
                     <img className="BlogsContainer__background--image" src="/Images/Blogs/blogs_bg.png" />

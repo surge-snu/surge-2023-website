@@ -128,7 +128,7 @@ export default function MyHome({ user }) {
             <DashTable title="Personal information">
                 <DashRow
                     isDropDown={false}
-                    contentCols={[<span>Name</span>, <span>{user.name}</span>]}
+                    contentCols={[<span key={'name'}>Name</span>, <span key={'name2'}>{user.name}</span>]}
                 />
                 <DashRow
                     isDropDown={user.college === ""}
@@ -136,8 +136,8 @@ export default function MyHome({ user }) {
                     setDropdownIndex={setPersonalIndex}
                     index={0}
                     contentCols={[
-                        <span>College</span>,
-                        <span>
+                        <span key={'College'}>College</span>,
+                        <span key={'college-data'}>
                             {user.college === "" ? (
                                 <>
                                     <img alt="Error" src="/Images/Utils/RedExclamation.svg" height={14} />{" "}
@@ -196,8 +196,8 @@ export default function MyHome({ user }) {
                     setDropdownIndex={setPersonalIndex}
                     index={1}
                     contentCols={[
-                        <span>Phone</span>,
-                        <span>
+                        <span key={'phone'}>Phone</span>,
+                        <span key={'phoneData'}>
                             {user.phone === "" ? (
                                 <>
                                     <img alt="Error" src="/Img/Red Exclamation.svg" height={14} />{" "}
@@ -241,15 +241,15 @@ export default function MyHome({ user }) {
             <DashTable title="Account Settings">
                 <DashRow
                     isDropDown={false}
-                    contentCols={[<span>Email</span>, <span>{user.email}</span>]}
+                    contentCols={[<span key={'email'}>Email</span>, <span key={'email2'}>{user.email}</span>]}
                 />
                 <DashRow
                     dropdownIndex={accountIndex}
                     setDropdownIndex={setAccountIndex}
                     index={0}
                     contentCols={[
-                        <span>Change Password</span>,
-                        <span>************</span>,
+                        <span key={'changePassword'}>Change Password</span>,
+                        <span key={'hide'}>************</span>,
                     ]}
                 >
                     <Link href="#reset-password">
