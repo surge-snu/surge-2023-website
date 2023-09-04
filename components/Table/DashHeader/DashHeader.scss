@@ -3,7 +3,9 @@
   gap: 10px;
   display: grid;
   padding: 10px 50px 10px 20px;
-
+  &__title {
+    font-family: 'Poppins', sans-serif;
+  }
   span {
     @include box($width: auto, $height: fit-content);
     flex-grow: 1;

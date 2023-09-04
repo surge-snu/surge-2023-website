@@ -294,7 +294,9 @@
     @include box($width: 100%, $height: auto);
     @include make-flex($dir: column, $align: flex-start, $just: flex-start);
     gap: 20px;
-
+    h2 {
+      font-family: 'Poppins',sans-serif;
+    }
     &--link {
       cursor: pointer;
       border: 0px;
