@@ -141,7 +141,7 @@ function Navbar({ isSmall = false }) {
             >
               <Link href="/contact">Contact</Link>
             </li>
-            {/* <li className="NavbarContainer__Menu--list-account">
+            <li className="NavbarContainer__Menu--list-account">
               {!user ? (
                 <a href="#login">
                   <Image
@@ -161,7 +161,7 @@ function Navbar({ isSmall = false }) {
                   />
                 </Link>
               )}
-            </li> */}
+            </li>
           </ul>
         </div>
       </div>

@@ -11,7 +11,7 @@ import CartRow from "../../components/CartRow/CartRow";
 import DashRow from "../../components/Table/DashRow/DashRow";
 import Link from "next/link";
 import Alert from "../../components/Alert/Alert";
-import GInput from "../../Components/GInput/GInput";
+import GInput from "../../components/GInput/GInput";
 import BlurredSpinner from "../../components/BlurredSpinner/BlurredSpinner";
 import { customAlphabet } from "nanoid";
 import { useRouter } from "next/router";
@@ -372,13 +372,13 @@ export default function MyCart({ user, allEvents }) {
                                         </span>
                                     </div>
                                     <div className="MyCart__alert--right">
-                                        <img src="/Images/Utils/Paytm.png" alt="https://paytm.me/T-d1kU8" />
-                                        <span>(or)</span>
+                                        <img src="/Images/surge_qr.jpeg" alt="qr image" />
+                                        {/* <span>(or)</span>
                                         <Link href="https://paytm.me/T-d1kU8">
                                             <p className="MyCart__alert--bottom2" target="_blank" referrerPolicy="no-referrer">
                                                 https://paytm.me/T-d1kU8 &#129109;
                                             </p>
-                                        </Link>
+                                        </Link> */}
                                     </div>
                                 </div>
                                 <h3 className="MyCart__alert--middle">

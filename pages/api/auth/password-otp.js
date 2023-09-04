@@ -42,7 +42,7 @@ async function SendPasswordOtp(req, res) {
         port: 465,
         host: "smtp.gmail.com",
         auth: {
-            user: 'as188@snu.edu.in',
+            user: 'surge.snutech@gmail.com',
             pass: process.env.GMAIL_PASS,
         },
         secure: true,

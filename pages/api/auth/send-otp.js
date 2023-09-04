@@ -46,7 +46,7 @@ async function SendOtp(req, res) {
         host: "smtp.gmail.com",
         from: "as188@snu.edu.in",
         auth: {
-            user: 'as188@snu.edu.in',
+            user: 'surge.snutech@gmail.com',
             pass : process.env.GMAIL_PASS,
         },
         secure : true,
