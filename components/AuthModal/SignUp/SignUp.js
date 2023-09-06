@@ -18,6 +18,7 @@ export default function SignUp({ onSignUp }) {
   const [showOtp, setShowOtp] = useState(false);
   const [cryptOtp, setCryptOtp] = useState("");
   const [showLoader, setShowLoader] = useState(false);
+  const [showTnC, setShowTnC] = useState(false);
   const [duplicateError, setDuplicateError] = useState({
     friendlyName: "",
     phone: "",
@@ -103,6 +104,47 @@ export default function SignUp({ onSignUp }) {
   return (
     <>
       {showLoader && <BlurredSpinner style={{ borderRadius: "7px" }} />}
+      <div className="SignUp__Terms">
+        {showTnC && <div className="SignUp__Terms--modal">
+          <div className="SignUp__Terms--modal--container">
+            <div className="SignUp__Terms--modal--container--header">
+              <h2>Terms and Conditions</h2>
+              <span
+                className="SignUp__Terms--modal--container--header--close"
+                onClick={() => setShowTnC(false)}
+              >
+                &#10799;
+              </span>
+            </div>
+            <div className="SignUp__Terms--modal--container--body">
+              <p>Welcome to Surge!</p>
+              <p>
+                These terms and conditions outline the rules and regulations for
+                the use of Surge's Website, located at
+                https://surge.shivnadaruniversity.in/.
+              </p>
+              <p>
+                lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+                lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+                lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+                lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+              </div>
+          </div>
+        </div>}
+      </div>
       {showOtp && (
         <div className="Otp">
           <div className="Otp__container">
@@ -274,9 +316,9 @@ export default function SignUp({ onSignUp }) {
             />
             <label htmlFor="tandc">
               I agree to the{" "}
-              <a href="/terms" target="_blank" referrerPolicy="no-referrer">
+              <p onClick={() => setShowTnC(true)} className="SignUp__tnc">
                 Terms and Privacy Policy
-              </a>
+              </p>
             </label>
           </div>
         </div>

@@ -17,15 +17,7 @@ const Footer = () => {
               className="Footer__logoSocials--logo"
             />
             <div className="Footer__logoSocials--socials">
-              <Link href="https://www.instagram.com/surge.snu/">
-                <Image
-                  src="Images/facebook.svg"
-                  alt="Facebook"
-                  width={30}
-                  height={30}
-                  className="Footer__logoSocials--socials--icon"
-                />
-              </Link>
+              
               <Link href="https://www.linkedin.com/company/surge-snioe/">
                 <Image
                   src="Images/linkedIn.svg"
