@@ -20,16 +20,16 @@ const Footer = () => {
               <Link href="https://www.instagram.com/surge.snu/">
                 <Image
                   src="Images/facebook.svg"
-                  alt="Instagram Link"
+                  alt="Facebook"
                   width={30}
                   height={30}
                   className="Footer__logoSocials--socials--icon"
                 />
               </Link>
-              <Link href="https://www.instagram.com/surge.snu/">
+              <Link href="https://www.linkedin.com/company/surge-snioe/">
                 <Image
                   src="Images/linkedIn.svg"
-                  alt="Instagram Link"
+                  alt="LinkedIn"
                   width={30}
                   height={30}
                   className="Footer__logoSocials--socials--icon"
@@ -44,10 +44,10 @@ const Footer = () => {
                   className="Footer__logoSocials--socials--icon"
                 />
               </Link>
-              <Link href="https://www.instagram.com/surge.snu/">
+              <Link href="https://www.youtube.com/@surge-shivnadaruniversity7421">
                 <Image
                   src="Images/youtube.svg"
-                  alt="Instagram Link"
+                  alt="Youtube"
                   width={30}
                   height={30}
                   className="Footer__logoSocials--socials--icon"
