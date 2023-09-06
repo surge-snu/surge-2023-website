@@ -1,7 +1,5 @@
 import nodemailer from "nodemailer";
 import { customAlphabet } from "nanoid";
-import { withIronSessionApiRoute } from "iron-session/next";
-import { ironOptions } from "../../../lib/ironOptions";
 import { hashSync } from "bcrypt";
 import { fetchUser } from "../../../services/userServer";
 import { OTPTemplate } from "../../../public/Templates/OTP-template";
@@ -44,7 +42,6 @@ async function SendOtp(req, res) {
     let transporter = nodemailer.createTransport({
         port: 465,
         host: "smtp.gmail.com",
-        from: "as188@snu.edu.in",
         auth: {
             user: 'surge.snutech@gmail.com',
             pass : process.env.GMAIL_PASS,
@@ -63,35 +60,4 @@ async function SendOtp(req, res) {
         res.status(200).json({ status: 200, otp: `${hashSync(otp, 10)}` });
     })
 
-    // var mailOptions = {
-    //     to: email,
-    //     subject: "OTP for Surge registration",
-    //     html: OTPTemplate(
-    //         "Account Verification",
-    //         otp,
-    //         friendlyName,
-    //         "If you didn't request this, you can ignore this email"
-    //     ),
-    // };
-    // let transporter = nodemailer.createTransport({
-    //     port: 465,
-    //     host: "smtp.gmail.com",
-    //     auth: {
-    //         user: 'as188@snu.edu.in',
-    //         pass: process.env.GMAIL_PASS,
-    //     },
-    //     secure: true,
-    // });
-
-    // transporter.sendMail(mailOptions, (error, info) => {
-    //     if (error) {
-    //         console.log(error);
-    //         return res.status(400).json({
-    //             status: 400,
-    //             message: { email: "Something went wrong, Try again later..." },
-    //             error: JSON.stringify(error),
-    //         });
-    //     }
-    //     res.status(200).json({ status: 200, otp: `${hashSync(otp, 10)}` });
-    // });
 }
