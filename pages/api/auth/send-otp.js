@@ -38,7 +38,7 @@ async function SendOtp(req, res) {
     var mailOptions = {
         to : email,
         subject : "OTP for Surge registration",
-        html: OTPTemplate("Account Verification", otp, friendlyName, "If you did'nt request for this, you can ignore the message")
+        html: OTPTemplate("Account Verification", otp, friendlyName, "If you didn't request for this, you can ignore the message")
     };
 
     let transporter = nodemailer.createTransport({
