@@ -149,7 +149,7 @@ function EventTabs({ eventId, currentTab }) {
                         }`}
                     onClick={() => setIsDropDownOpen(!isDropDownOpen)}
                 >
-                    <img src="/Images/Arrow Right Variant.svg" alt="Right Arrow" height={20} width={20} />
+                    <img src="/Images/Utils/Arrow Right Variant.svg" alt="Right Arrow" height={20} width={20} />
                 </button>
             </ul>
         </>
