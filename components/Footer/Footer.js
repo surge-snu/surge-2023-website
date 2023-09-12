@@ -20,7 +20,7 @@ const Footer = () => {
               
               <Link href="https://www.linkedin.com/company/surge-snioe/">
                 <Image
-                  src="Images/linkedIn.svg"
+                  src="/Images/linkedin.svg"
                   alt="LinkedIn"
                   width={30}
                   height={30}
@@ -29,7 +29,7 @@ const Footer = () => {
               </Link>
               <Link href="https://www.instagram.com/surge.snu/">
                 <Image
-                  src="Images/instagram.svg"
+                  src="/Images/instagram.svg"
                   alt="Instagram Link"
                   width={30}
                   height={30}
@@ -38,7 +38,7 @@ const Footer = () => {
               </Link>
               <Link href="https://www.youtube.com/@surge-shivnadaruniversity7421">
                 <Image
-                  src="Images/youtube.svg"
+                  src="/Images/youtube.svg"
                   alt="Youtube"
                   width={30}
                   height={30}
