@@ -15,11 +15,11 @@ export default function EventCard({ event }) {
             <div className="EventCard__detail">
                 <div className="EventCard__detail--price">
                     <img src="/Images/eye.png" />
-                    <p>₹{event.pricePerPlayer} / person</p>
+                    <p className='GlobalF'>₹{event.pricePerPlayer} / person</p>
                 </div>
                 <div className="EventCard__detail--date">
                     <img src="/Images/calender.png" />
-                    <p>{event.dateTo} to {event.dateFrom}</p>
+                    <p className='GlobalF'>{event.dateTo} to {event.dateFrom}</p>
                 </div>
             </div>
             <Link className="EventCard__reg" href={`/event/${event.eventId}/overview`}>
