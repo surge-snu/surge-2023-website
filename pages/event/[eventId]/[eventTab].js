@@ -190,7 +190,7 @@ export default function EventTabContent({ eventDetails, eventTab, user, generalR
                                         Runner Up Prize per athlete:{" "}
                                         {Cashify(eventDetails.runnerUpPrize)}
                                     </p> : <p></p>}
-                                    {eventDetails.winningTeamPrize != 0 ? <p>
+                                    {eventDetails.winningTeamPrize != 0 ? <p className='GlobalF'>
                                         Winner Team prize: {Cashify(eventDetails.winningTeamPrize)}
                                         <br />
                                         Runner Up Team prize:{" "}
