@@ -4,6 +4,9 @@
 import os
 from PIL import Image
 import sys
+import PIL
+
+PIL.Image.MAX_IMAGE_PIXELS = 933120000
 
 # get the current working directory
 cwd = os.getcwd()
@@ -22,31 +25,21 @@ def convert_files_of_dir(dir_path):
         # create full path
         full_path = os.path.join(dir_path, entry)
         # if entry is a directory then get the list of files in this directory
-        if os.path.isdir(full_path):
-            convert_files_of_dir(full_path)
-        else:
-            # check if the file is an image
-            if entry.endswith('.jpg') or entry.endswith('.png'):
-                # convert the image to webp format
-                img = Image.open(full_path)
-                img.save(full_path[:-4] + '.webp', 'webp')
-                # remove the old image
-                os.remove(full_path)
+        try :
+            if os.path.isdir(full_path):
+                convert_files_of_dir(full_path)
+            else:
+                # check if the file is an image
+                if entry.endswith('.jpg') or entry.endswith('.png') or entry.endswith('.jpeg') or entry.endswith('.JPG') :
+                    # convert the image to webp format
+                    img = Image.open(full_path)
+                    img.save(full_path[:-4] + '.webp', 'webp')
+                    # remove the old image
+                    os.remove(full_path)
+        except :
+            print('Error converting file: ' + full_path)
 
 # iterate over all the entries
-for entry in list_of_files:
-    # create full path
-    full_path = os.path.join(path, entry)
-    # if entry is a directory then get the list of files in this directory
-    if os.path.isdir(full_path):
-        convert_files_of_dir(full_path)
-    else:
-        # check if the file is an image
-        if entry.endswith('.jpg') or entry.endswith('.png') or entry.endswith('.jpeg') or entry.endswith('.JPG') or entry.endswith('.PNG') or entry.endswith('.JPEG') or entry.endswith('.svg') or entry.endswith('.SVG'):
-            # convert the image to webp format
-            img = Image.open(full_path)
-            img.save(full_path[:-4] + '.webp', 'webp')
-            # remove the old image
-            os.remove(full_path)
+convert_files_of_dir(path)
 
 print('All images converted to .webp format')
