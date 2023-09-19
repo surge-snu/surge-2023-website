@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="left-panel">
           <div className="Footer__logoSocials">
             <Image
-              src="/Images/Surge_Logo.png"
+              src="/Images/Surge_Logo.webp"
               alt="Surge Logo"
               width={200}
               height={100}

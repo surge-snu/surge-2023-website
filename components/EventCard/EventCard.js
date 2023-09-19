@@ -14,17 +14,17 @@ export default function EventCard({ event }) {
             </div>
             <div className="EventCard__detail">
                 <div className="EventCard__detail--price">
-                    <img src="/Images/eye.png" />
+                    <img src="/Images/eye.webp" />
                     <p className='GlobalF'>₹{event.pricePerPlayer} / person</p>
                 </div>
                 <div className="EventCard__detail--date">
-                    <img src="/Images/calender.png" />
+                    <img src="/Images/calender.webp" />
                     <p className='GlobalF'>{event.dateTo} to {event.dateFrom}</p>
                 </div>
             </div>
             <Link className="EventCard__reg" href={`/event/${event.eventId}/overview`}>
                 <p>Register Now</p>
-                <img src="/Images/arrow-right.png" />
+                <img src="/Images/arrow-right.webp" />
             </Link>
         </div>
     );

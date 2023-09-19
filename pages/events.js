@@ -33,7 +33,7 @@ export default function Events({ allEvents }) {
         <div className="EventsPage__container">
             <div className="EventsPage__container--scrollItems">
                 <EventScroll heading='EVENTS' />
-                <img src="/Images/comingSoon.png" />
+                <img src="/Images/comingSoon.webp" />
             </div>
             <div className="EventsPage__container--upcoming">
                 <ScrollItems heading='UPCOMING EVENTS' />

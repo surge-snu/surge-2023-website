@@ -18,15 +18,15 @@ const SportsScroll = () => {
   ];
 
   const images = [
-    "Volleyball.png",
-    "Football.png",
-    "Cricket.png",
-    "Basketball.png",
-    "Tennis.png",
-    "Badminton.png",
-    "TableTennis.png",
-    "Squash.png",
-    "Chess.png",
+    "Volleyball.webp",
+    "Football.webp",
+    "Cricket.webp",
+    "Basketball.webp",
+    "Tennis.webp",
+    "Badminton.webp",
+    "TableTennis.webp",
+    "Squash.webp",
+    "Chess.webp",
   ];
 
   return (
