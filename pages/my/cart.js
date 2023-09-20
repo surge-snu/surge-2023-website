@@ -372,7 +372,7 @@ export default function MyCart({ user, allEvents }) {
                                         </span>
                                     </div>
                                     <div className="MyCart__alert--right">
-                                        <img src="/Images/surge_qr.jpeg" alt="qr image" />
+                                        <img src="/Images/surge_qr.webp" alt="qr image" />
                                         {/* <span>(or)</span>
                                         <Link href="https://paytm.me/T-d1kU8">
                                             <p className="MyCart__alert--bottom2" target="_blank" referrerPolicy="no-referrer">
@@ -437,7 +437,7 @@ export default function MyCart({ user, allEvents }) {
                                         width="700px"
                                     >
                                         <span className="MyCart__alert--bottom2Alert">
-                                            <img src="/Images/Utils/GuideImage.jpeg" />
+                                            <img src="/Images/Utils/GuideImage.webp" />
                                             Eg: 20221016 0309020085
                                         </span>
                                     </Alert>

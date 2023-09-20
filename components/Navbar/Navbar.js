@@ -145,7 +145,7 @@ function Navbar({ isSmall = false }) {
               {!user ? (
                 <a href="#login">
                   <Image
-                    src="/Images/Navbar/Account.png"
+                    src="/Images/Navbar/Account.webp"
                     alt="Account Navigation Link"
                     width={40}
                     height={40}
@@ -154,7 +154,7 @@ function Navbar({ isSmall = false }) {
               ) : (
                 <Link href='/my'>
                   <Image
-                    src="/Images/Navbar/Account.png"
+                    src="/Images/Navbar/Account.webp"
                     alt="Account Navigation Link"
                     width={40}
                     height={40}

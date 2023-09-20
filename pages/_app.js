@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps, user }) {
             name="description"
             content="Shiv Nadar IOE's annual Sports Fest"
           />
-          <link rel="icon" href="/Images/Favicon.png" />
+          <link rel="icon" href="/Images/Favicon.webp" />
         </Head>
         <Navbar isSmall={isSmall} />
         <AuthModal />

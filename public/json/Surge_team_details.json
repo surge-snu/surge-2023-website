@@ -4,7 +4,7 @@
         "designation": "Chairperson",
         "phoneNumber": "8448585442",
         "email": "aj232@snu.edu.in",
-        "photo": "/Images/TeamMembers/akshita.png",
+        "photo": "/Images/TeamMembers/akshita.webp",
         "team": "Core"
     },
     {
@@ -12,7 +12,7 @@
         "designation": "Co-chairperson",
         "phoneNumber": "99115966223",
         "email": "nb932@snu.edu.in",
-        "photo": "/Images/TeamMembers/nandini.png",
+        "photo": "/Images/TeamMembers/nandini.webp",
         "team": "Core"
     },
     {
@@ -20,7 +20,7 @@
         "designation": "Co-chairperson",
         "phoneNumber": "9110449419",
         "email": "pp606@snu.edu.in",
-        "photo": "/Images/TeamMembers/prabhav.png",
+        "photo": "/Images/TeamMembers/prabhav.webp",
         "team": "Core"
     },
     {
@@ -28,7 +28,7 @@
         "designation": "Administrator",
         "phoneNumber": "9968590900",
         "email": "ts342@snu.edu.in",
-        "photo": "/Images/TeamMembers/tanuj.png",
+        "photo": "/Images/TeamMembers/tanuj.webp",
         "team": "Core"
     },
     {
@@ -36,7 +36,7 @@
         "designation": "Administrator",
         "phoneNumber": "9136121122",
         "email": "py276@snu.edu.in",
-        "photo": "/Images/TeamMembers/sharan.png",
+        "photo": "/Images/TeamMembers/sharan.webp",
         "team": "Core"
     },
     {
@@ -44,7 +44,7 @@
         "designation": "Advisor",
         "phoneNumber": "9550820302",
         "email": "dp622@snu.edu.in",
-        "photo": "/Images/profile_image.png",
+        "photo": "/Images/profile_image.webp",
         "team": "Core"
     }
 ]
