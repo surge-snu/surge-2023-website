@@ -5,8 +5,10 @@ import Stats from "../components/Stats/Stats";
 import Sponsors from "../components/Sponsors/Sponsors";
 import AfterMovie from "../components/AfterMovie/AfterMovie";
 import PastSponsors from "../components/PastSponsors/PastSponsors";
+import { useRouter } from "next/router";
 
 function Home() {
+  const router = useRouter();
   return (
     <main>
       <section className="HeroSection">
@@ -32,6 +34,15 @@ function Home() {
             and exertion both physical and mental, as records are formed and
             broken.
           </motion.p>
+          <motion.button
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ type: "spring", stiffness: 100 }}
+            className="CTA"
+            onClick={() => router.push('/events')}
+          >
+            Register Now
+          </motion.button>
         </div>
         <motion.div
           initial={{ y: -20, opacity: 0 }}
@@ -39,7 +50,7 @@ function Home() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="HeroSection__dates"
         >
-          {/* <p className="HeroSection__dates--date">3 4 5 November'23</p> */}
+          <p className="HeroSection__dates--date">3 4 5 November'23</p>
           <p className="HeroSection__dates--scroll">Scroll for more</p>
           <Image
             src="/Images/Icons/chevronsDown.svg"

@@ -49,13 +49,13 @@ export default function MyEvents({ user }) {
                                         {team.paymentStatus === "PAID" ? (
                                             <img
                                                 alt="Success"
-                                                src="/Img/Green Tick.svg"
+                                                src="/Images/Utils/Green Tick.svg"
                                                 height={14}
                                             />
                                         ) : (
                                             <img
                                                 alt="Error"
-                                                src="/Img/RedExclamation.svg"
+                                                src="/Images/Utils/RedExclamation.svg"
                                                 height={14}
                                             />
                                         )}
