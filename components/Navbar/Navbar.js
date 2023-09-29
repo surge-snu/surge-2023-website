@@ -94,7 +94,7 @@ function Navbar({ isSmall = false }) {
             <li
               className={`${pathName === "/"
                 ? "NavbarContainer__Menu--list-activeItem"
-                : "NavbarContainer__menu--list-item"
+                : "NavbarContainer__Menu--list-item"
                 }`}
             >
               <Link href="/">Home</Link>

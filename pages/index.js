@@ -6,6 +6,7 @@ import Sponsors from "../components/Sponsors/Sponsors";
 import AfterMovie from "../components/AfterMovie/AfterMovie";
 import PastSponsors from "../components/PastSponsors/PastSponsors";
 import { useRouter } from "next/router";
+import Navbar from "../components/Navbar/Navbar";
 
 function Home() {
   const router = useRouter();
@@ -72,5 +73,14 @@ function Home() {
     </main>
   );
 }
+
+Home.getLayout = function getLayout(page) {
+  return (
+      <div className="MyLayout">
+          <Navbar />
+          {page}
+      </div>
+  );
+};
 
 export default Home;

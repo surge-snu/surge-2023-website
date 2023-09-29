@@ -266,9 +266,7 @@ export default function MyHome({ user }) {
 MyHome.getLayout = function getLayout(page) {
     return (
         <div className="MyLayout">
-            {/* <Navbar
-                isSmall={true}
-            /> */}
+            
             <Sidebar />
             <div className="MyLayout__page">{page}</div>
         </div>

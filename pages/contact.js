@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../styles/routes/Contact.scss";
 import details from "../public/json/Surge_team_details.json";
+import Navbar from "../components/Navbar/Navbar";
 
 function Contact() {
   var core = details.filter((member) => member["team"] === "Core");
@@ -80,5 +81,14 @@ function Contact() {
     </section>
   );
 }
+
+Contact.getLayout = function getLayout(page) {
+  return (
+      <div className="MyLayout">
+          <Navbar />
+          {page}
+      </div>
+  );
+};
 
 export default Contact;
