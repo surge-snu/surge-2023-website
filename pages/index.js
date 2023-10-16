@@ -15,14 +15,14 @@ function Home() {
       <section className="HeroSection">
         <div className="HeroSection__overlay"></div>
         <div className="HeroSection__content">
-          <motion.h1
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ type: "spring", stiffness: 100 }}
             className="HeroSection__content--heading"
           >
             We are the home of <span>Champions</span>
-          </motion.h1>
+          </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}

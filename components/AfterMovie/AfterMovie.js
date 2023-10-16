@@ -11,7 +11,7 @@ function AfterMovie() {
         </video>
       </div>
       <div className="Aftermovie__content">
-        <motion.h1
+        <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -19,7 +19,7 @@ function AfterMovie() {
         >
           About Sports Fest <br />
           of <span>Shiv Nadar IOE</span>
-        </motion.h1>
+        </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
