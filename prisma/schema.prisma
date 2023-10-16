@@ -69,6 +69,7 @@ model PaymentDetails {
   paymentId     String
   playerOrderId String
   amount        Int
+  changedStatus DateTime @default(now())
   createdAt     DateTime @default(now())
   Team          Team     @relation(fields: [teamId], references: [teamId])
 }

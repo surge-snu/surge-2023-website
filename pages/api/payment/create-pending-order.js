@@ -12,6 +12,7 @@ async function CreatePendingOrder(req, res) {
             ...member,
             paymentId: body.paymentId,
             playerOrderId: body.playerOrderId,
+            changedStatus: new Date(),
         };
     });
 
