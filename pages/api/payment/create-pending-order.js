@@ -6,13 +6,15 @@ import { fetchUserData } from "../../../services/userServer";
 export default withIronSessionApiRoute(CreatePendingOrder, ironOptions);
 
 async function CreatePendingOrder(req, res) {
+    const ISTOptions = { timeZone: 'Asia/Kolkata' }; // 'Asia/Kolkata' is the IANA timezone identifier for IST
+    const currentISTTime = new Date().toLocaleString('en-US', ISTOptions);
     const body = await req.body;
     const paySplit = body.paySplit.map((member) => {
         return {
             ...member,
             paymentId: body.paymentId,
             playerOrderId: body.playerOrderId,
-            changedStatus: new Date(),
+            changedStatus: currentISTTime,
         };
     });
 
