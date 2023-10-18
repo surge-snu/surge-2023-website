@@ -126,7 +126,7 @@ export default function MyCart({ user, allEvents }) {
                                             )}
                                         </span>,
                                         <button
-                                        key={'removeButton'}
+                                            key={'removeButton'}
                                             className="MyCart__team--removeButton"
                                             onClick={() => {
                                                 setLocalTeams(
@@ -226,7 +226,7 @@ export default function MyCart({ user, allEvents }) {
                                                 )}
                                             </span>,
                                             <button
-                                            key={'localteam'}
+                                                key={'localteam'}
                                                 className="MyCart__team--addButton"
                                                 onClick={() => {
                                                     setLocalTeams(
