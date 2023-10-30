@@ -83,6 +83,15 @@ model PlayerLog {
   timeStamp    DateTime    @default(now())
 }
 
+model GateLog {
+  id Int @id @default(autoincrement())
+  name String @default("")
+  phone String @default("")
+  college String @default("")
+  location PlayerState @default(IN_CAMPUS)
+  timeStamp DateTime @default(now())
+}
+
 enum PaymentStatus {
   PAID
   NOT_PAID

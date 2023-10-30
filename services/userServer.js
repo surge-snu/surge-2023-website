@@ -1,5 +1,14 @@
 import db from '../lib/prisma'
-
+export async function addInCampus(data) {
+    return db.gateLog.create({
+        data,
+    });
+}
+export async function addOutCampus(data) {
+    return db.gateLog.create({
+        data,
+    });
+}
 export async function fetchUser(email) {
     return (db).user.findUnique({
         where: {

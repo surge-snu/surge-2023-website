@@ -9,7 +9,24 @@ export async function sendOtp(formData) {
         return res.json();
     });
 }
-
+export async function registerIn(formData) {
+    return fetch("/api/entryExit/entry", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+    });
+}
+export async function registerOut(formData) {
+    return fetch("/api/entryExit/exit", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+    });
+}
 export async function register(formData) {
     return fetch("/api/auth/register", {
         method: "POST",

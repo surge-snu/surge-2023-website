@@ -1,0 +1,103 @@
+.EntryMainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  &__title {
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  input {
+    @include box($height: 40px, $width: 15rem);
+    // @include make-flex($just: flex-start);
+    border: none;
+    outline: none;
+    font-size: 17px;
+    color: #fff;
+    padding: 7px 10px;
+    background-color: var(--GInput-BG);
+    border-radius: 5px;
+    border: 1.5px solid #8f8f8f;
+    margin-bottom: 2rem;
+    &:focus ~ label {
+      top: 0%;
+      color: #cafa08;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      color: #8f8f8f;
+    }
+
+    &:focus {
+      border: 1.5px solid #cafa08;
+      color: #cafa08;
+    }
+
+    &:not(:placeholder-shown) ~ label {
+      top: 0%;
+      color: #fff;
+    }
+    &:-webkit-autofill,
+    &:-webkit-autofill ~ label,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      box-shadow: 0 0 0 30px var(--GInput-BG) inset;
+      color: #fff;
+      -webkit-box-shadow: 0 0 0 30px var(--GInput-BG) inset;
+      -webkit-text-fill-color: #fff;
+      font-size: 17px;
+      caret-color: #fff;
+    }
+  }
+}
+
+.ResponseMainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100vh;
+  justify-content: center;
+  &__title {
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 1rem;
+    font-weight: 600;
+  }
+  &__text {
+    margin-left: 2.5rem;
+    margin-bottom: 1rem;
+    color: $primaryColor;
+    font-size: 1.4rem;
+    font-weight: 600;
+    span {
+        color: white;
+        font-weight: 500;
+    }
+  }
+  &__bottom {
+      padding: 1rem;
+      text-align: center;
+    span {
+        color: #cafa08;
+    }
+  }
+}
+.CTA {
+  padding: 0.75rem 2.5rem;
+  border-radius: 10px;
+  border: none;
+  background-color: $primaryColor;
+  color: $backgroundColor;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $primaryColorOnHover;
+  }
+}
