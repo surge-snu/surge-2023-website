@@ -54,11 +54,10 @@ export default function Queries() {
                     </tr>
                 </thead>
                 <tbody>
-                    {query.map((q) => {
+                    {query.map((q,index) => {
                         if (q.data["isResolved"] === false) {
-                            console.log(q)
                             return (
-                                <tr>
+                                <tr key={index}>
                                     <td>{q.data["category"]}</td>
                                     <td>{q.data["email"]}</td>
                                     <td>{q.data["description"]}</td>
@@ -79,11 +78,11 @@ export default function Queries() {
                     </tr>
                 </thead>
                 <tbody>
-                    {query.map((q) => {
+                    {query.map((q, index) => {
                         if (q.data["isResolved"] === true) {
                             console.log(q)
                             return (
-                                <tr>
+                                <tr key={index}>
                                     <td>{q.data["category"]}</td>
                                     <td>{q.data["email"]}</td>
                                     <td>{q.data["description"]}</td>
