@@ -9,7 +9,7 @@ import {
     where,
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { app } from './config'
+import { app } from '../../src/config'
 import '../../styles/routes/Query.scss'
 const db = getFirestore(app);
 import { useRouter } from "next/router";
