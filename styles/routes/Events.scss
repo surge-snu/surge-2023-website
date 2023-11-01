@@ -62,5 +62,12 @@
         }
       }
     }
+    &--closed {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.7rem;
+      text-align: center;
+      height: 30vh;
+      padding-top: 5rem;
+    }
   }
 }

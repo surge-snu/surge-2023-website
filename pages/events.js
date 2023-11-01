@@ -46,7 +46,7 @@ export default function Events({ allEvents }) {
             <div className="EventsPage__container--upcoming">
                 <ScrollItems heading='UPCOMING EVENTS' />
             </div>
-            <div className="EventsPage__container--search">
+            {/* <div className="EventsPage__container--search">
                 <input
                     type="text"
                     placeholder="Search Events By Name"
@@ -61,7 +61,8 @@ export default function Events({ allEvents }) {
                         <EventCard event={event} key={index} />
                     )
                 })}
-            </div>
+            </div> */}
+            <p className="EventsPage__container--closed">Registerations are closed. For enquiry<br/> contact Nandini - 9911596623</p>
         </div>
     )
     // return (
