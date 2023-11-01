@@ -1,5 +1,6 @@
 import AllSponsors from "../components/AllSponsors/AllSponsors";
 import AllSponsorsAfterMovie from "../components/AllSponsorsAfterMovie/AllSponsorsAfterMovie";
+import Navbar from "../components/Navbar/Navbar";
 import PastSponsors from "../components/PastSponsors/PastSponsors";
 import SponsorTitles from "../components/SponsorTitles/SponsorTitles";
 import "../styles/routes/Sponsors.scss"
@@ -21,5 +22,12 @@ function Sponsors() {
     </section>
   );
 }
-
+Sponsors.getLayout = function getLayout(page) {
+  return (
+      <div className="MyLayout">
+          <Navbar />
+          {page}
+      </div>
+  );
+};
 export default Sponsors;

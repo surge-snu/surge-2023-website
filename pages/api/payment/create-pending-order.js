@@ -6,12 +6,18 @@ import { fetchUserData } from "../../../services/userServer";
 export default withIronSessionApiRoute(CreatePendingOrder, ironOptions);
 
 async function CreatePendingOrder(req, res) {
+    const ISTOptions = { timeZone: 'Asia/Kolkata' };
+    const currentISTTime = new Date().toLocaleString('en-US', ISTOptions);
+
+    // Convert the string to a Date object
+    const currentISTTimeAsDate = new Date(currentISTTime);
     const body = await req.body;
     const paySplit = body.paySplit.map((member) => {
         return {
             ...member,
             paymentId: body.paymentId,
             playerOrderId: body.playerOrderId,
+            changedStatus: currentISTTimeAsDate,
         };
     });
 

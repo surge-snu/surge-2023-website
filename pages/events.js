@@ -2,7 +2,7 @@ import EventCard from "../components/EventCard/EventCard";
 import { fetchAllEvents } from "../services/eventServer";
 import "../styles/routes/Events.scss";
 import ButtonGroup from "../components/ButtonGroup/ButtonGroup";
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import ScrollItems from "../components/ScrollItems/ScrollItems";
 import EventScroll from "../components/EventScroll/EventScroll";
 
@@ -27,8 +27,16 @@ export async function getServerSideProps(context) {
 }
 
 export default function Events({ allEvents }) {
-    const [allFilteredEvents, setAllFilteredEvents] = useState(allEvents);
-    console.log(allEvents);
+    const [searchQuery, setSearchQuery] = useState("");
+    const [filteredEvents, setFilteredEvents] = useState(allEvents);
+
+    // Update the filteredEvents whenever the searchQuery changes
+    useEffect(() => {
+        const filtered = allEvents.filter((event) =>
+            event.eventName.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+        setFilteredEvents(filtered);
+    }, [searchQuery, allEvents]);
     return (
         <div className="EventsPage__container">
             <div className="EventsPage__container--scrollItems">
@@ -38,13 +46,23 @@ export default function Events({ allEvents }) {
             <div className="EventsPage__container--upcoming">
                 <ScrollItems heading='UPCOMING EVENTS' />
             </div>
+            {/* <div className="EventsPage__container--search">
+                <input
+                    type="text"
+                    placeholder="Search Events By Name"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                />
+                <p className="EventsPage__container--search__down">Download <a target="_blank" href="/Images/surge_rulebook.pdf">RuleBook</a> & <a target="_blank" href="/Images/surge_event.pdf">Event Brochure</a></p>
+            </div>
             <div className="EventsPage__container--popular">
-                {allFilteredEvents.map((event, index) => {
+                {filteredEvents.map((event, index) => {
                     return (
                         <EventCard event={event} key={index} />
                     )
                 })}
-            </div>
+            </div> */}
+            <p className="EventsPage__container--closed">Registerations are closed. For enquiry<br/> contact Nandini - 9911596623</p>
         </div>
     )
     // return (

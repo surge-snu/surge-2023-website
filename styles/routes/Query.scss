@@ -1,0 +1,18 @@
+.bordered-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.bordered-table th,
+.bordered-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-family: 'Inter', sans-serif;
+  text-align: center; /* Center text horizontally */
+  vertical-align: middle; /* Center text vertically */
+}
+
+.bordered-table th {
+  background-color: $primaryColor;
+  color: black;
+}

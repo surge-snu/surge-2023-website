@@ -41,7 +41,7 @@ const SportsScroll = () => {
               width={300}
               height={300}
             />
-            <h1 className="SportsSlider__track--item--heading">{sport}</h1>
+            <p className="SportsSlider__track--item--heading">{sport}</p>
           </div>
         ))}
       </div>

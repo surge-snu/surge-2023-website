@@ -14,7 +14,7 @@
       text-overflow: ellipsis;
       @include make-flex();
       gap: 10px;
-
+      align-items: flex-start;
       img {
         height: 20px;
         rotate: 180deg;

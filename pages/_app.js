@@ -29,9 +29,9 @@ function MyApp({ Component, pageProps, user }) {
             name="description"
             content="Shiv Nadar IOE's annual Sports Fest"
           />
-          <link rel="icon" href="/Images/Favicon.webp" />
+          <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Navbar isSmall={isSmall} />
+        {/* <Navbar isSmall={isSmall} /> */}
         <AuthModal />
         {getLayout(<Component {...pageProps} />)}
         <Footer />

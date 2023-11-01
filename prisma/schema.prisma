@@ -69,6 +69,7 @@ model PaymentDetails {
   paymentId     String
   playerOrderId String
   amount        Int
+  changedStatus DateTime @default(now())
   createdAt     DateTime @default(now())
   Team          Team     @relation(fields: [teamId], references: [teamId])
 }
@@ -80,6 +81,15 @@ model PlayerLog {
   teamMemberId Int
   PlayerState  PlayerState @default(OUT_CAMPUS)
   timeStamp    DateTime    @default(now())
+}
+
+model GateLog {
+  id Int @id @default(autoincrement())
+  name String @default("")
+  phone String @default("")
+  college String @default("")
+  location PlayerState @default(IN_CAMPUS)
+  timeStamp DateTime @default(now())
 }
 
 enum PaymentStatus {

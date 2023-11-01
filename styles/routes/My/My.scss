@@ -2,7 +2,9 @@
   @include box($height: 100vh);
   @include make-flex($dir: row, $align: flex-start, $just: flex-start);
   overflow-x: auto;
-  padding-top: 69px;
+  @include respondAt(915px) {
+    padding-top: 69px;
+  }
   &__page {
     @include make-flex($dir: column, $align: flex-start, $just: flex-start);
     background-color: #193559;

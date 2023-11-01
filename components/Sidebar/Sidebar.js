@@ -57,6 +57,7 @@ function Sidebar() {
                 <div className="MySidebarWrapper__top--left">
                     <h2>{user.name}</h2>
                     <span>{user.email}</span>
+                    {!navState ? <Link href='/'>Main Page</Link> : <></>}
                 </div>
             </div>
             <div className="MySidebarWrapper__bottom">
